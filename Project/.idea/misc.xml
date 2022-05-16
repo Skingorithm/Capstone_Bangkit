@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FileKuliah/Bangkit/FileProject/git/Capstone_Bangkit/Project/app/src/main/res/layout/activity_logic.xml" value="0.23052536231884058" />
         <entry key="..\:/FileKuliah/Bangkit/FileProject/git/Capstone_Bangkit/Project/app/src/main/res/layout/activity_main.xml" value="0.23052536231884058" />
+        <entry key="..\:/FileKuliah/Bangkit/FileProject/git/Capstone_Bangkit/Project/app/src/main/res/layout/activity_splash.xml" value="0.23052536231884058" />
+        <entry key="..\:/FileKuliah/Bangkit/FileProject/git/Capstone_Bangkit/Project/app/src/main/res/layout/activity_welcome.xml" value="0.22" />
       </map>
     </option>
   </component>
