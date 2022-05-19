@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">CapstoneGas</string>
     <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="masuk">Masuk</string>
+    <string name="masukCta">Gunakan akun yang telah didaftarkan!</string>
+    <string name="name">Nama</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
