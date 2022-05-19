@@ -1,7 +1,8 @@
-package com.example.capstonegas
+package com.example.capstonegas.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.capstonegas.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

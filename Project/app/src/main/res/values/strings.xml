@@ -1,14 +1,19 @@
 <resources>
     <string name="app_name">CapstoneGas</string>
 
-
-    <!-- Profile XML    -->
+    <!-- Profile   -->
     <string name="content_image_desc">image_profile</string>
     <string name="full_name">Lorem Ipsum Dolor Sit Amet</string>
     <string name="username">loremipsum</string>
     <string name="desc_profile">Lorem Ipsum is simply dummy text of the printing and typesetting</string>
     <string name="btn_edit">Edit Profil</string>
 
-
-
+    <!-- Login & Register    -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="masuk">Masuk</string>
+    <string name="masukCta">Gunakan akun yang telah didaftarkan!</string>
+    <string name="name">Nama</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
