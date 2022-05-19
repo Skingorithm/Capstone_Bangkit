@@ -5,6 +5,14 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    Color SkinGorithm-->
+    <color name="blue">#5571D8</color>
+    <color name="dark_blue">#2544B1</color>
+    <color name="red">#DB324D</color>
+    <color name="dark_red">#A62639</color>
+    <color name="black">#424242</color>
+    <color name="background_white">#F2F2F2</color>
+
 </resources>
