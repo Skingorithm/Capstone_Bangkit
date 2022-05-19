@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".view.profile.ProfileActivity">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/img_profile"
@@ -60,25 +60,47 @@
     <Button
         android:id="@+id/btn_edit"
         android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
         style="@style/OutlinedButton"
         android:text="@string/btn_edit"
-        app:strokeColor="@color/blue"
+        app:strokeColor="@color/primary_blue"
         app:strokeWidth="1.5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc_profile" />
 
     <View
+        android:id="@+id/line_profile"
         android:layout_width="330dp"
         android:layout_height="2dp"
         android:layout_marginTop="5dp"
-        android:background="@color/blue"
+        android:background="@color/primary_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_edit" />
+
+    <TextView
+        android:id="@+id/histori_kulit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        style="@style/Title"
+        android:text="@string/histori"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_edit" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/histori_kulit" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
