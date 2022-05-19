@@ -7,6 +7,7 @@
     <string name="username">loremipsum</string>
     <string name="desc_profile">Lorem Ipsum is simply dummy text of the printing and typesetting</string>
     <string name="btn_edit">Edit Profil</string>
+    <string name="histori">Histori Kondisi Kulit</string>
 
     <!-- Login & Register    -->
     <string name="login">Login</string>
