@@ -16,6 +16,14 @@
     <string name="history_score">70/100</string>
     <string name="btn_detail">Lihat Detail</string>
 
+    <!-- Edit Profile    -->
+    <string name="btn_edit_photo">Edit Foto</string>
+    <string name="btn_delete_photo">Hapus</string>
+    <string name="btn_save_change">Simpan Perubahan</string>
+    <string name="full_name_label">Nama Lengkap</string>
+    <string name="username_label">Username</string>
+    <string name="desc_label">Deskripsi</string>
+
     <!-- Login & Register    -->
     <string name="login">Login</string>
     <string name="register">Register</string>
