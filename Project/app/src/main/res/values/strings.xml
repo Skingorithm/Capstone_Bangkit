@@ -16,6 +16,13 @@
     <string name="history_score">70/100</string>
     <string name="btn_detail">Lihat Detail</string>
 
+    <!-- Item Ingredients    -->
+    <string name="ingredient_name"><u>Aloe Vera</u></string>
+    <string name="function">Fungsi:</string>
+    <string name="effect">Efek:</string>
+    <string name="detail_function">Lorem Ipsum Dolor Sit Amet</string>
+    <string name="detail_effect">Lorem Ipsum Dolor Sit Amet</string>
+
     <!-- Edit Profile    -->
     <string name="btn_edit_photo">Edit Foto</string>
     <string name="btn_delete_photo">Hapus</string>
