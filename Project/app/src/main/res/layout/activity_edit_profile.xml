@@ -31,34 +31,33 @@
 
     <Button
         android:id="@+id/button4"
+        style="@style/FilledRedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:layout_marginTop="35dp"
-        style="@style/FilledRedButton"
+        android:layout_marginEnd="15dp"
         android:text="@string/btn_delete_photo"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/full_name_label"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:text="@string/full_name_label"
-        style="@style/Title"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fullname_field"
         app:layout_constraintTop_toBottomOf="@+id/img_profile" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fullname_field"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="@+id/img_profile"
         app:layout_constraintTop_toBottomOf="@+id/full_name_label">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -69,24 +68,23 @@
 
     <TextView
         android:id="@+id/username_label"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:text="@string/username_label"
-        style="@style/Title"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fullname_field"
         app:layout_constraintTop_toBottomOf="@+id/fullname_field" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username_field"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_label"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        app:layout_constraintEnd_toEndOf="@+id/fullname_field"
+        app:layout_constraintStart_toStartOf="@+id/username_label"
+        app:layout_constraintTop_toBottomOf="@+id/username_label">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -107,31 +105,31 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/desc_field"
-        android:layout_width="330dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="15dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_label"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        app:layout_constraintEnd_toEndOf="@+id/username_field"
+        app:layout_constraintStart_toStartOf="@+id/desc_label"
+        app:layout_constraintTop_toBottomOf="@+id/desc_label">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/Description"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:hint="@string/desc_profile"
-            style="@style/Description" />
+            android:layout_height="match_parent"
+            android:hint="@string/desc_profile" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button5"
         style="@style/FilledBlueButton"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/btn_save_change"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/desc_field"
         app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/desc_field"
         app:layout_constraintTop_toBottomOf="@+id/desc_field" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

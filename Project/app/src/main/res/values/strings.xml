@@ -39,4 +39,6 @@
     <string name="name">Nama</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="daftar">Daftar</string>
+    <string name="registerCta">Yuk segera daftarkan dirimu!</string>
 </resources>
