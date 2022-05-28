@@ -41,4 +41,18 @@
     <string name="password">Password</string>
     <string name="daftar">Daftar</string>
     <string name="registerCta">Yuk segera daftarkan dirimu!</string>
+    <string name="logo_image">SkinGorithm</string>
+    <string name="loginCta">Belum Punya Akun?</string>
+    <string name="registerClick">Yuk Daftar!</string>
+
+    <!-- Detail Skincare    -->
+    <string name="text_number">1</string>
+    <string name="text_title_result_skincare">Jerawat</string>
+
+    <!-- Bottom Navigation    -->
+    <string name="nav_home">Home</string>
+    <string name="nav_routines">Routines</string>
+    <string name="nav_camera">Camera</string>
+    <string name="nav_ingredients">Ingredients</string>
+    <string name="nav_profile">Profile</string>
 </resources>
