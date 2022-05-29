@@ -9,9 +9,9 @@ Our application that helps users in their skincare journey. With this app users 
 
 <br>
 
-| Name                            | Student ID | Path                | Contact               | 
-| ------------------------------- | ---------- | ------------------- | <a href="https://www.linkedin.com/in/agung-prabowo8800/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> | 
-| Mohammad Hamid Asnawi           | M7011F1172 | Machine Learning    | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Name                            | Student ID | Path                | Contact                                                                                                                                                                                                              | 
+| ------------------------------- | ---------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mohammad Hamid Asnawi           | M7011F1172 | Machine Learning    | <a href="https://www.linkedin.com/in/agung-prabowo8800/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  | 
 | Nuril Hidayati                  | M2008G0845 | Machine Learning    | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
 | Ahdan Amanullah Irfan Muzhafar  | A7004F0336 | Mobile Development  | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
 | Husin Muhammad Assegaff         | A2004F0318 | Mobile Development  | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
