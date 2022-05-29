@@ -1,10 +1,9 @@
-# Skin Gorithm: Know What You Need!
+# C22-PS180 [Skin Gorithm]
 
 ## Hai Everyone! <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="30px">
 
 ## About The Project
-
-
+Our application that helps users in their skincare journey. With this app users can understand more about the skincare function, pros, and cons based on the ingredients, providing a facial skin reviewer that allows user to know their facial condition, alarm feature to remind the users of their skincare daily usage, and the most important thing they can see their progress in their skincare journey!
 
 ## Team Members
 
@@ -12,7 +11,7 @@
 
 <br>
 
-| Name                            | Student ID | Path                |
+| Name                            | Student ID | Path                | 
 | ------------------------------- | ---------- | ------------------- |
 | Mohammad Hamid Asnawi           | M7011F1172 | Machine Learning    |
 | Nuril Hidayati                  | M2008G0845 | Machine Learning    |
