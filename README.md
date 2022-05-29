@@ -1,7 +1,7 @@
 # C22-PS180 [Skin Gorithm]
 
 ## About The Project
-Our application that helps users in their skincare journey. With this app users can understand more about the skincare function, pros, and cons based on the ingredients, providing a facial skin reviewer that allows user to know their facial condition, alarm feature to remind the users of their skincare daily usage, and the most important thing they can see their progress in their skincare journey!
+Skin Gorithm is an application that helps users in their skincare journey. With this app users can understand more about the skincare function, pros, and cons based on the ingredients, providing a facial skin reviewer that allows user to know their facial condition, alarm feature to remind the users of their skincare daily usage, and the most important thing they can see their progress in their skincare journey!
 
 ## Team Members
 
