@@ -6,9 +6,9 @@
 
 
 
-# Team Members
+## Team Members
 
-## Team ID : C22-PS180
+### Team ID : C22-PS180
 
 <br>
 
@@ -23,7 +23,7 @@
 
 <br>
 
-# Resource
+## Resource
 
 In our project is divided into four branches.
 
