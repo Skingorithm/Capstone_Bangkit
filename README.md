@@ -1,7 +1,5 @@
 # C22-PS180 [Skin Gorithm]
 
-## Hai Everyone! <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="30px">
-
 ## About The Project
 Our application that helps users in their skincare journey. With this app users can understand more about the skincare function, pros, and cons based on the ingredients, providing a facial skin reviewer that allows user to know their facial condition, alarm feature to remind the users of their skincare daily usage, and the most important thing they can see their progress in their skincare journey!
 
@@ -21,12 +19,3 @@ Our application that helps users in their skincare journey. With this app users 
 | Taris Muhammad Hadyansyah       | C2008F0889 | Cloud Computing     |
 
 <br>
-
-## Resource
-
-In our project is divided into four branches.
-
-1. [main](https://github.com/ahdan86/Capstone_Bangkit)
-2. [android-development](https://github.com/ahdan86/Capstone_Bangkit/tree/main/Project)
-3. [cloud-computing]( )
-4. [machine-learning]( )
