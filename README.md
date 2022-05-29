@@ -9,13 +9,13 @@ Our application that helps users in their skincare journey. With this app users 
 
 <br>
 
-| Name                            | Student ID | Path                | 
-| ------------------------------- | ---------- | ------------------- |
-| Mohammad Hamid Asnawi           | M7011F1172 | Machine Learning    |
-| Nuril Hidayati                  | M2008G0845 | Machine Learning    |
-| Ahdan Amanullah Irfan Muzhafar  | A7004F0336 | Mobile Development  |
-| Husin Muhammad Assegaff         | A2004F0318 | Mobile Development  |
-| Difa Maulana                    | C2008F0866 | Cloud Computing     |
-| Taris Muhammad Hadyansyah       | C2008F0889 | Cloud Computing     |
+| Name                            | Student ID | Path                | Contact               | 
+| ------------------------------- | ---------- | ------------------- | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Mohammad Hamid Asnawi           | M7011F1172 | Machine Learning    | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Nuril Hidayati                  | M2008G0845 | Machine Learning    | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Ahdan Amanullah Irfan Muzhafar  | A7004F0336 | Mobile Development  | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Husin Muhammad Assegaff         | A2004F0318 | Mobile Development  | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Difa Maulana                    | C2008F0866 | Cloud Computing     | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Taris Muhammad Hadyansyah       | C2008F0889 | Cloud Computing     | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
 
 <br>
