@@ -11,21 +11,11 @@ Our application that helps users in their skincare journey. With this app users 
 
 | Name                            | Student ID | Path                | Contact                                                                                                                                                                                                              | 
 | ------------------------------- | ---------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Mohammad Hamid Asnawi           | M7011F1172 | Machine Learning    | <a href="https://www.linkedin.com/in/agung-prabowo8800/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  | 
-| Nuril Hidayati                  | M2008G0845 | Machine Learning    | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
-| Ahdan Amanullah Irfan Muzhafar  | A7004F0336 | Mobile Development  | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
-| Husin Muhammad Assegaff         | A2004F0318 | Mobile Development  | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
-| Difa Maulana                    | C2008F0866 | Cloud Computing     | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
-| Taris Muhammad Hadyansyah       | C2008F0889 | Cloud Computing     | <a href="https://www.linkedin.com/in/agung-prabowo8800/"> | 
+| Mohammad Hamid Asnawi           | M7011F1172 | Machine Learning    | <a href="https://www.linkedin.com/in/mhamidasn/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  | 
+| Nuril Hidayati                  | M2008G0845 | Machine Learning    | <a href="https://www.linkedin.com/in/nuril-hidayati/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a | 
+| Ahdan Amanullah Irfan Muzhafar  | A7004F0336 | Mobile Development  | <a href="https://www.linkedin.com/in/ahdan-amanullah-irfan-muzhaffar-1335b8178/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a | 
+| Husin Muhammad Assegaff         | A2004F0318 | Mobile Development  | <a href="https://www.linkedin.com/in/husinassegaff/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a | 
+| Difa Maulana                    | C2008F0866 | Cloud Computing     | <a href="https://www.linkedin.com/in/difa-maulana/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a | 
+| Taris Muhammad Hadyansyah       | C2008F0889 | Cloud Computing     | <a href="https://www.linkedin.com/in/taris-muhammad/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a | 
 
 <br>
- 
- | Name                  | Contact                                                                                                                                                                                                                                                                                                                                        |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Agung Prabowo         | <a href="https://www.linkedin.com/in/agung-prabowo8800/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>                |
-| Sabrina Mutamimul Ula | <a href="https://www.linkedin.com/in/sabrina-m-a65441130/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>                |
-| Annisa Syalsabila     | <a href="https://www.linkedin.com/in/annisa-syalsabila-590099207/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  |
-| Faizal Surya Prabowo  | <a href="https://www.linkedin.com/in/faizal-surya/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>                           |
-| Dimas Kuncoro Jati    | <a href="https://www.linkedin.com/in/dimas-k-jati/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>                        |
-| Luky Mulana           | <a href="https://www.linkedin.com/in/lukymulana/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>                         |
-  
