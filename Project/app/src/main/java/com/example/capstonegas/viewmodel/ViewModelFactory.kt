@@ -8,9 +8,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
-//            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
-//                MainViewModel(pref) as T
-//            }
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
+                MainViewModel(pref) as T
+            }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(pref) as T
             }
