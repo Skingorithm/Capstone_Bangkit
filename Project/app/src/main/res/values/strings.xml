@@ -48,6 +48,14 @@
     <!-- Detail Skincare    -->
     <string name="text_number">1</string>
     <string name="text_title_result_skincare">Jerawat</string>
+    <string name="percentage">100%</string>
+    <string name="label_desc_result">Deskripsi:</string>
+    <string name="desc_result">Lorem Ipsum is simply dummy text of the printing and typesetting.</string>
+    <string name="number_result">90/100</string>
+    <string name="label_face_type">Bentuk Wajah:</string>
+    <string name="face_type">Hati</string>
+    <string name="skin_diagnosis_label">Diagnosis Kulit</string>
+    <string name="content_image_btn">Image Button Expand</string>
 
     <!-- Bottom Navigation    -->
     <string name="nav_home">Home</string>
