@@ -7,7 +7,6 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 
 ### Team ID : C22-PS180
 
-<br>
 
 | Name                            | Student ID | Path                | Contact                                                                                                                                                                                                              | 
 | ------------------------------- | ---------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -18,7 +17,6 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 | Difa Maulana                    | C2008F0866 | Cloud Computing     | <a href="https://www.linkedin.com/in/difa-maulana/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> | 
 | Taris Muhammad Hadyansyah       | C2008F0889 | Cloud Computing     | <a href="https://www.linkedin.com/in/taris-muhammad/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> | 
 
-<br>
 
 ## Resource
 
