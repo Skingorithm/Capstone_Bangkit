@@ -10,11 +10,11 @@
         android:id="@+id/imageView4"
         android:layout_width="333dp"
         android:layout_height="74dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/logo_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/logo_skingorithm" />
 
     <TextView
@@ -50,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailTextFieldText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -67,6 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailTextField">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passTextFieldText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -102,8 +104,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="@string/registerClick"
+        android:clickable="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
