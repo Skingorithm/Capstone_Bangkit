@@ -19,3 +19,11 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 | Taris Muhammad Hadyansyah       | C2008F0889 | Cloud Computing     | <a href="https://www.linkedin.com/in/taris-muhammad/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> | 
 
 <br>
+
+## Resource
+
+In our project is divided into four branches.
+1. [main](https://github.com/ahdan86/Capstone_Bangkit)
+2. [android-development](https://github.com/AgungP88/getloc-apps/tree/android-development)
+3. [cloud-computing]()
+4. [machine-learning](https://github.com/ahdan86/Capstone_Bangkit/tree/Machine-Learning)
