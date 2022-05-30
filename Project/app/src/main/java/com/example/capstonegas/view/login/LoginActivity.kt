@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.capstonegas.databinding.ActivityLoginBinding
 import com.example.capstonegas.model.UserPreference
 import com.example.capstonegas.view.main.MainActivity
+import com.example.capstonegas.view.register.RegisterActivity
 import com.example.capstonegas.viewmodel.LoginViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
 
@@ -81,6 +82,11 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+        binding.textView4.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
