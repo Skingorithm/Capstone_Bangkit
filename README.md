@@ -20,7 +20,8 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 
 ## Resource
 
-In our project is divided into three branches.
-1. [Mobile Development](https://github.com/ahdan86/Capstone_Bangkit/tree/Mobile-Development)
-2. [Cloud Computing]()
-3. [Machine Learning](https://github.com/ahdan86/Capstone_Bangkit/tree/Machine-Learning)
+In our project is divided into four branches.
+1. [Main](https://github.com/ahdan86/Capstone_Bangkit)
+2. [Mobile Development](https://github.com/ahdan86/Capstone_Bangkit/tree/Mobile-Development)
+3. [Cloud Computing](https://github.com/ahdan86/Capstone_Bangkit/tree/Cloud-Computing)
+4. [Machine Learning](https://github.com/ahdan86/Capstone_Bangkit/tree/Machine-Learning)
