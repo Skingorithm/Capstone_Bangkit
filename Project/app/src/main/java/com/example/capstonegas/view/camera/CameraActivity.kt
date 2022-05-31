@@ -1,5 +1,6 @@
 package com.example.capstonegas.view.camera
 
+import android.Manifest
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -120,10 +121,10 @@ class CameraActivity : AppCompatActivity() {
                     val intent = Intent()
                     intent.putExtra("picture", photoFile)
                     intent.putExtra(
-                        "isBackCamera",
-                        cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
+                        "isFrontCamera",
+                        cameraSelector == CameraSelector.DEFAULT_FRONT_CAMERA
                     )
-//                    setResult(UploadActivity.CAMERA_X_RESULT, intent)
+                    setResult(UploadActivity.CAMERA_X_RESULT, intent)
                     finish()
                 }
             }
