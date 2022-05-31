@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowInsets
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.bottomNavigationView.background = null
+        binding.bottomNavigationView.menu.getItem(2).isEnabled = false
 
         setupView()
         setupViewModel()
@@ -72,23 +76,19 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navigation_home -> {
-                //TODO: go to home
+                //TODO: go to home fragment
                 return true
             }
             R.id.navigation_routines -> {
-                //TODO: go to routines
-                return true
-            }
-            R.id.navigation_camera -> {
-                startActivity(Intent(this, CameraActivity::class.java))
+                //TODO: go to routines fragment
                 return true
             }
             R.id.navigation_ingredients -> {
-                //TODO: go to ingredients
+                //TODO: go to ingredients fragment
                 return true
             }
             R.id.navigation_profile -> {
-                //TODO: go to profile
+                //TODO: go to profile fragment
                 return true
             }
             else -> return true

@@ -14,9 +14,8 @@
         android:title="@string/nav_routines"
         android:enabled="true"/>
     <item
-        android:id="@+id/navigation_camera"
-        android:icon="@drawable/ic_baseline_camera_inactive_24"
-        android:title="@string/nav_camera" />
+        android:id="@+id/placeholder"
+        android:title="" />
     <item
         android:id="@+id/navigation_ingredients"
         android:icon="@drawable/ic_baseline_ingredient_inactive_24"

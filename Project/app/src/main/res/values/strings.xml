@@ -70,5 +70,6 @@
     <string name="iya">Iya</string>
     <string name="tidak">Tidak</string>
     <string name="descUpload">Foto tersebut akan disimpan untuk perkembangan Skin Diary</string>
+    <string name="fab_camera_button">Camera Button</string>
 
 </resources>
