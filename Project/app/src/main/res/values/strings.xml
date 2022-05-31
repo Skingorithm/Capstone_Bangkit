@@ -64,4 +64,11 @@
     <string name="nav_ingredients">Ingredients</string>
     <string name="nav_profile">Profile</string>
     <string name="masukCTA">Masuk</string>
+
+    <!-- Upload Activity   -->
+    <string name="uploadWarning">Apakah kamu yakin akan menggunakan foto ini?</string>
+    <string name="iya">Iya</string>
+    <string name="tidak">Tidak</string>
+    <string name="descUpload">Foto tersebut akan disimpan untuk perkembangan Skin Diary</string>
+
 </resources>
