@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.resultskincare.ResultSkincareActivity"
-    android:background="#88CECECE">
+    android:background="@color/background_grey">
 
     <ImageView
         android:id="@+id/image_result"

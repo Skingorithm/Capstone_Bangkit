@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowInsets
@@ -17,7 +16,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityMainBinding
 import com.example.capstonegas.model.UserPreference
-import com.example.capstonegas.view.camera.CameraActivity
+import com.example.capstonegas.view.camera.UploadActivity
 import com.example.capstonegas.view.welcome.WelcomeActivity
 import com.example.capstonegas.viewmodel.MainViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
@@ -40,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         setupView()
         setupViewModel()
+        setupAction()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -92,6 +92,12 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             else -> return true
+        }
+    }
+
+    private fun setupAction(){
+        binding.fab.setOnClickListener {
+            startActivity(Intent(this, UploadActivity::class.java))
         }
     }
 }
