@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/iyaButton"
                 style="@style/FilledBlueButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                 app:layout_constraintGuide_begin="204dp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/tidakButton"
                 style="@style/FilledRedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                 android:text="@string/descUpload"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button2" />
+                app:layout_constraintTop_toBottomOf="@+id/tidakButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
