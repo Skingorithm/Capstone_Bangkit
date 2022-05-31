@@ -23,9 +23,6 @@
             android:name=".view.camera.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ingredient.IngredientAnalyzeActivity"
-            android:exported="false" />
-        <activity
             android:name=".view.profile.EditProfileActivity"
             android:exported="false" />
         <activity
