@@ -1,4 +1,4 @@
-# Skin Gorithm - Machine Learning
+# Skin Gorithm - Machine Learning Notebook
 
 ## 1. Facial Skin Problem Segmentation
 
