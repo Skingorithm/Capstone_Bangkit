@@ -84,7 +84,7 @@ class CameraActivity : AppCompatActivity() {
         if (result.resultCode == RESULT_OK) {
             val selectedImg: Uri = result.data?.data as Uri
             val intent = Intent()
-            intent.putExtra("image", selectedImg)
+            intent.putExtra("image", selectedImg.toString())
             setResult(UploadActivity.GALLERY_RESULT, intent)
             finish()
         }

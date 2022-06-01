@@ -59,9 +59,11 @@ class UploadActivity : AppCompatActivity() {
             binding.previewImageView.setImageBitmap(result)
         }
         else if(it.resultCode == GALLERY_RESULT){
-            val selectedImg = it.data?.getSerializableExtra("picture") as Uri
-            val myFile = uriToFile(selectedImg, this@UploadActivity)
-            binding.previewImageView.setImageURI(selectedImg)
+            Log.d("UploadActivity", "Gallery")
+            val selectedImg = it.data?.getSerializableExtra("image")
+            val uri = Uri.parse(selectedImg.toString())
+            val myFile = uriToFile(uri, this@UploadActivity)
+            binding.previewImageView.setImageURI(uri)
         }
     }
 
