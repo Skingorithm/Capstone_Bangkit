@@ -1,8 +1,9 @@
 # Skin Gorithm - Machine Learning Notebook
 
-## 1. Facial Skin Problem Segmentation
+## 1. Facial Skin Status Analyze
 
 ### INTRODUCTION
+Analysis of facial skin status, such as acne, dark circles, flek and wrinkles.
 
 ### DATASET
 We collect datasets manually from google images. The distribution as follows :
