@@ -14,9 +14,9 @@ We collect datasets manually from google images. The distribution as follows :
 - Wrinkle's dataset
 
 ### WORKFLOW STAGES
-1. Cropping your face images dataset, you can use our [notebook this]() to cropping your face images dataset 
+1. Cropping your face images dataset, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Cropping%20Face%20Images.ipynb) to cropping your face images dataset 
 2. Labelling your images dataset using ImageJ or Label-Studio
-3. Resize your input images to 256x256
+3. Resize your input images to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Resize%20Image%20to%20256x256.ipynb) to resize your images
 4. Stack your image using ImageJ 
 5. Training the model. You can start training your own model immediately by modifying the Model Section or load your own model. There are some files of our notebook, we using ResUNet architecture as our baseline:
    - [Acne Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Acne%20Skin%20Segmentation/Acne%20Segmentation%20-%20ResUnet.ipynb)
@@ -25,8 +25,7 @@ We collect datasets manually from google images. The distribution as follows :
    - [Face Skin Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Face%20Skin%20Segmentation/Face%20Skin%20Segmentation%20-%20ResUnet.ipynb)
    - [Flek Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Flek%20Segmentation/Flek%20Segmentation%20-%20ResUnet.ipynb)
    - [Wrinkles Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Wrinkles%20Segmentation/Wrinkles%20Segmentation%20-%20ResUnet.ipynb)
-6. Plot the IOU score, precision, and loss
-7. Save the model
+6. Load the model and save model to tflite format, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Load%20and%20Convert%20to%20TFLite.ipynb)
 
 ### LAUNCH
 
