@@ -27,11 +27,11 @@ availableSecrets:
       env: "ACCESS_TOKEN_KEY"
     # - versionName: projects/vee-project-351306/secrets/MAPS_API_KEY/versions/1
     #   env: "MAPS_API_KEY"
-    - versionName: projects/673277218150/secrets/MYSQLHOST
+    - versionName: projects/673277218150/secrets/MYSQLHOST/versions/1
       env: "MYSQLHOST"
-    - versionName: projects/673277218150/secrets/MYSQLPASSWORD
+    - versionName: projects/673277218150/secrets/MYSQLPASSWORD/versions/1
       env: "MYSQLPASSWORD"
-    - versionName: projects/673277218150/secrets/MYSQLUSER
+    - versionName: projects/673277218150/secrets/MYSQLUSER/versions/1
       env: "MYSQLUSER"
-    - versionName: projects/673277218150/secrets/REFRESH_TOKEN_KEY
+    - versionName: projects/673277218150/secrets/REFRESH_TOKEN_KEY/versions/1
       env: "REFRESH_TOKEN_KEY"
