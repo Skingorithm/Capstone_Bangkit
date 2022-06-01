@@ -4,6 +4,6 @@ instance_class: F1
 
 env_variables:
   MYSQLDB: skingorithm-db
-  MYSQLPORT: 
-  HOST: 34.101.184.196
+  MYSQLPORT: 3306
+  HOST: 0.0.0.0
   ACCESS_TOKEN_AGE: 1800
