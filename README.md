@@ -27,8 +27,6 @@ We collect datasets manually from google images. The distribution as follows :
    - [Wrinkles Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Wrinkles%20Segmentation/Wrinkles%20Segmentation%20-%20ResUnet.ipynb)
 6. Load the model and convert model to tflite format, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Load%20and%20Convert%20to%20TFLite.ipynb) to convert your model
 
-### LAUNCH
-
 
 ## 2. Face Shape Classification
 
