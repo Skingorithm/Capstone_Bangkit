@@ -13,11 +13,13 @@ We collect datasets manually from google images. The distribution as follows :
 - Flek's dataset 
 - Wrinkle's dataset
 
-### PRE-PROCESSING
-
-
-### TRAINING MODEL
-Training dilakukan dengan backbone model ResNet 34 sebagai encoder. ResNet34 merupakan residual neural network dengan 34 lapisan dimana dilakukan convolution dan ReLU diikuti dengan downsampling menggunakan operasi pooling untuk menyandikan atau membuat kode dari input data kedalam representasi fitur pada berbagai tingkatan
+### Workflow Stages
+- Resize our input images to 256x256
+- We are using ResUNet architecture so there will be encoding and decoding path.
+- We are creating keras model with residual block on the encoding and decoding path. We also need to concatenate each convolutional block and input it on the decoding path.
+- Training the model
+- Plot the IOU score, precision, and loss
+- Save the model
 
 ### LAUNCH
 There are some files of model facial skin segmentation:
