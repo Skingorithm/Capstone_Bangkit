@@ -6,11 +6,11 @@
 
 ### DATASET
 We collect datasets manually from google images. The distribution as follows :
-- Face skin's dataset 
 - Acne's dataset 
-- Flek's dataset 
+- Dark circle's dataset 
 - Eye's dataset 
-- Dark Circle's dataset 
+- Face skin's dataset 
+- Flek's dataset 
 - Wrinkle's dataset
 
 ### PRE-PROCESSING
