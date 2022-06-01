@@ -6,17 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".view.ingredient.IngredientAnalyzeFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="360dp"
-        android:layout_height="505dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <SearchView
+        android:id="@+id/searchIngredients"
+        android:background="@drawable/background_search_view"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="370dp"
+        android:layout_height="610dp"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchIngredients"
         tools:listitem="@layout/item_ingredient" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
