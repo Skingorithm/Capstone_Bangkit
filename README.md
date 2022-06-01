@@ -21,7 +21,7 @@ We collect datasets manually from google images. The distribution as follows :
 2. Labelling your images dataset using ImageJ. You can download ImageJ in [here](https://imagej.nih.gov/ij/download.html)
 3. Resize your input images to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Resize%20Image%20to%20256x256.ipynb) to resize your images
 4. Stack your input images using ImageJ software
-5. Training the model, we using ResUNet architecture as our baseline. But, you can start training your own model immediately by modifying the Model Section or load your own model. There are some files of our notebook:
+5. Training the model, we using ResUNet architecture as our baseline. There are some files of our notebook:
    - [Acne Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Acne%20Skin%20Segmentation/Acne%20Segmentation%20-%20ResUnet.ipynb)
    - [Dark Circle Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Dark%20Circle%20Segmentation/Dark%20Circle%20Segmentation%20-%20ResUnet.ipynb)
    - [Eye Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Eye%20Segmentation/Eye%20Segmentation%20-%20ResUnet.ipynb)
