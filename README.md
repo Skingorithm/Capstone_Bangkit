@@ -5,7 +5,7 @@
 ### INTRODUCTION
 Recently, the trend of skincare products has increased rapidly. In 2021 the demand for skincare in Indonesia is 70% higher than the previous year. This is due to many things, starting with the higher demand for skincare products, various skin problems, and also because of the rampant influence from skincare influencers that encourage people to be more aware of their skin health. Along with the increasing demand and usage of skincare products, there are still a lot of people who lack knowledge about the skincare things, a lot of people are still confused about how to choose the best skincare for themselves, and they are still not pretty sure is the skincare they using is effective for their skin or not. 
 
-Because of that, this project is built an app to analysis of facial skin status, such as acne, dark circles, flek and wrinkles using Deep Learning Technology. In addition, our app also provides features ingredient analyze to help users can understand more about the skincare function, pros, and cons based on the ingredients, alarm feature to remind the users of their skincare daily usage, and the most important thing they can see their progress in their skincare journey!
+Therefore, this project is built an app to analysis of facial skin status, such as acne, dark circles, flek and wrinkles using Deep Learning Technology. In addition, our app also provides features ingredient analyze to help users can understand more about the skincare function, pros, and cons based on the ingredients, alarm feature to remind the users of their skincare daily usage, and the most important thing they can see their progress in their skincare journey!
 
 ### DATASET
 We collect datasets manually from google images. The distribution as follows :
