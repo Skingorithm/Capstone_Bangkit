@@ -12,7 +12,7 @@ We collect datasets manually from google images. The distribution as follows :
 - Eye's dataset (60)
 - Face skin's dataset 
 - Flek's dataset 
-- Wrinkles's dataset
+- Wrinkles's dataset (135)
 
 ### WORKFLOW STAGES
 1. Cropping your face images dataset, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Cropping%20Face%20Images.ipynb) to cropping your face images dataset 
