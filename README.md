@@ -15,6 +15,7 @@ We collect datasets manually from google images. The distribution as follows :
 - Face skin's dataset: 80
 - Flek's dataset: 43
 - Wrinkles's dataset: 135 
+- Face Shape's dataset: 4336
 
 ### WORKFLOW STAGES
 #### Face Segmentation
