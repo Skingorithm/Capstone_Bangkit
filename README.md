@@ -1,6 +1,6 @@
 # Skin Gorithm - Machine Learning Notebook
 
-## 1. Facial Skin Status Analyze
+## 1. Facial Skin Status Analyzer
 
 ### INTRODUCTION
 Recently, the trend of skincare products has increased rapidly. In 2021 the demand for skincare in Indonesia is 70% higher than the previous year. This is due to many things, starting with the higher demand for skincare products, various skin problems, and also because of the rampant influence from skincare influencers that encourage people to be more aware of their skin health. Along with the increasing demand and usage of skincare products, there are still a lot of people who lack knowledge about the skincare things, a lot of people are still confused about how to choose the best skincare for themselves, and they are still not pretty sure is the skincare they using is effective for their skin or not. 
@@ -17,6 +17,7 @@ We collect datasets manually from google images. The distribution as follows :
 - Wrinkles's dataset: 135 
 
 ### WORKFLOW STAGES
+#### Face Segmentation
 1. Crop your face images dataset, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Cropping%20Face%20Images.ipynb) to crop your face images dataset 
 2. Resize your input images to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Resize%20Image%20to%20256x256.ipynb) to resize your images
 3. Label your images dataset using ImageJ. You can download ImageJ in [here](https://imagej.nih.gov/ij/download.html)
@@ -31,5 +32,8 @@ We collect datasets manually from google images. The distribution as follows :
 7. Load the model and convert model to tflite format, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Load%20and%20Convert%20to%20TFLite.ipynb) to convert your model
 
 
-## 2. Face Shape Classification
-
+#### Face Shape Classification
+1. Crop the face image dataset until the picture only contains the face 
+2. Train the model, for training we use InceptionResnetV2 architecture. Thisi are the notebook file that we work on:
+   - [Face Shape Classification - IncRes](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Face%20Shape%20Classification/Face%20Shape%20Classification%20-%20IncRes.ipynb)
+3. Load the model and convert model to tflite format, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Load%20and%20Convert%20to%20TFLite.ipynb) to convert your model
