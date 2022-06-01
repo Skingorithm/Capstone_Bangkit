@@ -16,7 +16,6 @@ We collect datasets manually from google images. The distribution as follows :
 ### Workflow Stages
 - Resize our input images to 256x256
 - We are using ResUNet architecture so there will be encoding and decoding path.
-- We are creating keras model with residual block on the encoding and decoding path. We also need to concatenate each convolutional block and input it on the decoding path.
 - Training the model
 - Plot the IOU score, precision, and loss
 - Save the model
