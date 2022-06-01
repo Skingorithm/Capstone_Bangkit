@@ -1,6 +1,6 @@
-# Skin Gorithm - Machine Learning Notebook
+# SKIN GORITHM - MACHINE LEARNING NOTEBOOK
 
-## Facial Skin Status Analyzer
+## FACIAL SKIN STATUS ANALYZER
 
 ### INTRODUCTION
 Recently, the trend of skincare products has increased rapidly. In 2021 the demand for skincare in Indonesia is 70% higher than the previous year. This is due to many things, starting with the higher demand for skincare products, various skin problems, and also because of the rampant influence from skincare influencers that encourage people to be more aware of their skin health. Along with the increasing demand and usage of skincare products, there are still a lot of people who lack knowledge about the skincare things, a lot of people are still confused about how to choose the best skincare for themselves, and they are still not pretty sure is the skincare they using is effective for their skin or not. 
