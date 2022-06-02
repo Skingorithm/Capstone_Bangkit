@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.routine.AddRoutineActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/title_app_add_routine"
+            app:menu="@menu/navigation_app_bar"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:titleCentered="true"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="40dp">
+
+        <TextView
+            android:id="@+id/routine_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            style="@style/Title"
+            android:text="@string/routine_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/routine_field"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="370dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/routine_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/routine" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/clock_label"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/clock_label"
+            app:layout_constraintStart_toBottomOf="routine_field"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/routine_field" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/clock_field"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@id/clock_label"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/clock" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/date_label"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/date_label"
+            app:layout_constraintStart_toEndOf="@id/clock_label"
+            app:layout_constraintTop_toBottomOf="@+id/routine_field" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date_field"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="40dp"
+            app:layout_constraintTop_toBottomOf="@id/clock_label"
+            app:layout_constraintStart_toEndOf="@id/clock_field">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/date" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/notif_label"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/notif_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clock_field" />
+
+        <CheckBox
+            android:id="@+id/checkBox_fifteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/fifteen_field"
+            android:buttonTint="@color/primary_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notif_label" />
+
+        <CheckBox
+            android:id="@+id/checkBox_thirty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/thirty_field"
+            android:buttonTint="@color/primary_blue"
+            app:layout_constraintStart_toEndOf="@id/checkBox_fifteen"
+            app:layout_constraintTop_toBottomOf="@+id/notif_label" />
+
+        <TextView
+            android:id="@+id/repeat_label"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/repeat_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_fifteen" />
+
+        <RadioButton
+            android:id="@+id/radioButton_no_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_repeat"
+            android:buttonTint="@color/primary_blue"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="342dp"
+            app:layout_constraintTop_toBottomOf="@id/repeat_label"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioButton
+            android:id="@+id/radioButton_repeat_daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/repeat_daily"
+            android:buttonTint="@color/primary_blue"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="50dp"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="342dp"
+            app:layout_constraintTop_toBottomOf="@id/repeat_label"
+            app:layout_constraintStart_toEndOf="@id/radioButton_no_repeat"/>
+
+        <RadioButton
+            android:id="@+id/radioButton_repeat_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/repeat_weekly"
+            android:buttonTint="@color/primary_blue"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="342dp"
+            app:layout_constraintTop_toBottomOf="@id/radioButton_no_repeat"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_add_routine"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            style="@style/FilledBlueButton"
+            android:text="@string/btn_add_routine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton_repeat_weekly" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
