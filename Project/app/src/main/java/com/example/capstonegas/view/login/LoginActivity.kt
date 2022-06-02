@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.activity.viewModels
@@ -36,6 +37,15 @@ class LoginActivity : AppCompatActivity() {
 
         setupView()
         setupAction()
+
+        showLoading(false)
+        loginViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+    }
+
+    private fun showLoading(it: Boolean?) {
+        binding.progressBar.visibility = if (it == true) View.VISIBLE else View.GONE
     }
 
     private fun setupView() {
@@ -66,20 +76,26 @@ class LoginActivity : AppCompatActivity() {
                     binding.emailTextField.error = "Email tidak valid"
                 }
                 else -> {
-                    loginViewModel.login(email)
-                    AlertDialog.Builder(this).apply {
-                        setTitle("Yeah!")
-                        setMessage("Anda berhasil login.")
-                        setPositiveButton("Lanjut") { _, _ ->
-                            val intent = Intent(context, MainActivity::class.java)
-                            intent.flags =
-                                Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                            startActivity(intent)
-                            finish()
-                        }
-                        create()
-                        show()
-                    }
+//                    loginViewModel.postLogin(email, password)
+//                    loginViewModel.loginSuccess.observe(this){
+//                        if(it == true) {
+//                            startActivity(Intent(this, MainActivity::class.java))
+//                            finish()
+//                        }
+//                        else if(it == false){
+//                            AlertDialog.Builder(this).apply {
+//                                setTitle("Oops!")
+//                                setMessage("Email/Password Salah.")
+//                                setPositiveButton("Coba lagi") { _, _ ->
+//                                    // do nothing
+//                                }
+//                                create()
+//                                show()
+//                            }
+//                        }
+//                    }
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 }
             }
         }

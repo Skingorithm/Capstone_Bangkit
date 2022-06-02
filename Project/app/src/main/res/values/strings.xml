@@ -73,5 +73,11 @@
     <string name="fab_camera_button">Camera Button</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profilepicture">profilePicture</string>
+    <string name="userName">Halo %s</string>
+    <string name="cta1">Cek Kondisi Wajahmu!</string>
+    <string name="subCta1">Cari tahu kondisi wajahmu sekarang!</string>
+    <string name="cta2">Cari Tahu Bahan-Bahan Skincare</string>
+    <string name="subCta2">Informasi detail mengenai kandungan bahan skincare</string>
 
 </resources>
