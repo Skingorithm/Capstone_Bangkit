@@ -65,7 +65,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loading_title" />
+        app:layout_constraintTop_toBottomOf="@+id/loading_title"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/btn_rephoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/FilledRedButton"
+        android:layout_marginTop="112dp"
+        android:text="@string/btn_rephoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loading_title"
+        android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
