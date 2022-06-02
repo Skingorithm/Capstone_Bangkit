@@ -2,9 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.capstonegas">
+
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneGas"
         tools:targetApi="31">
+        <activity
+            android:name=".view.routine.AddRoutineActivity"
+            android:exported="false" />
         <activity
             android:name=".view.resultskincare.ResultSkincareActivity"
             android:exported="false" />
@@ -29,7 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".view.welcome.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
