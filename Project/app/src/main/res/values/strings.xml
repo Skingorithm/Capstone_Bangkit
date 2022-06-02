@@ -25,7 +25,6 @@
     <string name="detail_effect">Lorem Ipsum Dolor Sit Amet</string>
 
     <!-- Edit Profile    -->
-    <string name="title_app_edit_profile">Edit Profil</string>
     <string name="btn_edit_photo">Edit Foto</string>
     <string name="btn_delete_photo">Hapus</string>
     <string name="btn_save_change">Simpan Perubahan</string>
@@ -48,7 +47,6 @@
     <string name="registerClick">Yuk Daftar!</string>
 
     <!-- Detail Skincare    -->
-    <string name="title_app_result_skincare">Hasil Analisis Wajah</string>
     <string name="text_number">1</string>
     <string name="text_title_result_skincare">Jerawat</string>
     <string name="percentage">100%</string>
@@ -75,28 +73,11 @@
     <string name="descUpload">Foto tersebut akan disimpan untuk perkembangan Skin Diary</string>
     <string name="fab_camera_button">Camera Button</string>
 
-    <!-- Schedule    -->
-    <string name="desc_icon_calendar">Icon Calendar</string>
-    <string name="desc_icon_notification">Icon Notification</string>
-    <string name="date">12 Mei 2022</string>
-    <string name="text_skincare_routine_1">0</string>
-    <string name="strip">/</string>
-    <string name="text_skincare_routine_2">7</string>
-    <string name="text_skincare_routine_3">Rutinitas Skincare</string>
-    <string name="routine">Membersihkan wajah</string>
-    <string name="clock">08.00</string>
-    <string name="btn_add_routine">+ Tambah Rutinitas</string>
+    <string name="profilepicture">profilePicture</string>
+    <string name="userName">Halo %s</string>
+    <string name="cta1">Cek Kondisi Wajahmu!</string>
+    <string name="subCta1">Cari tahu kondisi wajahmu sekarang!</string>
+    <string name="cta2">Cari Tahu Bahan-Bahan Skincare</string>
+    <string name="subCta2">Informasi detail mengenai kandungan bahan skincare</string>
 
-    <!-- Add Schedule    -->
-    <string name="title_app_add_routine">Tambah Rutinitas</string>
-    <string name="routine_label">Nama Rutinitas</string>
-    <string name="clock_label">Jam</string>
-    <string name="date_label">Tanggal</string>
-    <string name="notif_label">Notifikasi Pengingat</string>
-    <string name="repeat_label">Pengulangan</string>
-    <string name="fifteen_field">15 menit sebelum</string>
-    <string name="thirty_field">30 menit sebelum</string>
-    <string name="no_repeat">Tidak diulang</string>
-    <string name="repeat_daily">Setiap hari</string>
-    <string name="repeat_weekly">Setiap minggu</string>
 </resources>

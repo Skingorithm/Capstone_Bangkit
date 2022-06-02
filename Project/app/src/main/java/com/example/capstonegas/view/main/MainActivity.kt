@@ -13,6 +13,11 @@ import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityMainBinding
 import com.example.capstonegas.model.UserPreference
@@ -20,6 +25,7 @@ import com.example.capstonegas.view.camera.UploadActivity
 import com.example.capstonegas.view.welcome.WelcomeActivity
 import com.example.capstonegas.viewmodel.MainViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -38,14 +44,28 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.menu.getItem(2).isEnabled = false
 
         setupView()
+        setupFragment()
         setupViewModel()
         setupAction()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
-        inflater.inflate(R.menu.navigation, menu)
+        inflater.inflate(R.menu.menu_item, menu)
         return true
+    }
+
+    private fun setupFragment(){
+        val navView: BottomNavigationView = binding.bottomNavigationView
+
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.navigation_home, R.id.routinesFragment, R.id.ingredientAnalyzeFragment, R.id.profileFragment
+        ).build()
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 
     private fun setupView() {
@@ -70,28 +90,6 @@ class MainActivity : AppCompatActivity() {
 //            else{
 //                token = user.token
 //            }
-        }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.navigation_home -> {
-                //TODO: go to home fragment
-                return true
-            }
-            R.id.navigation_routines -> {
-                //TODO: go to routines fragment
-                return true
-            }
-            R.id.navigation_ingredients -> {
-                //TODO: go to ingredients fragment
-                return true
-            }
-            R.id.navigation_profile -> {
-                //TODO: go to profile fragment
-                return true
-            }
-            else -> return true
         }
     }
 
