@@ -108,4 +108,12 @@
     <string name="repeat_daily">Setiap hari</string>
     <string name="repeat_weekly">Setiap minggu</string>
 
+    <!-- Loading    -->
+    <string name="loading_title">Wajah kamu sedang kami analisis!</string>
+    <string name="failed_title">Maaf, wajah kamu gagal kami analisis!</string>
+    <string name="content_loading">Loading Image</string>
+    <string name="content_failed">Failed Image</string>
+    <string name="btn_rephoto">Foto Ulang</string>
+
+
 </resources>

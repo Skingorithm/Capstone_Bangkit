@@ -19,6 +19,9 @@
         android:theme="@style/Theme.CapstoneGas"
         tools:targetApi="31">
         <activity
+            android:name=".view.loading.LoadingActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.routine.AddRoutineActivity"
             android:exported="false" />
         <activity
