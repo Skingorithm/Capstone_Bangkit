@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_navigation">
-
+    android:id="@+id/main_navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment2">
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.capstonegas.view.main.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/ingredientAnalyzeFragment"
+        android:name="com.example.capstonegas.view.ingredient.IngredientAnalyzeFragment"
+        android:label="fragment_ingredient_analyze"
+        tools:layout="@layout/fragment_ingredient_analyze" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.capstonegas.view.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/routinesFragment"
+        android:name="com.example.capstonegas.view.routines.RoutinesFragment"
+        android:label="fragment_routines"
+        tools:layout="@layout/fragment_routines" />
 </navigation>
