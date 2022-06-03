@@ -55,6 +55,7 @@ const userRegister = async (req, res) => {
         }
     }
     catch(err){
+        console.log(err);
         console.log(error);
         console.error(error);
         res.status(stats);
