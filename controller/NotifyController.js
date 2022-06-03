@@ -39,6 +39,8 @@ const insertAlarm = async (req, res) => {
         }
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
@@ -58,6 +60,8 @@ const getAlarmbyUsername = async (req, res) => {
         res.json(getAlarmByUsername)
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})

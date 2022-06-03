@@ -26,9 +26,11 @@ const insertIngred = async (req, res) => {
         res.json({error:"false",status: "success", message:"success insert data"});
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
-        res.json({status: "error", message: error})
+        res.send({status:"error", message: error})
     }
 }
 
@@ -38,9 +40,11 @@ const getIngred = async (req, res) => {
         res.json({error:"false", message:"success", datalistset: getAllIngred})
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
-        res.json({status: "error", message: error})
+        res.send({status:"error", message: error})
     }
 }
 
@@ -58,9 +62,11 @@ const getIngredByName = async (req, res) => {
         res.json({error:"false", message:"success", datalistset: byNameResult})
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
-        res.json({status: "error", message: error})
+        res.send({status:"error", message: error})
     }
 }
 

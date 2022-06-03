@@ -42,6 +42,8 @@ const userLogin = async (req, res) => {
         }
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
@@ -68,6 +70,8 @@ const tokenRefresh = async (req, res) => {
         }
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
@@ -89,6 +93,8 @@ const userLogout = async (req, res) => {
         res.json({status: 'success', message: 'Berhasil Logout'})
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})

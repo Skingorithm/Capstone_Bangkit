@@ -65,6 +65,8 @@ const getAllUser = async (req, res) => {
         res.json({status:'success', datalistset: getAllUser});
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
@@ -84,6 +86,8 @@ const getByUsername = async (req, res) => {
         res.json({status: 'success', datalistset: getByUsername});
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
@@ -133,6 +137,8 @@ const updateUser = async (req, res) => {
         }
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
@@ -173,6 +179,8 @@ const changePassword = async (req, res) => {
         }
     }
     catch(err){
+        console.log(err);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
