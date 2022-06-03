@@ -50,7 +50,7 @@ const userRegister = async (req, res) => {
         res.json({status:'Success', message:'Berhasil melakukan registrasi'});
     }
     catch(err){
-        console.loh(error);
+        console.log(error);
         console.error(error);
         res.status(stats);
         res.send({status:"error", message: error})
