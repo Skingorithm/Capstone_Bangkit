@@ -24,6 +24,7 @@ const userRegister = async (req, res) => {
         }
         console.log('Mulai mengambil data dari table');
         const getUser = await User.findOne({where: {Username:req.body.Username}})
+        console.log(getUser);
         if(getUser != null)
         {
             error = 'Username sudah terdaftar, silahkan gunakan username lain';
