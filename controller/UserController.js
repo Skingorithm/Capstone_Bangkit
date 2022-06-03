@@ -16,12 +16,12 @@ const userRegister = async (req, res) => {
             FullName,
             ProfilePicture
         } = req.body;
-        if(req.body.Username != req.body.Username.toLowerCase())
-        {
-            error = 'Username tidak boleh menggunakan huruf besar';
-            stats = 200;
-            throw err;
-        }
+        // if(req.body.Username != req.body.Username.toLowerCase())
+        // {
+        //     error = 'Username tidak boleh menggunakan huruf besar';
+        //     stats = 200;
+        //     throw err;
+        // }
         const getUser = await User.findOne({where: {Username:req.body.Username}})
         if(getUser != null)
         {
