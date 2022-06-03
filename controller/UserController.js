@@ -16,12 +16,12 @@ const userRegister = async (req, res) => {
             FullName,
             ProfilePicture
         } = req.body;
-        // if(req.body.Username != req.body.Username.toLowerCase())
-        // {
-        //     error = 'Username tidak boleh menggunakan huruf besar';
-        //     stats = 200;
-        //     throw err;
-        // }
+        if(req.body.Username != req.body.Username.toLowerCase())
+        {
+            error = 'Username tidak boleh menggunakan huruf besar';
+            stats = 200;
+            throw err;
+        }
         console.log('Mulai mengambil data dari table');
         const getUser = await User.findOne({where: {Username:req.body.Username}})
         if(getUser != null)
@@ -30,30 +30,25 @@ const userRegister = async (req, res) => {
             stats = 200;
             throw err;
         }
-        else if(getUser != null){
-            const getEmail = await User.findOne({where: {Email:req.body.Email}})
-            if(getEmail != null)
-            {
-                error = 'Email sudah digunakan oleh user lain, Silahkan gunakan email lain';
-                stats = 200;
-                throw err;
-            }
-            else if(getUser == null)
-            {
-                const saltRounds = 10;
-                const hashedPassword = await bcrypt.hash(req.body.Password, saltRounds);
-                console.log(hashedPassword);
-                const newUser = new User ({
-                    Username,
-                    Email,
-                    Password: hashedPassword,
-                    FullName,
-                    ProfilePicture
-                });
-                await newUser.save();
-                res.json({status:'Success', message:'Berhasil melakukan registrasi'});
-            }
+        const getEmail = await User.findOne({where: {Email:req.body.Email}})
+        if(getEmail != null)
+        {
+            error = 'Email sudah digunakan oleh user lain, Silahkan gunakan email lain';
+            stats = 200;
+            throw err;
         }
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(req.body.Password, saltRounds);
+        console.log(hashedPassword);
+        const newUser = new User ({
+            Username,
+            Email,
+            Password: hashedPassword,
+            FullName,
+            ProfilePicture
+        });
+        await newUser.save();
+        res.json({status:'Success', message:'Berhasil melakukan registrasi'});
     }
     catch(err){
         console.log(err);

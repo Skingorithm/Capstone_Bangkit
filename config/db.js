@@ -3,7 +3,7 @@ module.exports = {
     HOST: process.env.MYSQLHOST,
     USER: process.env.MYSQLUSER,
     PASSWORD: process.env.MYSQLPASSWORD,
-    DB: 'skingorithm-db',
+    DB: 'SkinGorithm',
     dialect: 'mysql',
     dialecOptions: {
         useUCT: false,
