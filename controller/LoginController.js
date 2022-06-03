@@ -26,7 +26,7 @@ const userLogin = async (req, res) => {
             if(hashedCompare)
             {
                 const accessToken = generateAccessToken(userCheck.Username)
-                const refreshToken = jwt.sign(userCheck.Username, process.env.REFRESH_TOKEN_SECRET)
+                const refreshToken = jwt.sign(userCheck.Username, process.env.REFRESH_TOKEN_KEY)
                 console.log(refreshToken);
                 const insertRT = new RT({
                     RTStore: refreshToken
@@ -63,7 +63,7 @@ const tokenRefresh = async (req, res) => {
             throw err;
         }
         else{
-            jwt.verify(RefreshToken, process.env.REFRESH_TOKEN_SECRET,(err, UN) => {
+            jwt.verify(RefreshToken, process.env.REFRESH_TOKEN_KEY,(err, UN) => {
                 if(err) return res.sendStatus(403)
                 const newAccessToken = generateAccessToken(UN)
                 res.json({ accessToken: newAccessToken, expiredIn: expireTime })
@@ -103,7 +103,7 @@ const userLogout = async (req, res) => {
 }
 
 function generateAccessToken (user) {
-    const generatedToken =  jwt.sign({user}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: expireTime });
+    const generatedToken =  jwt.sign({user}, process.env.ACCESS_TOKEN_KEY, { expiresIn: expireTime });
     console.log(generateAccessToken);
     return generatedToken;
 }

@@ -11,7 +11,7 @@ function authenticateToken (req, res, next) {
     }
     try{
         const token = authHeader.split(' ')[1]
-        const tokenUser = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
+        const tokenUser = jwt.verify(token, process.env.ACCESS_TOKEN_KEY)
         req.user = tokenUser
         next()
     }
