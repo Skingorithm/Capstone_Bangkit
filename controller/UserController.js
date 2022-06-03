@@ -22,6 +22,7 @@ const userRegister = async (req, res) => {
         //     stats = 200;
         //     throw err;
         // }
+        console.log('Mulai mengambil data dari table');
         const getUser = await User.findOne({where: {Username:req.body.Username}})
         if(getUser != null)
         {
