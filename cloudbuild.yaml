@@ -2,7 +2,6 @@ steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     secretEnv: [
         "ACCESS_TOKEN_KEY",
-        # "MAPS_API_KEY",
         "MYSQLHOST",
         "MYSQLPASSWORD",
         "MYSQLUSER",
@@ -25,8 +24,6 @@ availableSecrets:
   secretManager:
     - versionName: projects/673277218150/secrets/ACCESS_TOKEN_KEY/versions/1
       env: "ACCESS_TOKEN_KEY"
-    # - versionName: projects/vee-project-351306/secrets/MAPS_API_KEY/versions/1
-    #   env: "MAPS_API_KEY"
     - versionName: projects/673277218150/secrets/MYSQLHOST/versions/1
       env: "MYSQLHOST"
     - versionName: projects/673277218150/secrets/MYSQLPASSWORD/versions/1
