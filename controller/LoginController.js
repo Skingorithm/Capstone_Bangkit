@@ -12,7 +12,7 @@ const expireTime = '30m';
 
 const userLogin = async (req, res) => {
     try {
-        const { Username, Password } = req.body
+        const { Username, Password } = req.body;
         const userCheck = await User.findOne({where: {Username:req.body.Username}})
         console.log(userCheck);
         if(userCheck == null)
