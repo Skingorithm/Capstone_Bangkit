@@ -5,56 +5,96 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.capstonegas.R
+import android.widget.SearchView
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.capstonegas.adapter.IngredientAdapter
+import com.example.capstonegas.databinding.FragmentIngredientAnalyzeBinding
+import com.example.capstonegas.model.Datalistset
+import com.example.capstonegas.viewmodel.IngredientAnalyzeViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [IngredientAnalyzeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class IngredientAnalyzeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var ingredientAdapter: IngredientAdapter
+    private lateinit var rvIngredient: RecyclerView
+    private lateinit var binding: FragmentIngredientAnalyzeBinding
+    private val ingredientAnalyzeViewModel by viewModels<IngredientAnalyzeViewModel>()
+    private val ingredient = Datalistset()
+
+    private lateinit var searchUser: SearchView
+    private lateinit var token: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ingredient_analyze, container, false)
+    ): View {
+        binding = FragmentIngredientAnalyzeBinding.inflate(inflater, container, false).apply { viewLifecycleOwner
+        IngredientAnalyzeViewModel}
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment IngredientAnalyzeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            IngredientAnalyzeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        rvIngredient = binding.recyclerView
+        ingredientAdapter = IngredientAdapter(ingredient)
+        rvIngredient.adapter = ingredientAdapter
+        searchUser = binding.searchIngredients
+        searchUser.queryHint = "Cari Ingredient"
+
+        ingredientAnalyzeViewModel.getUser().observe(viewLifecycleOwner) {
+            token = it.token
+        }
+
+        showRecyclerView(ingredient)
+
+        searchUser.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
             }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (!newText.isNullOrEmpty()) {
+                    val bearer = "Bearer $token"
+                    newText.let { ingredientAnalyzeViewModel.getIngredient(bearer, it) }
+                    showLoading(true)
+                } else {
+                    showLoading(false)
+                }
+                return true
+            }
+        })
+
+        ingredientAnalyzeViewModel.ingredient.observe(viewLifecycleOwner) {
+            if (it != null) {
+                showRecyclerView(it)
+            }
+        }
+
+        ingredientAnalyzeViewModel.isLoading.observe(viewLifecycleOwner) {
+            if (it) {
+                showLoading(true)
+            } else {
+                showLoading(false)
+            }
+        }
     }
+
+    private fun showRecyclerView(ingredient: Datalistset) {
+        rvIngredient.layoutManager = LinearLayoutManager(activity)
+        ingredientAdapter = IngredientAdapter(ingredient)
+        rvIngredient.adapter = ingredientAdapter
+        rvIngredient.itemAnimator = DefaultItemAnimator()
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBarIngredient.visibility = View.VISIBLE
+        } else {
+            binding.progressBarIngredient.visibility = View.GONE
+        }
+    }
+
+
 }
