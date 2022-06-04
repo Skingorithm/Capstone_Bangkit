@@ -2,10 +2,9 @@ package com.example.capstonegas.api
 
 import com.example.capstonegas.model.LoginResponse
 import com.example.capstonegas.model.RegisterResponse
+import com.example.capstonegas.model.SearchIngredientResponse
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -23,4 +22,13 @@ interface ApiService {
         @Field("Username") username: String,
         @Field("Password") password: String
     ): Call<LoginResponse>
+
+    // Search Ingredients
+    @GET("/Ingredient/getIngredByName")
+    fun getIngredient(
+        @Header("Authorization") token: String,
+        @Query("IngredName") query: String
+    ): Call<SearchIngredientResponse>
+
+
 }
