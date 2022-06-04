@@ -9,6 +9,7 @@
     tools:context=".view.routine.AddRoutineActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white">
@@ -17,25 +18,25 @@
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="@string/title_app_result_skincare"
             app:menu="@menu/navigation_app_bar"
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-            app:titleCentered="true"/>
+            app:title="@string/title_app_result_skincare"
+            app:titleCentered="true" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.resultskincare.ResultSkincareActivity"
         android:background="@color/background_grey"
-        android:paddingTop="50dp">
+        android:paddingTop="50dp"
+        tools:context=".view.resultskincare.ResultSkincareActivity">
 
         <ImageView
             android:id="@+id/image_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="@string/content_image_desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -45,50 +46,30 @@
 
         <TextView
             android:id="@+id/number_result"
+            style="@style/Header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            style="@style/Header"
+            android:layout_marginTop="10dp"
             android:text="@string/number_result"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_result" />
 
-        <TextView
-            android:id="@+id/label_face_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="15dp"
-            style="@style/Title"
-            android:text="@string/label_face_type"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/number_result" />
-
-        <TextView
-            android:id="@+id/face_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="15dp"
-            style="@style/Title"
-            android:text="@string/face_type"
-            app:layout_constraintStart_toEndOf="@+id/label_face_type"
-            app:layout_constraintTop_toBottomOf="@+id/number_result" />
 
         <TextView
             android:id="@+id/textView7"
+            style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            style="@style/Title"
+            android:layout_marginTop="10dp"
             android:text="@string/skin_diagnosis_label"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/label_face_type" />
+            app:layout_constraintTop_toBottomOf="@+id/number_result" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_skin_diagnosis"
             android:layout_width="369dp"
             android:layout_height="400dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -96,8 +77,30 @@
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7"
-            app:layout_constraintVertical_bias="0.384"
+            app:layout_constraintVertical_bias="0.109"
             tools:listitem="@layout/item_result_skincare" />
+
+        <Button
+            android:id="@+id/btn_save_result"
+            style="@style/FilledBlueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/btn_save_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_skin_diagnosis" />
+
+        <Button
+            android:id="@+id/btn_not_save_result"
+            style="@style/FilledRedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_not_save_result"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_skin_diagnosis" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

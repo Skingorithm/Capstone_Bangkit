@@ -67,6 +67,8 @@
     <string name="face_type">Hati</string>
     <string name="skin_diagnosis_label">Diagnosis Kulit</string>
     <string name="content_image_btn">Image Button Expand</string>
+    <string name="btn_save_result">Simpan Hasil</string>
+    <string name="btn_not_save_result">Tidak Simpan</string>
 
     <!-- Bottom Navigation    -->
     <string name="nav_home">Home</string>
