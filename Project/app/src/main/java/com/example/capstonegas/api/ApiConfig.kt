@@ -14,7 +14,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://api-skingorithm.com//")
+                .baseUrl("https://dynamic-reef-344016.uc.r.appspot.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
