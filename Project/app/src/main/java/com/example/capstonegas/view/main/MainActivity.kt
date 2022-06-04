@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowInsets
@@ -30,6 +31,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var token: String
+
     private lateinit var binding: ActivityMainBinding
     private val mainViewModel: MainViewModel by viewModels{
         ViewModelFactory(UserPreference.getInstance(dataStore))
@@ -83,13 +86,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViewModel(){
         mainViewModel.getUser().observe(this) { user ->
+            Log.d("MainActivity", "user: $user")
             if (!user.isLogin) {
                 startActivity(Intent(this, WelcomeActivity::class.java))
                 finish()
             }
-//            else{
-//                token = user.token
-//            }
+            else{
+                token = user.token
+            }
         }
     }
 

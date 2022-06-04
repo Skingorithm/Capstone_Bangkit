@@ -63,39 +63,34 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding.loginButton.setOnClickListener {
-            val email = binding.emailTextFieldText.text.toString()
+            val username = binding.usernameTextFieldText.text.toString()
             val password = binding.passTextFieldText.text.toString()
             when {
-                email.isEmpty() -> {
-                    binding.emailTextField.error = "Masukkan email"
+                username.isEmpty() -> {
+                    binding.usernameTextField.error = "Masukkan email"
                 }
                 password.isEmpty() -> {
                     binding.passTextField.error = "Masukkan password"
                 }
-                email.isNotEmpty() && !email.contains("@") -> {
-                    binding.emailTextField.error = "Email tidak valid"
-                }
                 else -> {
-//                    loginViewModel.postLogin(email, password)
-//                    loginViewModel.loginSuccess.observe(this){
-//                        if(it == true) {
-//                            startActivity(Intent(this, MainActivity::class.java))
-//                            finish()
-//                        }
-//                        else if(it == false){
-//                            AlertDialog.Builder(this).apply {
-//                                setTitle("Oops!")
-//                                setMessage("Email/Password Salah.")
-//                                setPositiveButton("Coba lagi") { _, _ ->
-//                                    // do nothing
-//                                }
-//                                create()
-//                                show()
-//                            }
-//                        }
-//                    }
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
+                    loginViewModel.postLogin(username, password)
+                    loginViewModel.loginSuccess.observe(this){
+                        if(it == true) {
+                            startActivity(Intent(this, MainActivity::class.java))
+                            finish()
+                        }
+                        else if(it == false){
+                            AlertDialog.Builder(this).apply {
+                                setTitle("Oops!")
+                                setMessage("Email/Password Salah.")
+                                setPositiveButton("Coba lagi") { _, _ ->
+                                    // do nothing
+                                }
+                                create()
+                                show()
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -9,6 +9,6 @@ data class LoginResponse(
     @field:SerializedName("message")
     val message: String,
 
-    @field:SerializedName("token")
+    @field:SerializedName("accessToken")
     val accessToken: String? = null,
 ) : Parcelable

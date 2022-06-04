@@ -64,7 +64,7 @@
         android:hint="@string/email"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextLayout">
+        app:layout_constraintTop_toBottomOf="@+id/usernameTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailTextField"
@@ -87,6 +87,24 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passTextField"
             android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameTextLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/usernameText"
+        app:layout_constraintEnd_toEndOf="@+id/nameTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/nameTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameTextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

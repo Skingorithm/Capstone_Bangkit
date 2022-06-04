@@ -114,6 +114,7 @@
     <string name="content_loading">Loading Image</string>
     <string name="content_failed">Failed Image</string>
     <string name="btn_rephoto">Foto Ulang</string>
+    <string name="usernameText">Username</string>
 
 
 </resources>

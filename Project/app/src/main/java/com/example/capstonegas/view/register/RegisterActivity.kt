@@ -6,12 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityRegisterBinding
 import com.example.capstonegas.view.login.LoginActivity
+import com.example.capstonegas.viewmodel.RegisterViewModel
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
+    private val registerViewModel: RegisterViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -38,15 +43,40 @@ class RegisterActivity : AppCompatActivity() {
         binding.registerButton.setOnClickListener {
             val name = binding.nameTextField.text.toString()
             val email = binding.emailTextField.text.toString()
+            val userName = binding.usernameTextField.text.toString()
             val password = binding.passTextField.text.toString()
             when{
                 name.isEmpty() -> binding.nameTextLayout.error = "Name is required"
                 email.isEmpty() -> binding.emailTextLayout.error = "Email is required"
+                email.isNotEmpty() && !email.contains("@") -> binding.emailTextLayout.error = "Email is invalid"
+                userName.isEmpty() -> binding.usernameTextLayout.error = "Username is required"
                 password.isEmpty() -> binding.passTextLayout.error = "Password is required"
+                password.isNotEmpty() && password.length < 6 -> binding.passTextLayout.error = "Password must be at least 6 characters"
                 else -> {
-                    binding.nameTextLayout.error = null
-                    binding.emailTextLayout.error = null
-                    binding.passTextLayout.error = null
+                    registerViewModel.postUser(name, userName, email, password)
+                    registerViewModel.registerSuccess.observe(this ){
+                        if (it) {
+                            AlertDialog.Builder(this).apply {
+                                setTitle("Yeah!")
+                                setMessage("Akunnya sudah dibuat.")
+                                setPositiveButton("Lanjut") { _, _ ->
+                                    finish()
+                                }
+                                create()
+                                show()
+                            }
+                        } else {
+                            AlertDialog.Builder(this).apply {
+                                setTitle("Oops!")
+                                setMessage("Akunnya gagal dibuat.")
+                                setPositiveButton("Coba lagi") { _, _ ->
+                                    // do nothing
+                                }
+                                create()
+                                show()
+                            }
+                        }
+                    }
                 }
             }
         }
