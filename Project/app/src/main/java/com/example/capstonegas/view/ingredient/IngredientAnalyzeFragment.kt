@@ -56,8 +56,7 @@ class IngredientAnalyzeFragment : Fragment() {
             }
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (!newText.isNullOrEmpty()) {
-                    val bearer = "Bearer $token"
-                    newText.let { ingredientAnalyzeViewModel.getIngredient(bearer, it) }
+                    newText.let { ingredientAnalyzeViewModel.getIngredient(token, it) }
                     showLoading(true)
                 } else {
                     showLoading(false)
