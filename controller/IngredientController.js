@@ -51,7 +51,7 @@ const getIngred = async (req, res) => {
 const getIngredByName = async (req, res) => {
     try{
         const { IngredName } = req.body;
-        const getByName = await Ingredient.findOne({where: {IngredName:req.body.IngredName}})
+        const getByName = await Ingredient.findOne({where: {IngredName: IngredName}})
         if(getByName == null)
         {
             stats=200;
