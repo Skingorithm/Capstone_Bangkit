@@ -4,8 +4,8 @@ const verifyToken = require('../middleware/JWTverify');
 
 const router = require('express').Router();
 
-router.post('/InsertIngredients', IngredController.insertIngred);
-router.get('/getAllIngred', verifyToken, IngredController.getIngred);
-router.get('/getIngredByName', verifyToken, IngredController.getIngredByName);
+router.post('/insertMaterial', IngredController.insertIngred);
+router.get('/getAllRawMaterial', verifyToken, IngredController.getIngred);
+router.get('/getRawMaterialByName', verifyToken, IngredController.getIngredByName);
 
 module.exports = router;

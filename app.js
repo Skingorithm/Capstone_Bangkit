@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 const IngredientRoute = require('./routes/IngredientRoutes')
-app.use('/Ingredient', IngredientRoute);
+app.use('/rawMaterial', IngredientRoute);
 
 const UserRoute = require('./routes/UserRoutes')
 app.use('/User', UserRoute);
