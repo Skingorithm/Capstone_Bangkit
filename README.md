@@ -17,10 +17,11 @@ We collect datasets manually from google images. The distribution as follows :
 - Wrinkles's dataset: 135 
 
 ### WORKFLOW STAGES
-1. Crop and Resize your input images to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Data%20Preparation%20-%20Crop%20and%20Resize%20Face%20Image.ipynb).
-3. Label your images dataset using ImageJ. You can download ImageJ in [here](https://imagej.nih.gov/ij/download.html)
-5. Stack your input images using ImageJ software
-6. Train the model, for training we use UNet architecture and ResNEt34 as our backbone (encoder). These are the notebook file that we work on:
+1. Download and collect your own dataset from google images
+2. Crop and Resize your input images dataset to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Data%20Preparation%20-%20Crop%20and%20Resize%20Face%20Image.ipynb).
+3. Label your input images dataset using ImageJ. You can download ImageJ in [here](https://imagej.nih.gov/ij/download.html)
+5. Stack your input images dataset using ImageJ software
+6. Train the model, for training we use UNet architecture and ResNEt34 as our backbone (encoder). After that, save and export the existing model to .h5 file format. These are the notebook file that we work on:
    - [Acne Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Acne%20Skin%20Segmentation/Acne%20Segmentation%20-%20ResUnet.ipynb)
    - [Dark Circle Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Dark%20Circle%20Segmentation/Dark%20Circle%20Segmentation%20-%20ResUnet.ipynb)
    - [Eye Segmentation - ResUnet.ipynb](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Eye%20Segmentation/Eye%20Segmentation%20-%20ResUnet.ipynb)
