@@ -17,8 +17,7 @@ We collect datasets manually from google images. The distribution as follows :
 - Wrinkles's dataset: 135 
 
 ### WORKFLOW STAGES
-1. Crop your face images dataset, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Cropping%20Face%20Images.ipynb) to crop your face images dataset 
-2. Resize your input images to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Resize%20Image%20to%20256x256.ipynb) to resize your images
+1. Crop and Resize your input images to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Data%20Preparation%20-%20Crop%20and%20Resize%20Face%20Image.ipynb).
 3. Label your images dataset using ImageJ. You can download ImageJ in [here](https://imagej.nih.gov/ij/download.html)
 5. Stack your input images using ImageJ software
 6. Train the model, for training we use UNet architecture and ResNEt34 as our backbone (encoder). These are the notebook file that we work on:
