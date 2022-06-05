@@ -68,7 +68,25 @@ const getAlarmbyUsername = async (req, res) => {
     }
 }
 
+const getByDate = async (req, res) => {
+    try{
+        const UName = req.body.Username;
+        const Tanggal = req.body.Date;
+        const getDate = await Notify.findAll({where: {Date: Tanggal, Username:UName}})
+        console.log(getDate);
+        res.json({statis:'success', datalistset: getDate});
+    }
+    catch(err){
+        console.log(err);
+        console.log(error);
+        console.error(error);
+        res.status(stats);
+        res.send({status:"error", message: error})
+    }
+}
+
 module.exports = {
     insertAlarm,
-    getAlarmbyUsername
+    getAlarmbyUsername,
+    getByDate
 }

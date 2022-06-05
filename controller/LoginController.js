@@ -27,12 +27,7 @@ const userLogin = async (req, res) => {
             {
                 const accessToken = generateAccessToken(userCheck.Username)
                 const refreshToken = jwt.sign(userCheck.Username, process.env.REFRESH_TOKEN_KEY)
-                console.log(refreshToken);
-                const insertRT = new RT({
-                    RTStore: refreshToken
-                });
-                await insertRT.save()
-                res.json({message:'Berhasil Login', accessToken: accessToken, refreshToken: refreshToken, expiredIn: expireTime})
+                res.json({message:'Berhasil Login', accessToken: accessToken, refreshToken: refreshToken})
             }
             else
             {
@@ -103,7 +98,7 @@ const userLogout = async (req, res) => {
 }
 
 function generateAccessToken (user) {
-    const generatedToken =  jwt.sign({user}, process.env.ACCESS_TOKEN_KEY, { expiresIn: expireTime });
+    const generatedToken =  jwt.sign({user}, process.env.ACCESS_TOKEN_KEY);
     console.log(generateAccessToken);
     return generatedToken;
 }
