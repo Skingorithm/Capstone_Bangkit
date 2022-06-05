@@ -35,7 +35,7 @@ class ScheduleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_routine, container, false)
+        return inflater.inflate(R.layout.fragment_schedule, container, false)
     }
 
     companion object {

@@ -46,8 +46,19 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.background = null
         binding.bottomNavigationView.menu.getItem(2).isEnabled = false
 
+        val navView: BottomNavigationView = binding.bottomNavigationView
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_routines, R.id.navigation_ingredients, R.id.navigation_profile
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+
         setupView()
-        setupFragment()
+//        setupFragment()
         setupViewModel()
         setupAction()
     }
@@ -59,16 +70,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupFragment(){
-        val navView: BottomNavigationView = binding.bottomNavigationView
 
-        val navController = findNavController(R.id.nav_host_fragment)
-
-        val appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.navigation_home, R.id.routinesFragment, R.id.ingredientAnalyzeFragment, R.id.profileFragment
-        ).build()
-
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
     }
 
     private fun setupView() {
