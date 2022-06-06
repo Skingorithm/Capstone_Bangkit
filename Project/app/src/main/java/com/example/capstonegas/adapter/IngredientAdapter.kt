@@ -26,7 +26,7 @@ class IngredientAdapter(private val ingredient: Datalistset) : RecyclerView.Adap
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return 0
     }
 
 
