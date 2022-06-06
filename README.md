@@ -7,21 +7,26 @@ Available endpoints:
 a.	/Ingredient/InsertIngredients
 -	Method: POST
 -	Request Body:
+```
 {
     "IngredName": "Niacinamidez",
     "IngredFunction": "Gatau",
     "IngredEffect": "Gatau jg"
 }
+```
+```
 IngredName as STRING:(mandatory) (UNIQUE)
 IngredFunction as STRING: (mandatory)
 IngredEffect as STRING: (mandatory)
-
+````
+```
 -	Response:
 {
     "error": "false",
     "status": "success",
     "message": "success insert data"
 }
+```
 
 b.	/Ingredient/getAllIngredient
 -	Method : GET
