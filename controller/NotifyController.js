@@ -1,3 +1,4 @@
+const { get } = require('express/lib/response');
 const db = require('../model');
 require('dotenv').config();
 const Notify = db.Notify;
@@ -11,29 +12,66 @@ const insertAlarm = async (req, res) => {
     try {
         const { RoutinityName, 
                 NotifyHour,
-                Date,
+                AlarmDate,
                 fifteenBefore,
                 thirtyBefore,
                 repeatAlarm,
                 Username
             } = req.body;
+            let Tanggal = new Date(`${req.body.AlarmDate}`);
         const checkUser = await User.findOne({where: {Username:req.body.Username}})
         if(checkUser != null)
         {
-            const newAlarm = new Notify ({
-                RoutinityName, 
-                NotifyHour,
-                Date,
-                fifteenBefore,
-                thirtyBefore,
-                repeatAlarm,
-                Username
-            })
-            await newAlarm.save();
-            res.send({status: 'success', message:'Berhasil Menambahkan Alarm'});
+            if(req.body.repeatAlarm == 0)
+            {
+                const newAlarm = new Notify ({
+                    RoutinityName, 
+                    NotifyHour,
+                    AlarmDate,
+                    fifteenBefore,
+                    thirtyBefore,
+                    repeatAlarm,
+                    Username
+                })
+                await newAlarm.save();
+                res.send({status: 'success', message:'Berhasil Menambahkan Alarm'});
+            }
+            else if(req.body.repeatAlarm == 1)
+            {
+                for(let i = 0; i < 4; i++)
+                {
+                    Tanggal.setDate(Tanggal.getDate() + 7);
+                    console.log(Tanggal);
+                    const newAlarm = new Notify ({
+                        RoutinityName, 
+                        NotifyHour,
+                        AlarmDate: Tanggal,
+                        fifteenBefore,
+                        thirtyBefore,
+                        repeatAlarm,
+                        Username
+                    })
+                    await newAlarm.save();
+                }
+                res.send({status: 'success', message:'Berhasil Menambahkan Alarm'});
+            }
+            else if(req.body.repeatAlarm == 2)
+            {
+                const newAlarm = new Notify ({
+                    RoutinityName, 
+                    NotifyHour,
+                    AlarmDate,
+                    fifteenBefore,
+                    thirtyBefore,
+                    repeatAlarm,
+                    Username
+                })
+                await newAlarm.save();
+                res.send({status: 'success', message:'Berhasil Menambahkan Alarm'});
+            }
         }
         else{
-            stats=404;
+            stats=200;
             error="User not Found";
             throw err;
         }
@@ -57,7 +95,7 @@ const getAlarmbyUsername = async (req, res) => {
             error='No Alarm Found';
             throw err;
         }
-        res.json(getAlarmByUsername)
+        res.json({status:'success', datalistset: getAlarmByUsername});
     }
     catch(err){
         console.log(err);
@@ -70,11 +108,15 @@ const getAlarmbyUsername = async (req, res) => {
 
 const getByDate = async (req, res) => {
     try{
-        const UName = req.body.Username;
-        const Tanggal = req.body.Date;
-        const getDate = await Notify.findAll({where: {Date: Tanggal, Username:UName}})
-        console.log(getDate);
-        res.json({statis:'success', datalistset: getDate});
+        const {Username, Date} = req.body;
+        const getAlarmByDate = await Notify.findAll({where:{AlarmDate: req.body.Date, Username:req.body.Username}})
+        if(!getAlarmByDate)
+        {
+            stats=404;
+            error='No Alarm Found';
+            throw err;
+        }
+        res.json({status:'success', datalistset: getAlarmByDate});
     }
     catch(err){
         console.log(err);

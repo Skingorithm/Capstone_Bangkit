@@ -22,6 +22,7 @@ db.Ingredient = require('./IngredientModel.js') (sequelize);
 db.User = require('./UserModel.js') (sequelize);
 db.RefreshToken = require('./RTModel') (sequelize);
 db.Notify = require('./NotifyModel') (sequelize);
+db.History = require('./ScanHistoryModel') (sequelize);
 
 db.sequelize.sync({force: false}).then(() => {
     console.log('re-sync done')

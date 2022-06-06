@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 const IngredientRoute = require('./routes/IngredientRoutes')
-app.use('/rawMaterial', IngredientRoute);
+app.use('/Ingredient', IngredientRoute);
 
 const UserRoute = require('./routes/UserRoutes')
 app.use('/User', UserRoute);
@@ -21,5 +21,8 @@ app.use('/Login', LoginRoute)
 
 const NotifyRoute = require('./routes/NotifyRoutes')
 app.use('/Alarm', NotifyRoute)
+
+const HistoryRoute = require('./routes/HistoryRoutes')
+app.use('/History', HistoryRoute)
 
 app.listen(process.env.PORT, () => console.log(`Berjalan di Port ${process.env.PORT}`));

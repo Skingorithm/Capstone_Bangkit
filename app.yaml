@@ -7,3 +7,4 @@ env_variables:
   MYSQLPORT: 3306
   HOST: 0.0.0.0
 
+services: backend
