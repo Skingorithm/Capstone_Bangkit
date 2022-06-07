@@ -34,13 +34,6 @@ def predict2():
         print("Get exception")
     return jsonify(data)
 
-# fspath = 'https://storage.googleapis.com/bucket-model-ml/skin_ResUnet.h5'
-# acpath = 'https://storage.googleapis.com/bucket-model-ml/acne_ResUnet.h5'
-# bspath = 'https://storage.googleapis.com/bucket-model-ml/flek_ResUnet.h5'
-# wrpath = 'https://storage.googleapis.com/bucket-model-ml/wrinkles_ResUnet.h5'
-# eapath = 'https://storage.googleapis.com/bucket-model-ml/eye_ResUnet.h5'
-# pepath = 'https://storage.googleapis.com/bucket-model-ml/panda_ResUnet.h5'
-
 #function resize dan crop
 
 def get_cropped_image_if_2_eyes(image_path):
@@ -124,12 +117,13 @@ def load_models(fs_dict, ac_dict, bs_dict, wr_dict, ea_dict, pe_dict):
 
 if __name__ == "__main__":
     # Load Model
-    fspath = "./ModelML/skin_ResUnet.h5"
-    acpath = "./ModelML/acne_ResUnet.h5"
-    bspath = "./ModelML/flek_ResUnet.h5"
-    wrpath = "./ModelML/wrinkles_ResUnet.h5"
-    eapath = "./ModelML/eye_ResUnet.h5"
-    pepath = "./ModelML/panda_ResUnet.h5"
+
+    fspath = 'https://storage.googleapis.com/bucket-model-ml/skin_ResUnet.h5'
+    acpath = 'https://storage.googleapis.com/bucket-model-ml/acne_ResUnet.h5'
+    bspath = 'https://storage.googleapis.com/bucket-model-ml/flek_ResUnet.h5'
+    wrpath = 'https://storage.googleapis.com/bucket-model-ml/wrinkles_ResUnet.h5'
+    eapath = 'https://storage.googleapis.com/bucket-model-ml/eye_ResUnet.h5'
+    pepath = 'https://storage.googleapis.com/bucket-model-ml/panda_ResUnet.h5'
     FS_model, AC_model, BS_model, WR_model, EA_model, PE_model = load_models(fspath, acpath, bspath, wrpath, eapath, pepath)
 
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 8080)))
