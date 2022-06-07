@@ -11,9 +11,9 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 
 ## Team Members
 
-### Team ID : C22-PS180
+### Team ID : C22-PS180  [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c22-ps180@bangkit.academy)](mailto:c22-ps180@bangkit.academy)
 
-| Name                           | Bangki ID  | Learning Path      | University                          | Contact                                                                                                                                                                                           |
+| Name                           | Bangkit ID  | Learning Path      | University                          | Contact                                                                                                                                                                                           |
 | ------------------------------ | ---------- | ------------------ |  ---------------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Mohammad Hamid Asnawi          | M7011F1172 | Machine Learning   | Universitas Padjadjaran             | <a href="https://www.linkedin.com/in/mhamidasn/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>                            |
 | Nuril Hidayati                 | M2008G0845 | Machine Learning   | Universitas Gadjah Mada             | <a href="https://www.linkedin.com/in/nuril-hidayati/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>                            |
