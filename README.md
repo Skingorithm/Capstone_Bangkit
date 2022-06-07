@@ -11,7 +11,7 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 
 ## Team Members
 
-### Team ID : C22-PS180  [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c22-ps180@bangkit.academy)](mailto:c22-ps180@bangkit.academy)
+### Team ID : C22-PS180  [![c22-ps180@bangkit.academy Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c22-ps180@bangkit.academy)](mailto:c22-ps180@bangkit.academy)
 
 | Name                           | Bangkit ID  | Learning Path      | University                          | Contact                                                                                                                                                                                           |
 | ------------------------------ | ---------- | ------------------ |  ---------------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
