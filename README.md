@@ -288,18 +288,18 @@ Authorization: Bearer Token (From Login)
 ```
 {
     "RoutinityName": "Memakai Skincare",
-    "NotifyHour": "07:00:00",
-    "Date": "31-05-2022",
+    "NotifyHour": "13:00:00",
+    "AlarmDate": "2022-04-07",
     "fifteenBefore": false,
     "thirtyBefore": true,
     "repeatAlarm": 1,
-    "Username": "tarisyangsalah"
+    "Username": "username"
 }
 ```
 Username as STRING: Mandatory (untuk check apakah user terdaftar)
 RoutinityName as STRING: Mandatory
 NotifyHour as TIME Format (HH:MM:SS): Mandatory
-Date as DATE Format (YYYY-MM-DD): Mandatory
+AlarmDate as DATE Format (YYYY-MM-DD): Mandatory
 fifteenBefore as BOOLEAN: Mandatory
 thirtyBefore as BOOLEAN: Mandatory
 repeatAlarm as INTEGER: Mandatory
@@ -325,7 +325,7 @@ Username as STRING: Mandatory
         "id": 3,
         "RoutinityName": "Memakai Skincare",
         "NotifyHour": "07:00:00",
-        "Date": "2022-05-31",
+        "AlarmDate": "2022-05-31",
         "fifteenBefore": false,
         "thirtyBefore": true,
         "repeatAlarm": 1,
@@ -334,6 +334,189 @@ Username as STRING: Mandatory
         "updatedAt": "2022-05-31T08:17:52.000Z"
     }
 ]
+```
+c. /Alarm/getAlarmByDate
+-   Method: POST
+-	Header: 
+```
+Authorization: Bearer Token (From Login)
+```
+-   Request Body:
+```
+{
+    "Username": "username",
+    "AlarmDate": "2022-04-07"
+}
+```
+Username as STRING: Mandatory (untuk check apakah user terdaftar)
+AlarmDate as DATE Format (YYYY-MM-DD): Mandatory
+
+-    Response:
+```
+{
+    "status": "success",
+    "datalistset": [
+        {
+            "id": 1,
+            "RoutinityName": "Memakai Skincare",
+            "NotifyHour": "07:00:00",
+            "AlarmDate": "2022-04-07",
+            "fifteenBefore": false,
+            "thirtyBefore": true,
+            "repeatAlarm": 1,
+            "Username": "username",
+            "createdAt": "2022-06-05T03:07:34.000Z",
+            "updatedAt": "2022-06-05T03:07:34.000Z"
+        },
+        {
+            "id": 2,
+            "RoutinityName": "Memakai Skincare",
+            "NotifyHour": "13:00:00",
+            "AlarmDate": "2022-04-07",
+            "fifteenBefore": false,
+            "thirtyBefore": true,
+            "repeatAlarm": 1,
+            "Username": "username",
+            "createdAt": "2022-06-05T09:34:26.000Z",
+            "updatedAt": "2022-06-05T09:34:26.000Z"
+        }
+    ]
+}
+```
+
+
+5.	/History
+a.	/History/insertHistory
+-	Method: POST
+-	Header: 
+```
+Authorization: Bearer Token (From Login)
+```
+-	Request Body:
+```
+{
+    "Username": "username",
+    "ScanDate": "2022-04-07",
+    "FaceShape": "Flat",
+    "Photo": "exp",
+    "Jerawat": 10,
+    "Kerutan": 5,
+    "FlekHitam": 2,
+    "MataPanda": 3,
+    "Total": 20
+}
+```
+Username as STRING: Mandatory (untuk check apakah user terdaftar)
+ScanDate as DATE Format (YYYY-MM-DD): Mandatory
+FaceShape as STRING
+Photo as STRING: Mandatory
+Jerawat as INTEGER
+Kerutan as INTEGER
+FlekHitam as INTEGER
+MataPanda as INTEGER
+Total as INTEGER
+
+b.	/History/getHistoryByUsername
+-	Method: POST
+-	Header: 
+```
+Authorization: Bearer Token (From Login)
+```
+-	Request Body:
+```
+{
+    "Username": "username"
+}
+```
+Username as STRING: Mandatory
+
+-	Response:
+```
+{
+    "message": "success",
+    "datalistset": [
+        {
+            "id": 1,
+            "Username": "username",
+            "ScanDate": "2022-06-06",
+            "FaceShape": "test",
+            "Photo": "base 64 string example",
+            "Jerawat": 3,
+            "Kerutan": 15,
+            "FlekHitam": 10,
+            "MataPanda": 2,
+            "Total": 30,
+            "createdAt": "2022-06-05T17:24:13.000Z",
+            "updatedAt": "2022-06-05T17:24:13.000Z"
+        },
+        {
+            "id": 2,
+            "Username": "username",
+            "ScanDate": "2022-06-06",
+            "FaceShape": "test",
+            "Photo": "base 64 string example",
+            "Jerawat": 3,
+            "Kerutan": 15,
+            "FlekHitam": 10,
+            "MataPanda": 2,
+            "Total": 30,
+            "createdAt": "2022-06-05T17:25:12.000Z",
+            "updatedAt": "2022-06-05T17:25:12.000Z"
+        },
+        {
+            "id": 3,
+            "Username": "username",
+            "ScanDate": "2022-06-07",
+            "FaceShape": "test",
+            "Photo": "base 64 string example",
+            "Jerawat": 3,
+            "Kerutan": 15,
+            "FlekHitam": 10,
+            "MataPanda": 2,
+            "Total": 30,
+            "createdAt": "2022-06-05T17:25:18.000Z",
+            "updatedAt": "2022-06-05T17:25:18.000Z"
+        }
+    ]
+}
+```
+c. //History/getHistoryByUsernameDate
+-   Method: POST
+-	Header: 
+```
+Authorization: Bearer Token (From Login)
+```
+-   Request Body:
+```
+{
+    "Username": "username",
+    "Date": "2022-04-07"
+}
+```
+Username as STRING: Mandatory (untuk check apakah user terdaftar)
+Date as DATE Format (YYYY-MM-DD): Mandatory
+
+-    Response:
+```
+{
+    "status": "success",
+    "datalistset": [
+        {
+            "id": 3,
+            "Username": "username",
+            "ScanDate": "2022-06-07",
+            "FaceShape": "test",
+            "Photo": "base 64 string example",
+            "Jerawat": 3,
+            "Kerutan": 15,
+            "FlekHitam": 10,
+            "MataPanda": 2,
+            "Total": 30,
+            "createdAt": "2022-06-05T17:25:18.000Z",
+            "updatedAt": "2022-06-05T17:25:18.000Z"
+        }
+    ]
+}
 ```
 
 
