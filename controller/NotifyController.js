@@ -88,14 +88,15 @@ const insertAlarm = async (req, res) => {
 const getAlarmbyUsername = async (req, res) => {
     try{
         const {Username, RoutinityName} = req.body;
-        const getAlarmByUsername = await Notify.findAll({where: {Username: req.body.Username}})
-        if(!getAlarmByUsername)
+        const getAlarmByUName = await Notify.findAll({where: {Username: req.body.Username}})
+        if(!getAlarmByUName)
         {
             stats=404;
             error='No Alarm Found';
             throw err;
         }
-        res.json({status:'success', datalistset: getAlarmByUsername});
+        console.log(getAlarmbyUName)
+        res.json({status:'success', datalistset: getAlarmByUName});
     }
     catch(err){
         console.log(err);
@@ -116,6 +117,7 @@ const getByDate = async (req, res) => {
             error='No Alarm Found';
             throw err;
         }
+        console.log(getAlarmByDate);
         res.json({status:'success', datalistset: getAlarmByDate});
     }
     catch(err){
