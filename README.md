@@ -9,18 +9,18 @@ a.	/Ingredient/InsertIngredients
 -	Request Body:
 ```
 {
-    "IngredName": "Niacinamidez",
-    "IngredFunction": "Gatau",
-    "IngredEffect": "Gatau jg"
+    "IngredName": "name",
+    "IngredFunction": "function",
+    "IngredEffect": "effect"
 }
 ```
 ```
 IngredName as STRING:(mandatory) (UNIQUE)
 IngredFunction as STRING: (mandatory)
 IngredEffect as STRING: (mandatory)
-````
 ```
 -	Response:
+```
 {
     "error": "false",
     "status": "success",
@@ -33,8 +33,11 @@ b.	/Ingredient/getAllIngredient
 -	Request Body:
 (Leave it blank)
 -	Headers:
+```
 Authorization: Bearer Token (from Login)
+```
 -	Response: 
+```
 {
     "error": "false",
     "message": "success",
@@ -55,18 +58,24 @@ Authorization: Bearer Token (from Login)
         }
     ]
 }
+```
 
 c.	/Ingredient/getIngredByName
 -	Method : GET
 -	Request Body:
+```
 {
     "IngredName": "Niacinamide"
 }
+```
 IngredName as STRING: Mandatory
 
 -	Headers:
+```
 Authorization: Bearer Token (from Login)
+```
 -	Response: 
+```
 {
     "error": "false",
     "message": "success",
@@ -78,11 +87,13 @@ Authorization: Bearer Token (from Login)
         "updatedAt": "2022-05-21T10:13:30.000Z"
     }
 }
+```
 
 2.	/User
 a.	/User/userRegister
 -	Method : POST
 -	Request Body:
+```
 {
     "Username": "username",
     "Password": "password",
@@ -90,6 +101,7 @@ a.	/User/userRegister
     "FullName": "Fullname Example",
     "ProfilePicture": "http://example.com"
 }
+```
 
 Username as STRING: Mandatory, Unique
 Password as STRING: Mandatory
@@ -98,16 +110,19 @@ Fullname as STRING: Mandatory
 ProfilePicture as STRING: non Mandatory
 
 -	Response: 
+```
 {
     "status": "Success",
     "message": "Berhasil melakukan registrasi"
 }
+```
 
 b.	/User/getAllUser
 -	Method : GET
 -	Request Body:
 (leave it blank)
 -	Response:
+```
 {
     "status": "success",
     "datalistset": [
@@ -122,15 +137,21 @@ b.	/User/getAllUser
         }
     ]
 }
+```
+
 c.	/User/getUserByUsername
 -	Method: GET
 -	Request Body:
+```
 {
     "Username": "username"
 }
+```
+
 Username as STRING: Mandatory
 
 -	Response:
+```
 {
     "status": "success",
     "datalistset": {
@@ -143,103 +164,128 @@ Username as STRING: Mandatory
         "updatedAt": "2022-05-31T09:52:48.000Z"
     }
 }
+```
 
 d.	/User/updateUser
 -	Method: PUT
 -	Header:
 Authorization: Bearer Token (From Login)
 -	Request Body:
+```
 {
     "Username": "username",
     "FullName": "changed FullName",
     "ProfilePicture": "Changed ProfilePicture"
 }
+```
 Username: Mandatory
 FullName as STRING: Kalau mau diganti jadi mandatory, kalau tidak ambil dari data yang lama
 ProfilePicture as STRING: Kalau mau diganti jadi mandatory, kalau tidak ambil dari data yang lama
 
 -	Response:
+```
 {
     "status": "success",
     "message": "Berhasil memperbarui data"
 }
-
+```
 
 e.	/User/changePassword
 -	Method: PUT
 -	Header:
+```
 Authorization: Bearer Token (From Login)
+```
 -	Request Body:
+```
 {
     "Username": "username",
     "currentPassword": "oldPassword",
     "newPassword": "newPassword"
 }
+```
 Username as STRING: Mandatory
 currentPassword as STRING: Mandatory (harus sama dengan sebelumnya)
 newPassword as STRING: Mandatory
 
 -	Response
+```
 {
     "status": "success",
     "message": "Berhasil mengubah password"
 }
+```
 
 3.	/Login
 a.	/Login/userLogin
 -	Method: POST
 -	Request Body:
+```
 {
     "Username": "yusifaoktria",
     "Password": "test1234"
 }
+```
 Username as STRING: Mandatory
 Password as STRING: Mandatory
 
 -	Response:
+```
 {
     "message": "Berhasil Login",
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoieXVzaWZhb2t0cmlhIiwiaWF0IjoxNjUzOTkyMzE4LCJleHAiOjE2NTM5OTQxMTh9.Rgh0P1TlMSiW4wfxz2oiu5FFZYH-ycyZOWamW5flIRM",
     "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eXVzaWZhb2t0cmlh.wJRtSnh46_7I9t3dn6zVcQ-L0dtup5SkLHU6hXXSJQ",
     "expiredIn": "30m"
 }
+```
 
 b.	/Login/refreshToken
 -	Method: POST
 -	Request Body:
+```
 {
     "Username": "username",
     "RefreshToken": "eyJhbGciOiJIUzI1NiJ9.eXVzaWZhb2t0cmlh.wJRtSnh46_a7I9t3dn6zVcQ-L0dtup5SkLHU6hXXSJQ"
 }
+```
 Username as STRING: Mandatory
 RefreshToken as STRING: Mandatory (From Login)
 
 -	Response:
+```
 {
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoieXVzaWZhb2t0cmlhIiwiaWF0IjoxNjUzOTkzMTkwLCJleHAiOjE2NTM5OTQ5OTB9.HHzzRlmXkNgpj01z8k6-bw0TiaZjgKN4L5grUV56WQE",
     "expiredIn": "30m"
 }
+```
 
 c.	/Login/userLogout
 -	Method: DELETE
 -	Request Body:
+```
 {
     "RefreshToken": "eyJhbGciOiJIUzI1NiJ9.dGFyaXN5YW5nYmVuZXI.1kAsAg76GAjyMcKJJRULP3R2a1ZaKQ6YPvhrgRxwZXU"
 }
+```
 RefreshToken as STRING: Mandatory (From Login)
 
 -	Response:
+```
 {
     "status": "success",
     "message": "Berhasil Logout"
 }
+```
 
 4.	/Alarm
 a.	/Alarm/insertAlarm
 -	Method: POST
 -	Header: 
+```
 Authorization: Bearer Token (From Login)
+```
 -	Request Body:
+```
 {
     "RoutinityName": "Memakai Skincare",
     "NotifyHour": "07:00:00",
@@ -249,6 +295,7 @@ Authorization: Bearer Token (From Login)
     "repeatAlarm": 1,
     "Username": "tarisyangsalah"
 }
+```
 Username as STRING: Mandatory (untuk check apakah user terdaftar)
 RoutinityName as STRING: Mandatory
 NotifyHour as TIME Format (HH:MM:SS): Mandatory
@@ -260,14 +307,19 @@ repeatAlarm as INTEGER: Mandatory
 b.	/Alarm/getAlarmByUsername
 -	Method: POST
 -	Header: 
+```
 Authorization: Bearer Token (From Login)
+```
 -	Request Body:
+```
 {
     "Username": "username"
 }
+```
 Username as STRING: Mandatory
 
 -	Response:
+```
 [
     {
         "id": 3,
@@ -282,5 +334,6 @@ Username as STRING: Mandatory
         "updatedAt": "2022-05-31T08:17:52.000Z"
     }
 ]
+```
 
 
