@@ -74,7 +74,6 @@ const getHistoryByDate = async (req, res) => {
             stats=200;
             error='No Data found'
         }
-        const byDateResult = getByDate;
         // byNameResult(getByName);
         res.json({status:"success", datalistset: byDateResult})
     }
