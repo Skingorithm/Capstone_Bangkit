@@ -88,7 +88,7 @@ const insertAlarm = async (req, res) => {
 const getAlarmbyUsername = async (req, res) => {
     try{
         const getAlarmByUName = await Notify.findAll({where: {Username: req.body.Username}})
-        if(!getAlarmByUName)
+        if(getAlarmByUName == null)
         {
             stats=200;
             error='No Alarm Found';
@@ -109,9 +109,9 @@ const getAlarmbyUsername = async (req, res) => {
 const getByDate = async (req, res) => {
     try{
         const getAlarmByDate = await Notify.findAll({where:{AlarmDate: req.body.AlarmDate, Username:req.body.Username}})
-        if(!getAlarmByDate)
+        if(getAlarmByDate == null)
         {
-            stats=404;
+            stats=200;
             error='No Alarm Found';
             throw err;
         }
