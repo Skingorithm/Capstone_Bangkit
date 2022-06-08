@@ -38,6 +38,7 @@ const getIngred = async (req, res) => {
     try{
         const getAllIngred = await Ingredient.findAll({})
         res.json({error:"false", message:"success", datalistset: getAllIngred})
+        console.log(getIngred);
     }
     catch(err){
         console.log(err);
@@ -59,6 +60,8 @@ const getIngredByName = async (req, res) => {
             error='No ingredient name found'
         }
         const byNameResult = getByName;
+
+        console.log(byNameResult);
         // byNameResult(getByName);
         res.json({error:"false", message:"success", datalistset: byNameResult})
     }
