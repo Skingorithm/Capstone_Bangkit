@@ -109,7 +109,7 @@ const getAlarmbyUsername = async (req, res) => {
 const getByDate = async (req, res) => {
     try{
         const {Username, Date} = req.body;
-        const getAlarmByDate = await Notify.findAll({where:{AlarmDate: req.body.Date, Username:req.body.Username}})
+        const getAlarmByDate = await Notify.findAll({where:{AlarmDate: req.body.AlarmDate, Username:req.body.Username}})
         if(!getAlarmByDate)
         {
             stats=404;
