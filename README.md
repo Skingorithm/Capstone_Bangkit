@@ -480,7 +480,7 @@ Username as STRING: Mandatory
     ]
 }
 ```
-c. //History/getHistoryByUsernameDate
+c. /History/getHistoryByUsernameDate
 -   Method: POST
 -	Header: 
 ```
