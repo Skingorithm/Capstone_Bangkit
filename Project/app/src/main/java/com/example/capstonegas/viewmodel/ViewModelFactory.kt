@@ -17,6 +17,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             modelClass.isAssignableFrom(IngredientAnalyzeViewModel::class.java) -> {
                 IngredientAnalyzeViewModel(pref) as T
             }
+            modelClass.isAssignableFrom(AddRoutineViewModel::class.java) -> {
+                AddRoutineViewModel(pref) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

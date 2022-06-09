@@ -34,7 +34,7 @@
                 android:id="@+id/spinnerDate"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="120dp"
-                android:layout_height="25dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iconCalendar"
@@ -45,10 +45,12 @@
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="16dp"
                 android:background="@color/white"
-                android:src="@drawable/ic_baseline_notifications_24"
                 android:contentDescription="@string/desc_icon_notification"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:src="@drawable/ic_baseline_notifications_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -134,7 +136,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addRoutineButton"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
