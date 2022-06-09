@@ -1,13 +1,9 @@
 package com.example.capstonegas.viewmodel
 
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.capstonegas.api.ApiConfig
-import com.example.capstonegas.model.Datalistset
-import com.example.capstonegas.model.SearchIngredientResponse
-import com.example.capstonegas.model.UserModel
-import com.example.capstonegas.model.UserPreference
+import com.example.capstonegas.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,6 +15,9 @@ class IngredientAnalyzeViewModel(private val pref: UserPreference) : ViewModel()
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
+    private val _allIngredient = MutableLiveData<List<DatalistsetItem>?>()
+    val allIngredient : LiveData<List<DatalistsetItem>?> = _allIngredient
 
     fun getUser(): LiveData<UserModel> {
         return pref.getUser().asLiveData()
@@ -46,6 +45,34 @@ class IngredientAnalyzeViewModel(private val pref: UserPreference) : ViewModel()
 
             override fun onFailure(call: Call<SearchIngredientResponse>, t: Throwable) {
                 _isLoading.value = false
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
+    }
+
+    fun getAllIngredient(token: String) {
+        val bearer = "Bearer $token"
+        Log.d(TAG,"ini $bearer")
+        val client = ApiConfig.getApiService().getAllIngredient(bearer)
+        client.enqueue(object: Callback<AllIngredientResponse> {
+            override fun onResponse(
+                call: Call<AllIngredientResponse>,
+                response: Response<AllIngredientResponse>
+            ) {
+                Log.d(TAG,"ini masuk response")
+                if (response.isSuccessful) {
+                    _allIngredient.value = response.body()?.datalistset
+                    Log.d(TAG,"ini berhasil ")
+                    Log.d(TAG, _allIngredient.value.toString())
+                }
+
+                else {
+                    Log.e(TAG, "onFailure: ${response.message()}")
+
+                }
+            }
+
+            override fun onFailure(call: Call<AllIngredientResponse>, t: Throwable) {
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
             }
         })
