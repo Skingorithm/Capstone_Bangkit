@@ -1,9 +1,11 @@
 package com.example.capstonegas.api
 
+import com.example.capstonegas.model.InsertAlarmResponse
 import com.example.capstonegas.model.AllIngredientResponse
 import com.example.capstonegas.model.LoginResponse
 import com.example.capstonegas.model.RegisterResponse
 import com.example.capstonegas.model.SearchIngredientResponse
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -32,8 +34,30 @@ interface ApiService {
         @Field("IngredName") query: String
     ): Call<SearchIngredientResponse>
 
+    // Get All Ingredients
     @GET("/Ingredient/getAllIngredient")
     fun getAllIngredient(
         @Header("Authorization") token: String
     ): Call<AllIngredientResponse>
+
+    //Add Alarm
+    @FormUrlEncoded
+    @POST("/Alarm/insertAlarm")
+    fun insertAlarm(
+        @Header("Authorization") token: String,
+        @Field("RoutinityName") routinityName: String,
+        @Field("NotifyHour") notifyHour: String,
+        @Field("AlarmDate") alarmDate: String,
+        @Field("fifteenBefore") fifteenBefore: String,
+        @Field("thirtyBefore") thirtyBefore: String,
+        @Field("repeatAlarm") repeatAlarm: String,
+        @Field("Username") username: String
+    ): Call<InsertAlarmResponse>
+
+    @Multipart
+    @POST("")
+    fun uploadImage(
+        @Header("Authorization") token : String,
+        @Part file: MultipartBody.Part
+    ): Call<Any>
 }

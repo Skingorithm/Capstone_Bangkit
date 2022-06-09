@@ -118,6 +118,7 @@
     <string name="content_failed">Failed Image</string>
     <string name="btn_rephoto">Foto Ulang</string>
     <string name="usernameText">Username</string>
+    <string name="Waktu_null">XX:XX</string>
 
     <string-array name="listIngredients">
         <item>(Agaricus Blazei Ferment + Ganod...</item>
