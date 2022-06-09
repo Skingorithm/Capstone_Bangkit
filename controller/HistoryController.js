@@ -51,7 +51,7 @@ const insertHistory = async (req, res) => {
 const getHistoryByUsername = async (req, res) => {
     try{
         const getAllHistory = await History.findAll({where:{Username:req.body.Username}})
-        if(getAllHistory == null)
+        if(getAllHistory <= 0)
         {
             error='Data tidak ditemukan';
             stats=200;
@@ -71,7 +71,7 @@ const getHistoryByUsername = async (req, res) => {
 const getHistoryByDate = async (req, res) => {
     try{
         const getByDate = await History.findAll({where: {ScanDate: req.body.Date, Username:req.body.Username}})
-        if(getByDate == null)
+        if(getByDate <= 0)
         {
             stats=200;
             error='No Data found'

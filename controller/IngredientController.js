@@ -57,12 +57,10 @@ const getIngredByName = async (req, res) => {
         if(getByName == null)
         {
             stats=200;
-            error='No ingredient name found'
+            error='No ingredient name found';
+            throw err;
         }
         const byNameResult = getByName;
-
-        console.log(byNameResult);
-        // byNameResult(getByName);
         res.json({error:"false", message:"success", datalistset: byNameResult})
     }
     catch(err){
