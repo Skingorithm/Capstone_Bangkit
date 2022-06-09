@@ -1,5 +1,6 @@
 package com.example.capstonegas.api
 
+import com.example.capstonegas.model.AllIngredientResponse
 import com.example.capstonegas.model.LoginResponse
 import com.example.capstonegas.model.RegisterResponse
 import com.example.capstonegas.model.SearchIngredientResponse
@@ -24,11 +25,15 @@ interface ApiService {
     ): Call<LoginResponse>
 
     // Search Ingredients
-    @GET("/Ingredient/getIngredByName")
+    @FormUrlEncoded
+    @POST("/Ingredient/getIngredByName")
     fun getIngredient(
         @Header("Authorization") token: String,
-        @Query("IngredName") query: String
+        @Field("IngredName") query: String
     ): Call<SearchIngredientResponse>
 
-
+    @GET("/Ingredient/getAllIngredient")
+    fun getAllIngredient(
+        @Header("Authorization") token: String
+    ): Call<AllIngredientResponse>
 }
