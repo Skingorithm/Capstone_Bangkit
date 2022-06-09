@@ -23,6 +23,7 @@ const insertHistory = async (req, res) => {
         {
             error='User Tidak Ditemukan';
             stats=200;
+            throw err;
         }
         const newHistory = new History ({
             Username,
@@ -54,6 +55,7 @@ const getHistoryByUsername = async (req, res) => {
         {
             error='Data tidak ditemukan';
             stats=200;
+            throw err;
         }
         res.json({message:"success", datalistset: getAllHistory})
     }
@@ -73,6 +75,7 @@ const getHistoryByDate = async (req, res) => {
         {
             stats=200;
             error='No Data found'
+            throw err;
         }
         // byNameResult(getByName);
         res.json({status:"success", datalistset: getByDate})
