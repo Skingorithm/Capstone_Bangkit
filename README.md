@@ -61,7 +61,7 @@ Authorization: Bearer Token (from Login)
 }
 ```
 
-c.	/Ingredient/getIngredByName
+### c.	/Ingredient/getIngredByName
 -	Method : GET
 -	Request Body:
 ```json
