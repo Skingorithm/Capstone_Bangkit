@@ -1,10 +1,6 @@
 package com.example.capstonegas.api
 
-import com.example.capstonegas.model.InsertAlarmResponse
-import com.example.capstonegas.model.AllIngredientResponse
-import com.example.capstonegas.model.LoginResponse
-import com.example.capstonegas.model.RegisterResponse
-import com.example.capstonegas.model.SearchIngredientResponse
+import com.example.capstonegas.model.*
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -60,4 +56,11 @@ interface ApiService {
         @Header("Authorization") token : String,
         @Part file: MultipartBody.Part
     ): Call<Any>
+
+    // Get User by Username
+    @GET("/User/getUserByUsername")
+    fun getUserByUsername(
+        @Query("Username") username: String
+    ): Call<GetUserByUsernameResponse>
+
 }
