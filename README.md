@@ -5,7 +5,7 @@ EndPoint: https://dynamic-reef-344016.uc.r.appspot.com
 Available endpoints:
 
 ## 1.	/Ingredient
-a.	/Ingredient/InsertIngredients
+### a.	/Ingredient/InsertIngredients
 -	Method: POST
 -	Request Body:
 ```json
@@ -15,7 +15,7 @@ a.	/Ingredient/InsertIngredients
     "IngredEffect": "effect"
 }
 ```
-```json
+```
 IngredName as STRING:(mandatory) (UNIQUE)
 IngredFunction as STRING: (mandatory)
 IngredEffect as STRING: (mandatory)
@@ -29,12 +29,12 @@ IngredEffect as STRING: (mandatory)
 }
 ```
 
-b.	/Ingredient/getAllIngredient
+### b.	/Ingredient/getAllIngredient
 -	Method : GET
 -	Request Body:
 (Leave it blank)
 -	Headers:
-```json
+```
 Authorization: Bearer Token (from Login)
 ```
 -	Response: 
@@ -72,7 +72,7 @@ c.	/Ingredient/getIngredByName
 IngredName as STRING: Mandatory
 
 -	Headers:
-```json
+```
 Authorization: Bearer Token (from Login)
 ```
 -	Response: 
@@ -91,7 +91,7 @@ Authorization: Bearer Token (from Login)
 ```
 
 ## 2.	/User
-a.	/User/userRegister
+### a.	/User/userRegister
 -	Method : POST
 -	Request Body:
 ```json
@@ -118,7 +118,7 @@ ProfilePicture as STRING: non Mandatory
 }
 ```
 
-b.	/User/getAllUser
+### b.	/User/getAllUser
 -	Method : GET
 -	Request Body:
 (leave it blank)
@@ -140,7 +140,7 @@ b.	/User/getAllUser
 }
 ```
 
-c.	/User/getUserByUsername
+### c.	/User/getUserByUsername
 -	Method: GET
 -	Request Body:
 ```json
@@ -167,7 +167,7 @@ Username as STRING: Mandatory
 }
 ```
 
-d.	/User/updateUser
+### d.	/User/updateUser
 -	Method: PUT
 -	Header:
 Authorization: Bearer Token (From Login)
@@ -191,10 +191,10 @@ ProfilePicture as STRING: Kalau mau diganti jadi mandatory, kalau tidak ambil da
 }
 ```
 
-e.	/User/changePassword
+### e.	/User/changePassword
 -	Method: PUT
 -	Header:
-```json
+```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
@@ -218,7 +218,7 @@ newPassword as STRING: Mandatory
 ```
 
 ## 3.	/Login
-a.	/Login/userLogin
+### a.	/Login/userLogin
 -	Method: POST
 -	Request Body:
 ```json
@@ -240,7 +240,7 @@ Password as STRING: Mandatory
 }
 ```
 
-b.	/Login/refreshToken
+### b.	/Login/refreshToken
 -	Method: POST
 -	Request Body:
 ```json
@@ -260,7 +260,7 @@ RefreshToken as STRING: Mandatory (From Login)
 }
 ```
 
-c.	/Login/userLogout
+### c.	/Login/userLogout
 -	Method: DELETE
 -	Request Body:
 ```json
@@ -279,10 +279,10 @@ RefreshToken as STRING: Mandatory (From Login)
 ```
 
 ## 4.	/Alarm
-a.	/Alarm/insertAlarm
+### a.	/Alarm/insertAlarm
 -	Method: POST
 -	Header: 
-```json
+```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
@@ -305,10 +305,10 @@ fifteenBefore as BOOLEAN: Mandatory
 thirtyBefore as BOOLEAN: Mandatory
 repeatAlarm as INTEGER: Mandatory
 
-b.	/Alarm/getAlarmByUsername
+### b.	/Alarm/getAlarmByUsername
 -	Method: POST
 -	Header: 
-```json
+```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
@@ -336,10 +336,10 @@ Username as STRING: Mandatory
     }
 ]
 ```
-c. /Alarm/getAlarmByDate
+### c. /Alarm/getAlarmByDate
 -   Method: POST
 -	Header: 
-```json
+```
 Authorization: Bearer Token (From Login)
 ```
 -   Request Body:
@@ -387,10 +387,10 @@ AlarmDate as DATE Format (YYYY-MM-DD): Mandatory
 
 
 ## 5.	/History
-a.	/History/insertHistory
+### a.	/History/insertHistory
 -	Method: POST
 -	Header: 
-```json
+```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
@@ -417,10 +417,10 @@ FlekHitam as INTEGER
 MataPanda as INTEGER
 Total as INTEGER
 
-b.	/History/getHistoryByUsername
+### b.	/History/getHistoryByUsername
 -	Method: POST
 -	Header: 
-```json
+```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
@@ -481,10 +481,10 @@ Username as STRING: Mandatory
     ]
 }
 ```
-c. /History/getHistoryByUsernameDate
+### c. /History/getHistoryByUsernameDate
 -   Method: POST
 -	Header: 
-```json
+```
 Authorization: Bearer Token (From Login)
 ```
 -   Request Body:
