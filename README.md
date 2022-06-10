@@ -16,6 +16,14 @@ We collect datasets manually from google images. The distribution as follows :
 - Flek's dataset: 43
 - Wrinkles's dataset: 135 
 
+### TEchnologies
+-	Tensorflow 2.8.2
+-	Segmentation_models 1.0.1
+-	Numpy 1.21.6
+-	PIL 7.1.2
+-	Cv2 4.1.2
+-	Keras 2.8.0
+
 ### Workflow Stages
 1. Download and collect your own dataset from google images
 2. Crop and Resize your input images dataset to 256x256, you can use [our notebook](https://github.com/Skingorithm/Capstone_Bangkit/blob/Machine-Learning/Data%20Preparation%20-%20Crop%20and%20Resize%20Face%20Image.ipynb).
