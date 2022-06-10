@@ -17,6 +17,7 @@ We collect datasets manually from google images. The distribution as follows :
 - Wrinkles's dataset: 135 
 
 ### TEchnologies
+Here are the library that used in this project
 -	Tensorflow 2.8.2
 -	Segmentation_models 1.0.1
 -	Numpy 1.21.6
