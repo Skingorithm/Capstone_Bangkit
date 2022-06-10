@@ -16,7 +16,7 @@ We collect datasets manually from google images. The distribution as follows :
 - Flek's dataset: 43
 - Wrinkles's dataset: 135 
 
-### TEchnologies
+### Technologies
 Here are the library that used in this project
 -	Tensorflow 2.8.2
 -	Segmentation Models 1.0.1
