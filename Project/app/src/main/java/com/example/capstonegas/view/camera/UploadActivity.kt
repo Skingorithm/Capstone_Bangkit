@@ -1,27 +1,28 @@
 package com.example.capstonegas.view.camera
 
-import android.Manifest
+import android.content.Context
 import android.content.Intent
-import android.content.Intent.ACTION_GET_CONTENT
-import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.example.capstonegas.databinding.ActivityUploadBinding
+import com.example.capstonegas.view.loading.LoadingActivity
 import com.example.capstonegas.view.main.MainActivity
-import java.io.File
+import java.io.*
+
 
 class UploadActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUploadBinding
+    private var getFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,47 @@ class UploadActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        binding.iyaButton.setOnClickListener {
+            uploadImage()
+        }
+    }
+
+    private fun uploadImage(){
+        if(getFile != null){
+            val file = reduceFileImage(getFile as File)
+            val encodedImage = encodeImage(file)
+//            writeToFile(encodedImage, applicationContext)
+            val intent = Intent(this, LoadingActivity::class.java)
+            intent.putExtra("image", encodedImage)
+            startActivity(intent)
+            finish()
+        }else{
+            Toast.makeText(this, "Please take a picture", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun encodeImage(path: File): String {
+        var fis: FileInputStream? = null
+        try {
+            fis = FileInputStream(path)
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
+        val bm = BitmapFactory.decodeStream(fis)
+        val baos = ByteArrayOutputStream()
+        bm.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val b = baos.toByteArray()
+        //Base64.encode
+        return Base64.encodeToString(b, Base64.DEFAULT)
+    }
+
+    private fun writeToFile(data: String, context: Context) {
+        val path = context.filesDir
+        val letDirectory = File(path, "Picture Base64")
+        letDirectory.mkdirs()
+        val file = File(letDirectory, "test.txt")
+        file.appendText(data)
+        Log.d("File", "File path: $file")
     }
 
     private fun startCameraX() {
@@ -56,6 +98,8 @@ class UploadActivity : AppCompatActivity() {
                 BitmapFactory.decodeFile(myFile.path),
                 isBackCamera
             )
+            result.compress(Bitmap.CompressFormat.JPEG, 100, FileOutputStream(myFile))
+            getFile = myFile
             binding.previewImageView.setImageBitmap(result)
         }
         else if(it.resultCode == GALLERY_RESULT){
@@ -63,6 +107,7 @@ class UploadActivity : AppCompatActivity() {
             val selectedImg = it.data?.getSerializableExtra("image")
             val uri = Uri.parse(selectedImg.toString())
             val myFile = uriToFile(uri, this@UploadActivity)
+            getFile = myFile
             binding.previewImageView.setImageURI(uri)
         }
     }
