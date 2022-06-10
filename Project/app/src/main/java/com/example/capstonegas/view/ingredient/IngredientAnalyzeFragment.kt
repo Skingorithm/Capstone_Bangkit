@@ -101,11 +101,15 @@ class IngredientAnalyzeFragment : Fragment() {
                     arrayAdapter.filter.filter(query)
                     query.let { token?.let { it1 -> viewModel.getIngredient(it1, query.toString()) } }
                     showLoading(true)
+                    binding.imgSearch.visibility = View.INVISIBLE
+                    binding.textImgSearch.visibility = View.INVISIBLE
                     binding.listIngredients.visibility = View.INVISIBLE
                 } else {
                     Toast.makeText(requireContext(), "Ingredient tidak ditemukan", Toast.LENGTH_SHORT).show()
                     showLoading(false)
                     binding.listIngredients.visibility = View.INVISIBLE
+                    binding.imgSearch.visibility = View.VISIBLE
+                    binding.textImgSearch.visibility = View.VISIBLE
                 }
 
                 return false
