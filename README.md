@@ -19,10 +19,10 @@ We collect datasets manually from google images. The distribution as follows :
 ### TEchnologies
 Here are the library that used in this project
 -	Tensorflow 2.8.2
--	Segmentation_models 1.0.1
--	Numpy 1.21.6
--	PIL 7.1.2
--	Cv2 4.1.2
+-	Segmentation Models 1.0.1
+-	NumPy 1.21.6
+-	Pillow 7.1.2
+-	OpenCV 4.1.2
 -	Keras 2.8.0
 
 ### Workflow Stages
