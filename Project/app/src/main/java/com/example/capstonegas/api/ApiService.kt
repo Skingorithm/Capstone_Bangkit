@@ -44,9 +44,9 @@ interface ApiService {
         @Field("RoutinityName") routinityName: String,
         @Field("NotifyHour") notifyHour: String,
         @Field("AlarmDate") alarmDate: String,
-        @Field("fifteenBefore") fifteenBefore: String,
-        @Field("thirtyBefore") thirtyBefore: String,
-        @Field("repeatAlarm") repeatAlarm: String,
+        @Field("fifteenBefore") fifteenBefore: Boolean,
+        @Field("thirtyBefore") thirtyBefore: Boolean,
+        @Field("repeatAlarm") repeatAlarm: Int,
         @Field("Username") username: String
     ): Call<InsertAlarmResponse>
 

@@ -49,7 +49,7 @@ class UploadActivity : AppCompatActivity() {
         if(getFile != null){
             val file = reduceFileImage(getFile as File)
             val encodedImage = encodeImage(file)
-//            writeToFile(encodedImage, applicationContext)
+            writeToFile(encodedImage, applicationContext)
             val intent = Intent(this, LoadingActivity::class.java)
             intent.putExtra("image", encodedImage)
             startActivity(intent)
@@ -71,14 +71,14 @@ class UploadActivity : AppCompatActivity() {
         bm.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val b = baos.toByteArray()
         //Base64.encode
-        return Base64.encodeToString(b, Base64.DEFAULT)
+        return Base64.encodeToString(b, Base64.NO_WRAP)
     }
 
     private fun writeToFile(data: String, context: Context) {
         val path = context.filesDir
         val letDirectory = File(path, "Picture Base64")
         letDirectory.mkdirs()
-        val file = File(letDirectory, "test.txt")
+        val file = File(letDirectory, "test2.txt")
         file.appendText(data)
         Log.d("File", "File path: $file")
     }

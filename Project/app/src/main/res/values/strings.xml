@@ -95,7 +95,7 @@
     <string name="strip">/</string>
     <string name="text_skincare_routine_2">7</string>
     <string name="text_skincare_routine_3">Rutinitas Skincare</string>
-    <string name="routine">Membersihkan wajah</string>
+    <string name="routine">Nama Rutinitas</string>
     <string name="clock">08.00</string>
     <string name="btn_add_routine">+ Tambah Rutinitas</string>
 
@@ -120,6 +120,10 @@
     <string name="btn_rephoto">Foto Ulang</string>
     <string name="usernameText">Username</string>
     <string name="Waktu_null">XX:XX</string>
+    <string name="routineHint2">Ex: Memakai Serum Niacinamide</string>
+    <string name="yyyy_mm_dd">YYYY/MM/DD</string>
+    <string name="atur_tanggal">Atur Tanggal</string>
+    <string name="atur_waktu">Atur Waktu</string>
 
     <string-array name="listIngredients">
         <item>Niacinamide</item>

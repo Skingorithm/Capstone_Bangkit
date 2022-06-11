@@ -14,7 +14,7 @@ class MLApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://github-skingorithm-skingorithm-face-recognition-ofpwmjg7hq-et.a.run.app/skingorithm/")
+                .baseUrl("http://172.22.17.248:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

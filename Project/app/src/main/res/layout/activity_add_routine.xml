@@ -8,27 +8,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.routine.AddRoutineActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white">
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/appBarLayout2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/white">-->
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/navigation_app_bar"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-            app:title="@string/title_app_add_routine"
-            app:titleCentered="true" />
+<!--        <com.google.android.material.appbar.MaterialToolbar-->
+<!--            android:id="@+id/topAppBar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            app:title="@string/title_app_add_routine"-->
+<!--            app:titleCentered="true" />-->
 
-    </com.google.android.material.appbar.AppBarLayout>
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="40dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/routine_label"
@@ -36,27 +33,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="16dp"
             android:text="@string/routine_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/routine_field"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="370dp"
-            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/routine_label"
             app:layout_constraintTop_toBottomOf="@+id/routine_label">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/routineFieldText"
                 android:layout_width="match_parent"
+                android:hint="@string/routineHint2"
                 android:layout_height="wrap_content"
-                android:hint="@string/routine"
-                android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -76,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="16dp"
             android:text="@string/date_label"
             app:layout_constraintStart_toEndOf="@+id/clock_label"
             app:layout_constraintTop_toBottomOf="@+id/routine_field" />
@@ -176,7 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Atur Waktu"
+            android:text="@string/atur_waktu"
             app:layout_constraintStart_toStartOf="@+id/timeNull"
             app:layout_constraintTop_toBottomOf="@+id/timeNull" />
 
@@ -185,7 +182,7 @@
             style="@style/OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Atur Tanggal"
+            android:text="@string/atur_tanggal"
             app:layout_constraintStart_toStartOf="@+id/dateNull"
             app:layout_constraintTop_toTopOf="@+id/timePickerButton" />
 
@@ -194,7 +191,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="DD/MM/YY"
+            android:text="@string/yyyy_mm_dd"
             app:layout_constraintStart_toStartOf="@+id/date_label"
             app:layout_constraintTop_toBottomOf="@+id/date_label" />
 
