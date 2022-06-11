@@ -83,6 +83,8 @@ class ProfileFragment : Fragment() {
                     profileViewModel.logout()
                     val intent = Intent(context, WelcomeActivity::class.java)
                     startActivity(intent)
+                    // finish activity
+                    activity?.finish()
                 }
                 create()
                 show()

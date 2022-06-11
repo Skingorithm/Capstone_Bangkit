@@ -2,8 +2,10 @@ package com.example.capstonegas.view.routine
 
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
@@ -12,6 +14,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityAddRoutineBinding
 import com.example.capstonegas.model.UserPreference
+import com.example.capstonegas.view.main.MainActivity
 import com.example.capstonegas.viewmodel.AddRoutineViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
 
@@ -91,15 +94,11 @@ class AddRoutineActivity : AppCompatActivity() {
         }
     }
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                return true
-            }
-        }
-        return super.onContextItemSelected(item)
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
+
 
 //    private fun setupView()
 //    {

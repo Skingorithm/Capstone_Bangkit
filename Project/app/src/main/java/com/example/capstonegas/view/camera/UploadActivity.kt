@@ -49,7 +49,7 @@ class UploadActivity : AppCompatActivity() {
         if(getFile != null){
             val file = reduceFileImage(getFile as File)
             val encodedImage = encodeImage(file)
-            writeToFile(encodedImage, applicationContext)
+//            writeToFile(encodedImage, applicationContext)
             val intent = Intent(this, LoadingActivity::class.java)
             intent.putExtra("image", encodedImage)
             startActivity(intent)
