@@ -11,6 +11,7 @@
     <string name="subCta2">Informasi detail mengenai kandungan bahan skincare</string>
 
     <!-- Profile   -->
+    <string name="profile">Profil Saya</string>
     <string name="content_image_desc">image_profile</string>
     <string name="full_name">Lorem Ipsum Dolor Sit Amet</string>
     <string name="username">loremipsum</string>
@@ -18,15 +19,17 @@
     <string name="btn_edit">Edit Profil</string>
     <string name="history">Histori Kondisi Kulit</string>
     <string name="desc_spinner">Months</string>
-    <string name="menu_logout">Logout</string>
-    <string name="alert_title_logout">Logout</string>
-    <string name="alert_msg_logout">Are you sure you want to logout of your account?</string>
-    <string name="alert_btn_logout">Yes</string>
+    <string name="menu_logout">Keluar</string>
+    <string name="alert_title_logout">Keluar</string>
+    <string name="alert_msg_logout">Apakah Anda yakin untuk keluar dari akun Anda?</string>
+    <string name="alert_btn_logout">Iya</string>
+    <string name="empty_history">Anda belum memiliki histori kondisi wajah, ayo segera cek kondisi wajah Anda!</string>
 
     <!-- Item History Skin    -->
     <string name="history_date">11 Mei 2022</string>
     <string name="content_icon_face">icon face</string>
-    <string name="history_score">70/100</string>
+    <string name="history_score">70</string>
+    <string name="history_score_2">/100</string>
     <string name="btn_detail">Lihat Detail</string>
 
     <!-- Item Ingredients    -->
