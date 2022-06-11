@@ -3,7 +3,6 @@ package com.example.capstonegas.view.profile
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +12,13 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.capstonegas.R
+import com.example.capstonegas.adapter.ListHistoryAdapter
 import com.example.capstonegas.databinding.FragmentProfileBinding
+import com.example.capstonegas.model.DatalistsetHistory
 import com.example.capstonegas.model.Datalistuser
 import com.example.capstonegas.model.UserPreference
 import com.example.capstonegas.view.welcome.WelcomeActivity
@@ -31,6 +34,8 @@ class ProfileFragment : Fragment() {
         ViewModelFactory(UserPreference.getInstance(requireContext().dataStore))
     }
     private lateinit var data: Datalistuser
+    private lateinit var rvHistory: RecyclerView
+    private val listHistory = ArrayList<DatalistsetHistory>()
     private var username: String = ""
     private var token: String = ""
 
@@ -47,22 +52,35 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupAction()
+
         profileViewModel.getUser().observe(viewLifecycleOwner) {
             username = it.name
             token = it.token
-            Log.d("isi username:", username)
-            Log.d("isi token:", token)
 
             setupUser(username, token)
             setupDataUser()
         }
 
-        setupAction()
+        rvHistory = binding.rvHistory
+        rvHistory.setHasFixedSize(true)
+        showListHistory(listHistory)
+
+        profileViewModel.listHistory.observe(viewLifecycleOwner) {
+            showListHistory(it)
+        }
+
+        showLoading(true)
+        profileViewModel.isLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
+        }
+
     }
 
 
     private fun setupUser(user: String, token: String) {
         profileViewModel.getDataUser(user, token)
+        profileViewModel.getHistoryByUsername(user, token)
     }
 
     private fun setupDataUser() {
@@ -100,6 +118,26 @@ class ProfileFragment : Fragment() {
 
         binding.fullName.text = data.fullName
         binding.username.text = data.username
+    }
+
+    private fun showListHistory(list: List<DatalistsetHistory>) {
+        rvHistory.layoutManager = LinearLayoutManager(context)
+        val adapter = ListHistoryAdapter(list)
+
+        if (adapter.itemCount == 0) {
+            binding.imgEmptyHistory.visibility = View.VISIBLE
+            binding.emptyHistory.visibility = View.VISIBLE
+        } else {
+            rvHistory.adapter = adapter
+            binding.imgEmptyHistory.visibility = View.GONE
+            binding.emptyHistory.visibility = View.GONE
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBarHistory.visibility =
+            if (isLoading) View.VISIBLE
+            else View.GONE
     }
 
 }
