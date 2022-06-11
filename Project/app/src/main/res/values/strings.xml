@@ -19,6 +19,9 @@
     <string name="history">Histori Kondisi Kulit</string>
     <string name="desc_spinner">Months</string>
     <string name="menu_logout">Logout</string>
+    <string name="alert_title_logout">Logout</string>
+    <string name="alert_msg_logout">Are you sure you want to logout of your account?</string>
+    <string name="alert_btn_logout">Yes</string>
 
     <!-- Item History Skin    -->
     <string name="history_date">11 Mei 2022</string>

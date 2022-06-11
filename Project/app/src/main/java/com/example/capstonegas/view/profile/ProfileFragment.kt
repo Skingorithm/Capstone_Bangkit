@@ -1,21 +1,24 @@
 package com.example.capstonegas.view.profile
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
+import com.example.capstonegas.R
 import com.example.capstonegas.databinding.FragmentProfileBinding
 import com.example.capstonegas.model.Datalistuser
 import com.example.capstonegas.model.UserPreference
-import com.example.capstonegas.viewmodel.MainViewModel
+import com.example.capstonegas.view.welcome.WelcomeActivity
 import com.example.capstonegas.viewmodel.ProfileViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
 
@@ -29,13 +32,13 @@ class ProfileFragment : Fragment() {
     }
     private lateinit var data: Datalistuser
     private var username: String = ""
+    private var token: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentProfileBinding.inflate(inflater, container, false).apply { viewLifecycleOwner
-        ProfileViewModel}
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -44,53 +47,59 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d(TAG, "1")
         profileViewModel.getUser().observe(viewLifecycleOwner) {
-            Log.d(TAG, "2")
             username = it.name
+            token = it.token
             Log.d("isi username:", username)
-        }
+            Log.d("isi token:", token)
 
-        if (username != "") {
-            Log.d(TAG, "3")
-            setupUser(username)
-            Log.d(TAG, "5")
+            setupUser(username, token)
             setupDataUser()
         }
+
+        setupAction()
     }
 
-    private fun setupUser(user: String) {
-        Log.d(TAG,"4")
-        profileViewModel.getDataUser(user)
+
+    private fun setupUser(user: String, token: String) {
+        profileViewModel.getDataUser(user, token)
     }
 
     private fun setupDataUser() {
-        Log.d(TAG,"6")
         profileViewModel.dataUser.observe(viewLifecycleOwner) {
-            Log.d("isi data user", it.toString())
             if (it != null) {
-                Log.d("isi data user2", it.toString())
                 data = it
                 showProfile(data)
             }
         }
     }
 
+    private fun setupAction(){
+        binding.imageButton.setOnClickListener {
+            AlertDialog.Builder(requireContext()).apply {
+                setTitle(getString(R.string.alert_title_logout))
+                setMessage(getString(R.string.alert_msg_logout))
+                setPositiveButton(getString(R.string.alert_btn_logout)) { _, _ ->
+                    profileViewModel.logout()
+                    val intent = Intent(context, WelcomeActivity::class.java)
+                    startActivity(intent)
+                }
+                create()
+                show()
+            }
+        }
+    }
+
     private fun showProfile(data : Datalistuser) {
-        Log.d(TAG, "7")
         Glide.with(this)
             .load(data.profilePicture)
             .circleCrop()
+            .placeholder(R.drawable.ic_baseline_account_circle_24)
+            .error(R.drawable.ic_baseline_account_circle_24)
             .into(binding.imgProfile)
 
         binding.fullName.text = data.fullName
         binding.username.text = data.username
-
-
-    }
-
-    companion object {
-        private const val TAG = "ProfileFragment"
     }
 
 }

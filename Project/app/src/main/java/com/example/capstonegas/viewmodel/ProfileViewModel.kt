@@ -21,8 +21,9 @@ class ProfileViewModel(private val pref: UserPreference): ViewModel() {
         return pref.getUser().asLiveData()
     }
 
-    fun getDataUser(username: String) {
-        val client = ApiConfig.getApiService().getUserByUsername(username)
+    fun getDataUser(username: String, token: String) {
+        val bearer = "Bearer $token"
+        val client = ApiConfig.getApiService().getUserByUsername(bearer, username)
         Log.d("masuk client", "sip")
         client.enqueue(object : Callback<GetUserByUsernameResponse>{
             override fun onResponse(
