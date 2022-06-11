@@ -25,7 +25,7 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 
 if you are interested in discussing this project issues with us, please contact us or send an email to c22-ps180@bangkit.academy
 
-## Resource
+## Project Branches
 
 In our project is divided into four branches.
 
