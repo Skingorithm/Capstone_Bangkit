@@ -62,7 +62,7 @@ Authorization: Bearer Token (from Login)
 ```
 
 ### c.	/Ingredient/getIngredByName
--	Method : GET
+-	Method : POST
 -	Request Body:
 ```json
 {
@@ -141,7 +141,7 @@ ProfilePicture as STRING: non Mandatory
 ```
 
 ### c.	/User/getUserByUsername
--	Method: GET
+-	Method: POST
 -	Request Body:
 ```json
 {
