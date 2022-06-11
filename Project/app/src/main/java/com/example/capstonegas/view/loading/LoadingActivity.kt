@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityLoadingBinding
+import com.example.capstonegas.model.ResultData
 import com.example.capstonegas.view.camera.CameraActivity
 import com.example.capstonegas.view.resultskincare.ResultSkincareActivity
 import com.example.capstonegas.viewmodel.LoadingViewModel
@@ -27,7 +28,8 @@ class LoadingActivity : AppCompatActivity() {
         viewModel.data.observe(this) {
             if (it != null) {
                 val intent = Intent(this, ResultSkincareActivity::class.java)
-                intent.putExtra(ResultSkincareActivity.ML_DATA, it)
+                val result = ResultData(it.average, it.acne, it.peye, it.wrinkle, it.bspot, base64)
+                intent.putExtra(ResultSkincareActivity.ML_DATA, result)
                 startActivity(intent)
                 finish()
             }
