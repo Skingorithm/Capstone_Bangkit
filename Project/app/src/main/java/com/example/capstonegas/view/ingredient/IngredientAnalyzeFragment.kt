@@ -36,7 +36,6 @@ class IngredientAnalyzeFragment : Fragment() {
     private lateinit var rvIngredient: RecyclerView
     private lateinit var binding: FragmentIngredientAnalyzeBinding
     private var allIngredient: List<DatalistsetItem>? = null
-    private lateinit var listIngredient: List<String>
     private val viewModel : IngredientAnalyzeViewModel by viewModels {
         ViewModelFactory(UserPreference.getInstance(requireContext().dataStore))
     }
@@ -65,12 +64,8 @@ class IngredientAnalyzeFragment : Fragment() {
 
         }
 
-        if (token != null) {
-            viewModel.getAllIngredient(token!!)
-        }
-
         viewModel.allIngredient.observe(viewLifecycleOwner) {
-            Log.d("isi all ingridient:", it.toString())
+            Log.d("isi all ingredient:", it.toString())
             if (it != null) {
                 allIngredient = it
             }
@@ -79,10 +74,6 @@ class IngredientAnalyzeFragment : Fragment() {
 
         // string-array
         val ingredientList = resources.getStringArray(R.array.listIngredients)
-
-//        for(item in allIngredient!!){
-//            item.ingredName?.let { Log.d("IngredientFragment", it) }
-//        }
 
         rvIngredient = binding.recyclerView
         ingredientAdapter = IngredientAdapter(ingredient)
@@ -119,7 +110,6 @@ class IngredientAnalyzeFragment : Fragment() {
                 if (!newText.isNullOrEmpty()) {
                     binding.listIngredients.visibility = View.VISIBLE
                     arrayAdapter.filter.filter(newText)
-//                    newText.let { token?.let { it1 -> viewModel.getIngredient(it1, it) } }
                 } else {
                     showLoading(false)
                     binding.listIngredients.visibility = View.INVISIBLE

@@ -50,34 +50,6 @@ class IngredientAnalyzeViewModel(private val pref: UserPreference) : ViewModel()
         })
     }
 
-    fun getAllIngredient(token: String) {
-        val bearer = "Bearer $token"
-        Log.d(TAG,"ini $bearer")
-        val client = ApiConfig.getApiService().getAllIngredient(bearer)
-        client.enqueue(object: Callback<AllIngredientResponse> {
-            override fun onResponse(
-                call: Call<AllIngredientResponse>,
-                response: Response<AllIngredientResponse>
-            ) {
-                Log.d(TAG,"ini masuk response")
-                if (response.isSuccessful) {
-                    _allIngredient.value = response.body()?.datalistset
-                    Log.d(TAG,"ini berhasil ")
-                    Log.d(TAG, _allIngredient.value.toString())
-                }
-
-                else {
-                    Log.e(TAG, "onFailure: ${response.message()}")
-
-                }
-            }
-
-            override fun onFailure(call: Call<AllIngredientResponse>, t: Throwable) {
-                Log.e(TAG, "onFailure: ${t.message.toString()}")
-            }
-        })
-    }
-
     companion object {
         private const val TAG = "IngredientViewModel"
     }
