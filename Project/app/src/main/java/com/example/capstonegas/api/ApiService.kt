@@ -58,9 +58,11 @@ interface ApiService {
     ): Call<Any>
 
     // Get User by Username
-    @GET("/User/getUserByUsername")
+    @FormUrlEncoded
+    @POST("/User/getUserByUsername")
     fun getUserByUsername(
-        @Query("Username") username: String
+        @Header("Authorization") token : String,
+        @Field("Username") username: String
     ): Call<GetUserByUsernameResponse>
 
 }
