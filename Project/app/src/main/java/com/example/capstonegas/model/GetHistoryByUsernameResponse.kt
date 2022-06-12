@@ -17,38 +17,35 @@ data class GetHistoryByUsernameResponse(
 data class DatalistsetHistory(
 
 	@field:SerializedName("createdAt")
-	val createdAt: String? = null,
+	val createdAt: String,
 
 	@field:SerializedName("ScanDate")
-	val scanDate: String? = null,
+	val scanDate: String,
 
 	@field:SerializedName("Username")
-	val username: String? = null,
+	val username: String,
 
 	@field:SerializedName("Total")
-	val total: Int? = null,
-
-	@field:SerializedName("FaceShape")
-	val faceShape: String? = null,
+	val total: Int,
 
 	@field:SerializedName("Photo")
-	val photo: String? = null,
+	val photo: String,
 
 	@field:SerializedName("Jerawat")
-	val jerawat: Int? = null,
+	val jerawat: Int,
 
 	@field:SerializedName("FlekHitam")
-	val flekHitam: Int? = null,
+	val flekHitam: Int,
 
 	@field:SerializedName("id")
-	val id: Int? = null,
+	val id: Int,
 
 	@field:SerializedName("MataPanda")
-	val mataPanda: Int? = null,
+	val mataPanda: Int,
 
 	@field:SerializedName("Kerutan")
-	val kerutan: Int? = null,
+	val kerutan: Int,
 
 	@field:SerializedName("updatedAt")
-	val updatedAt: String? = null
+	val updatedAt: String,
 ) : Parcelable
