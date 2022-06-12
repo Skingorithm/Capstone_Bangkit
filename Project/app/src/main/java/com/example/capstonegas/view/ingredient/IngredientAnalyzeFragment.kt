@@ -2,7 +2,6 @@ package com.example.capstonegas.view.ingredient
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,11 +14,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.capstonegas.R
-import com.example.capstonegas.adapter.IngredientAdapter
 import com.example.capstonegas.databinding.FragmentIngredientAnalyzeBinding
 import com.example.capstonegas.model.Datalistset
 import com.example.capstonegas.model.DatalistsetItem
@@ -31,18 +26,14 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 
 class IngredientAnalyzeFragment : Fragment() {
 
-    private lateinit var ingredientAdapter: IngredientAdapter
     private lateinit var arrayAdapter: ArrayAdapter<String>
-    private lateinit var rvIngredient: RecyclerView
     private lateinit var binding: FragmentIngredientAnalyzeBinding
     private var allIngredient: List<DatalistsetItem>? = null
     private val viewModel : IngredientAnalyzeViewModel by viewModels {
         ViewModelFactory(UserPreference.getInstance(requireContext().dataStore))
     }
-    private val ingredient = Datalistset()
-
     private lateinit var searchUser: SearchView
-    private var token: String? = null
+    private var token: String = ""
     private lateinit var listView: ListView
 
     override fun onCreateView(
@@ -57,40 +48,36 @@ class IngredientAnalyzeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val ingredientList = resources.getStringArray(R.array.listIngredients)
 
         viewModel.getUser().observe(viewLifecycleOwner) {
             token = it.token
-            Log.d("User Ingredient", token!!)
-
         }
 
         viewModel.allIngredient.observe(viewLifecycleOwner) {
-            Log.d("isi all ingredient:", it.toString())
             if (it != null) {
                 allIngredient = it
             }
-
         }
 
-        // string-array
-        val ingredientList = resources.getStringArray(R.array.listIngredients)
-
-        rvIngredient = binding.recyclerView
-        ingredientAdapter = IngredientAdapter(ingredient)
-        rvIngredient.adapter = ingredientAdapter
         searchUser = binding.searchIngredients
         searchUser.queryHint = "Cari Ingredient"
         listView = binding.listIngredients
         arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, ingredientList)
         listView.adapter = arrayAdapter
 
-        showRecyclerView(ingredient)
-
         searchUser.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (ingredientList.contains(query)) {
                     arrayAdapter.filter.filter(query)
-                    query.let { token?.let { it1 -> viewModel.getIngredient(it1, query.toString()) } }
+                    query.let { token.let { it1 -> viewModel.getIngredient(it1, query.toString()) } }
+                    viewModel.ingredient.observe(viewLifecycleOwner) {
+                        if (it != null) {
+                            showCardIngredient(it)
+                        }
+
+                    }
+
                     showLoading(true)
                     binding.imgSearch.visibility = View.INVISIBLE
                     binding.textImgSearch.visibility = View.INVISIBLE
@@ -98,6 +85,7 @@ class IngredientAnalyzeFragment : Fragment() {
                 } else {
                     Toast.makeText(requireContext(), "Ingredient tidak ditemukan", Toast.LENGTH_SHORT).show()
                     showLoading(false)
+                    binding.cardView.visibility = View.INVISIBLE
                     binding.listIngredients.visibility = View.INVISIBLE
                     binding.imgSearch.visibility = View.VISIBLE
                     binding.textImgSearch.visibility = View.VISIBLE
@@ -110,19 +98,19 @@ class IngredientAnalyzeFragment : Fragment() {
                 if (!newText.isNullOrEmpty()) {
                     binding.listIngredients.visibility = View.VISIBLE
                     arrayAdapter.filter.filter(newText)
+                    binding.cardView.visibility = View.INVISIBLE
+                    binding.imgSearch.visibility = View.VISIBLE
+                    binding.textImgSearch.visibility = View.VISIBLE
                 } else {
                     showLoading(false)
                     binding.listIngredients.visibility = View.INVISIBLE
+                    binding.cardView.visibility = View.INVISIBLE
+                    binding.imgSearch.visibility = View.VISIBLE
+                    binding.textImgSearch.visibility = View.VISIBLE
                 }
                 return true
             }
         })
-
-        viewModel.ingredient.observe(viewLifecycleOwner) {
-            if (it != null) {
-                showRecyclerView(it)
-            }
-        }
 
         viewModel.isLoading.observe(viewLifecycleOwner) {
             if (it) {
@@ -133,11 +121,13 @@ class IngredientAnalyzeFragment : Fragment() {
         }
     }
 
-    private fun showRecyclerView(ingredient: Datalistset) {
-        rvIngredient.layoutManager = LinearLayoutManager(activity)
-        ingredientAdapter = IngredientAdapter(ingredient)
-        rvIngredient.adapter = ingredientAdapter
-        rvIngredient.itemAnimator = DefaultItemAnimator()
+    private fun showCardIngredient(data: Datalistset) {
+        if (data.ingredName != null) {
+            binding.cardView.visibility = View.VISIBLE
+            binding.ingredientName.text = data.ingredName
+            binding.detailFunction.text = data.ingredFunction
+            binding.detailEffect.text = data.ingredEffect
+        }
     }
 
     private fun showLoading(state: Boolean) {
