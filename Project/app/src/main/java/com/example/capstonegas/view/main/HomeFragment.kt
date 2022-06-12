@@ -74,7 +74,7 @@ class HomeFragment : Fragment() {
         }
 
         homeViewModel.listHistory.observe(viewLifecycleOwner) {
-            if (it != null) {
+            if (it.isNotEmpty()) {
                 showGraph(it)
             } else {
                 binding.lineChart.visibility = View.GONE
@@ -128,9 +128,6 @@ class HomeFragment : Fragment() {
         binding.imgButtonCheckFace.setOnClickListener {
             val intent = Intent(context, UploadActivity::class.java)
             startActivity(intent)
-        }
-        binding.imgButtonIngredient.setOnClickListener {
-            Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_navigation_ingredients)
         }
     }
 }

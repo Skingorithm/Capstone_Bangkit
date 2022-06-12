@@ -3,15 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_navigation"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/navigation_home">
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="com.example.capstonegas.view.main.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_navigation_ingredients"
-            app:destination="@id/navigation_ingredients" />
     </fragment>
     <fragment
         android:id="@+id/navigation_routines"
