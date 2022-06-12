@@ -5,8 +5,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
@@ -18,6 +16,7 @@ import com.example.capstonegas.model.UserPreference
 import com.example.capstonegas.view.main.MainActivity
 import com.example.capstonegas.viewmodel.AddRoutineViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
+import java.util.*
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 class AddRoutineActivity : AppCompatActivity() {
@@ -95,6 +94,7 @@ class AddRoutineActivity : AppCompatActivity() {
 
         viewModel.isSuccess.observe(this) {
             if (it == true) {
+                Toast.makeText(this, "Berhasil menambahkan rutinitas", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }
@@ -172,6 +172,11 @@ class AddRoutineActivity : AppCompatActivity() {
         }
 
         binding.datePickerButton.setOnClickListener {
+            //Get current date month and year
+            val c = Calendar.getInstance()
+            val mYear = c.get(Calendar.YEAR)
+            val mMonth = c.get(Calendar.MONTH)
+            val mDay = c.get(Calendar.DAY_OF_MONTH)
             val datePicker: android.app.DatePickerDialog = android.app.DatePickerDialog(
                 // pass the Context
                 this,
@@ -180,13 +185,13 @@ class AddRoutineActivity : AppCompatActivity() {
                 datePickerDialogListener,
                 // default year when the date picker
                 // dialog is opened
-                2022,
+                mYear,
                 // default month when the date picker
                 // dialog is opened (0-11)
-                1,
+                mMonth,
                 // default day of month when the date picker
                 // dialog is opened
-                1
+                mDay
             )
             datePicker.show()
         }
