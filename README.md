@@ -223,7 +223,7 @@ newPassword as STRING: Mandatory
 -	Request Body:
 ```json
 {
-    "Username": "yusifaoktria",
+    "Username": "username",
     "Password": "test1234"
 }
 ```
