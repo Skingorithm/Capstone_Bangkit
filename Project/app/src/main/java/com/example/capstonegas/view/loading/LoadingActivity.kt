@@ -1,14 +1,12 @@
 package com.example.capstonegas.view.loading
 
 import android.content.Intent
-import android.graphics.Camera
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityLoadingBinding
 import com.example.capstonegas.model.ResultData
-import com.example.capstonegas.view.camera.CameraActivity
+import com.example.capstonegas.view.camera.UploadActivity
 import com.example.capstonegas.view.resultskincare.ResultSkincareActivity
 import com.example.capstonegas.viewmodel.LoadingViewModel
 
@@ -28,7 +26,16 @@ class LoadingActivity : AppCompatActivity() {
         viewModel.data.observe(this) {
             if (it != null) {
                 val intent = Intent(this, ResultSkincareActivity::class.java)
-                val result = ResultData(it.average, it.acne, it.peye, it.wrinkle, it.bspot, base64)
+                val result = it.average?.let { it1 -> it.acne?.let { it2 ->
+                    it.peye?.let { it3 ->
+                        it.wrinkle?.let { it4 ->
+                            it.bspot?.let { it5 ->
+                                ResultData(it1,
+                                    it2, it3, it4, it5, base64)
+                            }
+                        }
+                    }
+                } }
                 intent.putExtra(ResultSkincareActivity.ML_DATA, result)
                 startActivity(intent)
                 finish()
@@ -61,7 +68,7 @@ class LoadingActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding.btnRephoto.setOnClickListener {
-            val intent = Intent(this, CameraActivity::class.java)
+            val intent = Intent(this, UploadActivity::class.java)
             startActivity(intent)
             finish()
         }

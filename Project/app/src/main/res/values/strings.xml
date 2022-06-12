@@ -135,7 +135,8 @@
     <string name="text_number_3">3</string>
     <string name="text_number_4">4</string>
     <string name="bpsotName">Black Spot</string>
-    <string name="peyeName">Eye Score</string>
+    <string name="peyeName">Mata Panda</string>
+    <string name="acne_desc_result">Lorem Ipsum</string>
 
     <string-array name="listIngredients">
         <item>Niacinamide</item>

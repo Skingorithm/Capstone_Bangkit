@@ -7,20 +7,20 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class ResultData(
     @field:SerializedName("average")
-    val average: Double? = null,
+    val average: Double,
 
     @field:SerializedName("acne")
-    val acne: Double? = null,
+    val acne: Double,
 
     @field:SerializedName("peye")
-    val peye: Double? = null,
+    val peye: Double,
 
     @field:SerializedName("wrinkle")
-    val wrinkle: Double? = null,
+    val wrinkle: Double,
 
     @field:SerializedName("bspot")
-    val bspot: Double? = null,
+    val bspot: Double,
 
     @field:SerializedName("image")
-    val image: String? = null,
+    val image: String,
 ): Parcelable

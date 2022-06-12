@@ -19,7 +19,6 @@ import com.example.capstonegas.view.loading.LoadingActivity
 import com.example.capstonegas.view.main.MainActivity
 import java.io.*
 
-
 class UploadActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUploadBinding
     private var getFile: File? = null
@@ -49,7 +48,7 @@ class UploadActivity : AppCompatActivity() {
         if(getFile != null){
             val file = reduceFileImage(getFile as File)
             val encodedImage = encodeImage(file)
-//            writeToFile(encodedImage, applicationContext)
+            writeToFile(encodedImage, applicationContext)
             val intent = Intent(this, LoadingActivity::class.java)
             intent.putExtra("image", encodedImage)
             startActivity(intent)
@@ -68,7 +67,7 @@ class UploadActivity : AppCompatActivity() {
         }
         val bm = BitmapFactory.decodeStream(fis)
         val baos = ByteArrayOutputStream()
-        bm.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        bm.compress(Bitmap.CompressFormat.JPEG, 75, baos)
         val b = baos.toByteArray()
         //Base64.encode
         return Base64.encodeToString(b, Base64.NO_WRAP)
@@ -78,7 +77,7 @@ class UploadActivity : AppCompatActivity() {
         val path = context.filesDir
         val letDirectory = File(path, "Picture Base64")
         letDirectory.mkdirs()
-        val file = File(letDirectory, "test2.txt")
+        val file = File(letDirectory, "fotoku.txt")
         file.appendText(data)
         Log.d("File", "File path: $file")
     }
@@ -98,7 +97,7 @@ class UploadActivity : AppCompatActivity() {
                 BitmapFactory.decodeFile(myFile.path),
                 isBackCamera
             )
-            result.compress(Bitmap.CompressFormat.JPEG, 100, FileOutputStream(myFile))
+            result.compress(Bitmap.CompressFormat.JPEG, 75, FileOutputStream(myFile))
             getFile = myFile
             binding.previewImageView.setImageBitmap(result)
         }

@@ -26,15 +26,21 @@ class LoginViewModel(private val pref: UserPreference): ViewModel() {
                 if(response.isSuccessful){
                     val loginResponse = response.body()
                     if(loginResponse != null){
-                        Log.d(TAG, "Hasil onResponse: Tidak Error")
-                        _loginSuccess.value = true
-                        val token = loginResponse.accessToken
-                        if (token != null) {
-                            login(userName, token)
+                        if(loginResponse.message != "error") {
+                            Log.d(TAG, "Hasil onResponse: Tidak Error")
+                            _loginSuccess.value = true
+                            val token = loginResponse.accessToken
+                            if (token != null) {
+                                login(userName, token)
+                            }
+                        }
+                        else{
+                            Log.d(TAG, "Hasil onResponse: Error")
+                            _loginSuccess.value = false
                         }
                     }
                     else{
-                        Log.e(TAG, "ERROR LOGIN USER: ${loginResponse?.message}")
+                        _loginSuccess.value = false
                     }
                 }
                 else if(response.code() == 401){

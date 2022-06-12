@@ -23,6 +23,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(pref) as T
             }
+            modelClass.isAssignableFrom(ResultSkincareViewModel::class.java) -> {
+                ResultSkincareViewModel(pref) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

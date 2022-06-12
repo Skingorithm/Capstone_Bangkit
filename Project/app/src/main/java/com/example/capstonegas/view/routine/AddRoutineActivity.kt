@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -89,8 +90,24 @@ class AddRoutineActivity : AppCompatActivity() {
             actionBar.setDisplayHomeAsUpEnabled(true)
         }
 
-        viewModel.getUser().observe(this) {
-            token = it.token
+        binding.progressBar3.visibility = android.view.View.GONE
+        viewModel.isLoading.observe(this) {
+            if (it) {
+                binding.progressBar3.visibility = android.view.View.VISIBLE
+            } else {
+                binding.progressBar3.visibility = android.view.View.GONE
+            }
+        }
+
+        viewModel.isSuccess.observe(this) {
+            if (it == true) {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
+            else{
+                // Show Toast "Tidak bisa menyimpan rutinitas"
+                Toast.makeText(this, "Tidak bisa menyimpan rutinitas", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
