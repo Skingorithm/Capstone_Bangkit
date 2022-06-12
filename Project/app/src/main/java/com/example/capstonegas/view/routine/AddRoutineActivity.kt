@@ -22,8 +22,6 @@ import com.example.capstonegas.viewmodel.ViewModelFactory
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 class AddRoutineActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddRoutineBinding
-    private var token: String? = null
-    private var userName: String? = null
     private val viewModel: AddRoutineViewModel by viewModels{
         ViewModelFactory(UserPreference.getInstance(dataStore))
     }
@@ -72,10 +70,6 @@ class AddRoutineActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddRoutineBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        viewModel.getUser().observe(this) {
-            token = it.token
-        }
 
         setupAction()
 
@@ -148,12 +142,10 @@ class AddRoutineActivity : AppCompatActivity() {
                 notifyHour == "XX:XX" -> binding.timeNull.error = "Notify time is required"
                 alarmDate == "YYYY/MM/DD" -> binding.dateNull.error = "Alarm date is required"
                 else -> {
-                    token?.let { it1 -> userName?.let { it2 ->
-                        viewModel.postRoutine(it1, routinityName, notifyHour, alarmDate, fifteenBefore, thirtyBefore, repeatValue,
-                            it2
-                        )
-                    } }
-                    finish()
+                    viewModel.getUser().observe(this){
+                        viewModel.postRoutine(it.token, routinityName, notifyHour, alarmDate, fifteenBefore, thirtyBefore, repeatValue, it.name)
+                    }
+//                    finish()
                 }
             }
 

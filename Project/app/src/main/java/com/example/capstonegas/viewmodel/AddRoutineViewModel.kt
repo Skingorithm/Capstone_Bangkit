@@ -28,7 +28,7 @@ class AddRoutineViewModel(private val pref: UserPreference): ViewModel() {
     fun postRoutine(token: String, routinityName: String, notifyHour: String, alarmDate: String,
                     fifteenBefore: Boolean, thirtyBefore:Boolean, repeatValue: Int, userName: String){
         _isLoading.value = true
-        val client = ApiConfig.getApiService().insertAlarm(token, routinityName, notifyHour, alarmDate, fifteenBefore, thirtyBefore, repeatValue, userName)
+        val client = ApiConfig.getApiService().insertAlarm("Bearer $token", routinityName, notifyHour, alarmDate, fifteenBefore, thirtyBefore, repeatValue, userName)
         client.enqueue(object: Callback<InsertAlarmResponse>{
             override fun onResponse(
                 call: Call<InsertAlarmResponse>,

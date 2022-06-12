@@ -221,4 +221,8 @@
         <item>Centella Asiatica Root Extract</item>
         <item>Ceramide Ng</item>
     </string-array>
+
+    <string name="above75" >Kondisi %s kamu termasuk bagus! pertahankan pola skincaremu  yang sekarang ya!</string>
+    <string name="fiftyUntil75">Kondisi %s kamu masih normal, tapi kamu bisa jaga dan improve dengan skincare yang tepat </string>
+    <string name="below50">Kondisi %s kamu dibawah rata-rata nih, coba mulai untuk mencari skincare yang tepat untuk kamu ya! Semangat! </string>
 </resources>
