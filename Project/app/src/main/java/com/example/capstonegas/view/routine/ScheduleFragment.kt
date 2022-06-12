@@ -19,7 +19,7 @@ import com.example.capstonegas.model.AlarmItem
 import com.example.capstonegas.model.UserPreference
 import com.example.capstonegas.viewmodel.ScheduleViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
-import java.text.SimpleDateFormat
+import java.text.DateFormat.getDateInstance
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name="user_preferences")
 class ScheduleFragment() : Fragment() {
@@ -45,9 +45,11 @@ class ScheduleFragment() : Fragment() {
         rvAlarm = binding.rvMorning
         rvAlarm.setHasFixedSize(true)
 
+        binding.dateSchedule.text = getDateInstance().format(System.currentTimeMillis())
+
         viewModel.getUser().observe(viewLifecycleOwner) {
             if(it!=null){
-                val now = SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis())
+                val now = getDateInstance().format(System.currentTimeMillis())
                 viewModel.postAlarm(it.token, it.name, now)
             }
         }
@@ -70,6 +72,7 @@ class ScheduleFragment() : Fragment() {
     private fun showAlarmList(listAlarm: ArrayList<AlarmItem>){
         rvAlarm.layoutManager = LinearLayoutManager(requireContext())
         rvAlarm.adapter = ListRoutineAdapter(listAlarm)
+        binding.textSkincareRoutine2.text = listAlarm.size.toString()
     }
 
     //function to show progress bar or not

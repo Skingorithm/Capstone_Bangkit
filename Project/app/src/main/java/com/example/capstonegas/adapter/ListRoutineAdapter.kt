@@ -16,14 +16,12 @@ class ListRoutineAdapter(private val listRoutine: ArrayList<AlarmItem>): Recycle
     }
 
     override fun onBindViewHolder(holder: ListRoutineAdapter.ListViewHolder, position: Int) {
+        val ordered = listRoutine.sortBy { it.notifyHour }
         holder.binding.checkBox.text = listRoutine[position].routinityName
         holder.binding.clockText.text = listRoutine[position].notifyHour
-
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = listRoutine.size
 
     class ListViewHolder(var binding: ItemRoutineBinding) : RecyclerView.ViewHolder(binding.root)
 }
