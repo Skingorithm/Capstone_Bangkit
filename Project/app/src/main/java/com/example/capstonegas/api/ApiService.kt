@@ -72,4 +72,17 @@ interface ApiService {
         @Field("Username") username: String
     ): Call<GetHistoryByUsernameResponse>
 
+    @POST("/History/insertHistory")
+    @FormUrlEncoded
+    fun postHistory(
+        @Header("Authorization") token : String,
+        @Field("Username") username: String,
+        @Field("ScanDate") scandate: String,
+        @Field("Photo") photo: String,
+        @Field("Jerawat") jerawat: Int,
+        @Field("Kerutan") kerutan: Int,
+        @Field("FlekHitam") flekhitam: Int,
+        @Field("MataPanda") matapanda: Int,
+        @Field("Total") total: Int,
+    ): Call<InsertMLResponse>
 }

@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViewModel(){
         mainViewModel.getUser().observe(this) { user ->
-            Log.d("MainActivity", "user: $user")
+//            Log.d("MainActivity", "user: $user")
             if (!user.isLogin) {
                 startActivity(Intent(this, WelcomeActivity::class.java))
                 finish()

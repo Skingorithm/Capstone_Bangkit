@@ -81,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                         else if(it == false){
                             AlertDialog.Builder(this).apply {
                                 setTitle("Oops!")
-                                setMessage("Email/Password Salah.")
+                                setMessage("Tidak Bisa Login (Email/Password Salah atau Kesalahan Server)")
                                 setPositiveButton("Coba lagi") { _, _ ->
                                     // do nothing
                                 }

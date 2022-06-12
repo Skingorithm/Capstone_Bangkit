@@ -18,8 +18,8 @@ class AddRoutineViewModel(private val pref: UserPreference): ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private val _isSuccess = MutableLiveData<Boolean>()
-    val isSuccess: LiveData<Boolean> = _isSuccess
+    private val _isSuccess = MutableLiveData<Boolean?>()
+    val isSuccess: MutableLiveData<Boolean?> = _isSuccess
 
     fun getUser(): LiveData<UserModel> {
         return pref.getUser().asLiveData()
@@ -35,8 +35,10 @@ class AddRoutineViewModel(private val pref: UserPreference): ViewModel() {
                 response: Response<InsertAlarmResponse>
             ) {
                 if(response.isSuccessful){
-                    _isSuccess.value = response.body()?.status == "success"
-                    _isLoading.value = false
+                    if(response.body()?.status == "success"){
+                        _isSuccess.value = true
+                        _isLoading.value = false
+                    }
                 }
                 else{
                     _isSuccess.value = false
@@ -48,5 +50,6 @@ class AddRoutineViewModel(private val pref: UserPreference): ViewModel() {
                 _isSuccess.value = false
             }
         })
+        _isSuccess.value = null
     }
 }

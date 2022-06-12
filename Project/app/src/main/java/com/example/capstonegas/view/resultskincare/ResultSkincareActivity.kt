@@ -10,6 +10,7 @@ import android.transition.TransitionManager
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -44,20 +45,41 @@ class ResultSkincareActivity : AppCompatActivity() {
 
         data = intent.getParcelableExtra<ResultData>(ML_DATA) as ResultData
 
-        binding.imageResult.setImageBitmap(data.image?.let { Base64Util.convertStringToBitmap(it) })
-        binding.numberResult.text = "${data.average?.roundToInt()}/100"
+        binding.imageResult.setImageBitmap(data.image.let { Base64Util.convertStringToBitmap(it) })
+        binding.numberResult.text = "${data.average.roundToInt()}/100"
 
-        data.acne?.let { binding.acneProgressBarResult.setProgress(it.roundToInt()) }
-        binding.acneDesc.text = data.acne?.toString() + "%"
+        data.acne.let { binding.acneProgressBarResult.setProgress(it.roundToInt()) }
+        binding.acneDesc.text = data.acne.toString() + "%"
 
-        data.wrinkle?.let { binding.wrinkleProgressBarResult.setProgress(it.roundToInt()) }
-        binding.wrinkleDesc.text= data.wrinkle?.toString() + "%"
+        data.wrinkle.let { binding.wrinkleProgressBarResult.setProgress(it.roundToInt()) }
+        binding.wrinkleDesc.text= data.wrinkle.toString() + "%"
 
-        data.bspot?.let { binding.bspotProgressBarResult.setProgress(it.roundToInt()) }
-        binding.bspotDesc.text = data.bspot?.toString() + "%"
+        data.bspot.let { binding.bspotProgressBarResult.setProgress(it.roundToInt()) }
+        binding.bspotDesc.text = data.bspot.toString() + "%"
 
-        data.peye?.let { binding.peyeProgressBarResult.setProgress(it.roundToInt()) }
-        binding.peyeDesc.text = data.peye?.toString() + "%"
+        data.peye.let { binding.peyeProgressBarResult.setProgress(it.roundToInt()) }
+        binding.peyeDesc.text = data.peye.toString() + "%"
+
+        binding.progressBar2.visibility = View.GONE
+        viewModel.isLoading.observe(this) {
+            if (it) {
+                binding.progressBar2.visibility = View.VISIBLE
+            } else {
+                binding.progressBar2.visibility = View.GONE
+            }
+        }
+
+        viewModel.isError.observe(this) {
+            if (it == true) {
+                binding.progressBar2.visibility = View.GONE
+                //Tost that display error uploading data
+                Toast.makeText(this, "Error uploading data", Toast.LENGTH_SHORT).show()
+            }
+            else if(it == false){
+                binding.progressBar2.visibility = View.GONE
+                finish()
+            }
+        }
 
         setupView()
         setupAction(data)
@@ -133,9 +155,8 @@ class ResultSkincareActivity : AppCompatActivity() {
             viewModel.getUser().observe(this) {
                 token = it.token
                 userName = it.name
-                viewModel.postHistory(token, name, data)
+                viewModel.postHistory(token, userName, data)
             }
-            finish()
         }
     }
 
