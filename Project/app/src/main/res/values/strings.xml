@@ -9,6 +9,9 @@
     <string name="subCta1">Cari tahu kondisi wajahmu sekarang!</string>
     <string name="cta2">Cari Tahu Bahan-Bahan Skincare</string>
     <string name="subCta2">Informasi detail mengenai kandungan bahan skincare</string>
+    <string name="progress_wajah">Perkembangan Kondisi Wajah</string>
+    <string name="image_chart">Chart Progress Wajah</string>
+    <string name="text_image_chart">Kamu belum pernah mengecek kondisi wajahmu, yuk segera coba fitur deteksi kondisi wajah!</string>
 
     <!-- Profile   -->
     <string name="profile">Profil Saya</string>
@@ -21,9 +24,9 @@
     <string name="desc_spinner">Months</string>
     <string name="menu_logout">Keluar</string>
     <string name="alert_title_logout">Keluar</string>
-    <string name="alert_msg_logout">Apakah Anda yakin untuk keluar dari akun Anda?</string>
+    <string name="alert_msg_logout">Apakah kamu yakin untuk keluar dari akun kamu?</string>
     <string name="alert_btn_logout">Iya</string>
-    <string name="empty_history">Anda belum memiliki histori kondisi wajah, ayo segera cek kondisi wajah Anda!</string>
+    <string name="empty_history">Kamu belum memiliki histori kondisi wajah, ayo segera cek kondisi wajah kamu!</string>
 
     <!-- Item History Skin    -->
     <string name="history_date">11 Mei 2022</string>
