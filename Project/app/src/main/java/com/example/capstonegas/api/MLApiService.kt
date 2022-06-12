@@ -14,4 +14,17 @@ interface MLApiService {
     fun postInput(
         @Body input: InputModel
     ): Call<MLResponse>
+
+    @POST("/History/insertHistory")
+    @FormUrlEncoded
+    fun postHistory(
+        @Field("Username") username: String,
+        @Field("Scandate") scandate: String,
+        @Field("Photo") photo: String,
+        @Field("Jerawat") jerawat: Int,
+        @Field("Kerutan") kerutan: Int,
+        @Field("FlekHitam") flekhitam: Int,
+        @Field("MataPanda") matapanda: Int,
+        @Field("Total") total: Int,
+    )
 }

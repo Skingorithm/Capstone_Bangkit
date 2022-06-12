@@ -1,27 +1,38 @@
 package com.example.capstonegas.view.resultskincare
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.AutoTransition
 import android.transition.TransitionManager
-import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.activity.viewModels
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import com.example.capstonegas.Base64Util
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityResultSkincareBinding
-import com.example.capstonegas.databinding.ItemResultSkincareBinding
-import com.example.capstonegas.model.MLResponse
-import com.example.capstonegas.model.Output
 import com.example.capstonegas.model.ResultData
+import com.example.capstonegas.model.UserPreference
+import com.example.capstonegas.viewmodel.ResultSkincareViewModel
+import com.example.capstonegas.viewmodel.ViewModelFactory
 import kotlin.math.roundToInt
 
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 class ResultSkincareActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityResultSkincareBinding
+    private lateinit var token: String
+    private lateinit var userName: String
+    private lateinit var data: ResultData
+
+    private val viewModel: ResultSkincareViewModel by viewModels{
+        ViewModelFactory(UserPreference.getInstance(dataStore))
+    }
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +42,7 @@ class ResultSkincareActivity : AppCompatActivity() {
 
         setupView()
 
-        val data = intent.getParcelableExtra<ResultData>(ML_DATA) as ResultData
+        data = intent.getParcelableExtra<ResultData>(ML_DATA) as ResultData
 
         binding.imageResult.setImageBitmap(data.image?.let { Base64Util.convertStringToBitmap(it) })
         binding.numberResult.text = "${data.average?.roundToInt()}/100"
@@ -49,7 +60,7 @@ class ResultSkincareActivity : AppCompatActivity() {
         binding.peyeDesc.text = data.peye?.toString() + "%"
 
         setupView()
-        setupAction()
+        setupAction(data)
     }
 
     private fun setupView() {
@@ -65,7 +76,7 @@ class ResultSkincareActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun setupAction(){
+    private fun setupAction(data: ResultData) {
         binding.acneExpandButton.setOnClickListener {
             if (binding.acneExpandableLayout.visibility == View.GONE) {
                 TransitionManager.beginDelayedTransition(binding.acneCardView, AutoTransition())
@@ -112,6 +123,19 @@ class ResultSkincareActivity : AppCompatActivity() {
                 binding.peyeExpandableLayout.visibility = View.GONE
                 binding.peyeExpandButton.setImageResource(R.drawable.ic_baseline_expand_less_24)
             }
+        }
+
+        binding.btnNotSaveResult.setOnClickListener {
+            finish()
+        }
+
+        binding.btnSaveResult.setOnClickListener {
+            viewModel.getUser().observe(this) {
+                token = it.token
+                userName = it.name
+                viewModel.postHistory(token, name, data)
+            }
+            finish()
         }
     }
 
