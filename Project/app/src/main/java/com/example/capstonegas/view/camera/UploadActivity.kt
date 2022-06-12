@@ -69,7 +69,7 @@ class UploadActivity : AppCompatActivity() {
         }
         val bm = BitmapFactory.decodeStream(fis)
         val baos = ByteArrayOutputStream()
-        bm.compress(Bitmap.CompressFormat.JPEG, 75, baos)
+        bm.compress(Bitmap.CompressFormat.JPEG, 25, baos)
         val b = baos.toByteArray()
         //Base64.encode
         return Base64.encodeToString(b, Base64.NO_WRAP)
