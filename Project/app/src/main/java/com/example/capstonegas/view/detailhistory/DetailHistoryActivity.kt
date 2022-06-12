@@ -13,6 +13,7 @@ import com.example.capstonegas.Base64Util
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityDetailHistoryBinding
 import com.example.capstonegas.model.DatalistsetHistory
+import kotlin.math.roundToInt
 
 class DetailHistoryActivity : AppCompatActivity() {
 
@@ -52,15 +53,51 @@ class DetailHistoryActivity : AppCompatActivity() {
 
         binding.acneProgressBarResult.setProgress(data.jerawat)
         binding.acneDesc.text = data.jerawat.toString() + "%"
+        if(data.jerawat > 75){
+            binding.acneExplanation.text = resources.getString(R.string.above75, "Acne")
+        }
+        else if(data.jerawat in 50..75){
+            binding.acneExplanation.text = resources.getString(R.string.fiftyUntil75, "Acne")
+        }
+        else{
+            binding.acneExplanation.text = resources.getString(R.string.below50, "Acne")
+        }
 
         binding.wrinkleProgressBarResult.setProgress(data.kerutan)
         binding.wrinkleDesc.text = data.jerawat.toString() + "%"
+        if(data.kerutan > 75){
+            binding.wrinkleExplanation.text = resources.getString(R.string.above75, "Wrinkle")
+        }
+        else if(data.kerutan in 50..75){
+            binding.wrinkleExplanation.text = resources.getString(R.string.fiftyUntil75, "Wrinkle")
+        }
+        else{
+            binding.wrinkleExplanation.text = resources.getString(R.string.below50, "Wrinkle")
+        }
 
         binding.bspotProgressBarResult.setProgress(data.flekHitam)
         binding.bspotDesc.text = data.flekHitam.toString() + "%"
+        if(data.flekHitam > 75){
+            binding.bspotExplanation.text = resources.getString(R.string.above75, "B Spot")
+        }
+        else if(data.flekHitam in 50..75){
+            binding.bspotExplanation.text = resources.getString(R.string.fiftyUntil75, "B Spot")
+        }
+        else{
+            binding.bspotExplanation.text = resources.getString(R.string.below50, "B Spot")
+        }
 
         binding.peyeProgressBarResult.setProgress(data.mataPanda)
         binding.peyeDesc.text = data.mataPanda.toString() + "%"
+        if(data.mataPanda > 75){
+            binding.peyeExplanation.text = resources.getString(R.string.above75, "P Eye")
+        }
+        else if(data.mataPanda in 50..75){
+            binding.peyeExplanation.text = resources.getString(R.string.fiftyUntil75, "P Eye")
+        }
+        else{
+            binding.peyeExplanation.text = resources.getString(R.string.below50, "P Eye")
+        }
     }
 
     private fun setupActionDetail() {

@@ -50,15 +50,51 @@ class ResultSkincareActivity : AppCompatActivity() {
 
         data.acne.let { binding.acneProgressBarResult.setProgress(it.roundToInt()) }
         binding.acneDesc.text = data.acne.toString() + "%"
+        if(data.acne.roundToInt() > 75){
+            binding.acneExplanation.text = resources.getString(R.string.above75, "Acne")
+        }
+        else if(data.acne.roundToInt() in 50..75){
+            binding.acneExplanation.text = resources.getString(R.string.fiftyUntil75, "Acne")
+        }
+        else{
+            binding.acneExplanation.text = resources.getString(R.string.below50, "Acne")
+        }
 
         data.wrinkle.let { binding.wrinkleProgressBarResult.setProgress(it.roundToInt()) }
         binding.wrinkleDesc.text= data.wrinkle.toString() + "%"
+        if(data.wrinkle.roundToInt() > 75){
+            binding.wrinkleExplanation.text = resources.getString(R.string.above75, "Kerutan")
+        }
+        else if(data.wrinkle.roundToInt() in 50..75){
+            binding.wrinkleExplanation.text = resources.getString(R.string.fiftyUntil75, "Kerutan")
+        }
+        else{
+            binding.wrinkleExplanation.text = resources.getString(R.string.below50, "Kerutan")
+        }
 
         data.bspot.let { binding.bspotProgressBarResult.setProgress(it.roundToInt()) }
         binding.bspotDesc.text = data.bspot.toString() + "%"
+        if(data.bspot.roundToInt() > 75){
+            binding.bspotExplanation.text = resources.getString(R.string.above75, "Flek Hitam")
+        }
+        else if(data.bspot.roundToInt() in 50..75){
+            binding.bspotExplanation.text = resources.getString(R.string.fiftyUntil75, "Flek Hitam")
+        }
+        else{
+            binding.bspotExplanation.text = resources.getString(R.string.below50, "Flek Hitam")
+        }
 
         data.peye.let { binding.peyeProgressBarResult.setProgress(it.roundToInt()) }
         binding.peyeDesc.text = data.peye.toString() + "%"
+        if(data.peye.roundToInt() > 75){
+            binding.peyeExplanation.text = resources.getString(R.string.above75, "Mata Panda")
+        }
+        else if(data.peye.roundToInt() in 50..75){
+            binding.peyeExplanation.text = resources.getString(R.string.fiftyUntil75, "Mata Panda")
+        }
+        else{
+            binding.peyeExplanation.text = resources.getString(R.string.below50, "Mata Panda")
+        }
 
         binding.progressBar2.visibility = View.GONE
         viewModel.isLoading.observe(this) {
