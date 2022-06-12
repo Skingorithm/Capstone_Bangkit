@@ -194,8 +194,9 @@
     <TextView
         android:id="@+id/text_image_chart"
         android:layout_width="324dp"
-        android:layout_height="34dp"
+        android:layout_height="40dp"
         android:alpha="0.7"
+        android:lines="2"
         android:lineSpacingExtra="2dp"
         android:text="@string/text_image_chart"
         android:textAlignment="center"
