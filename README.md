@@ -31,5 +31,5 @@ In our project is divided into four branches.
 
 1. [Mobile Development](https://github.com/Skingorithm/Capstone_Bangkit/tree/Mobile-Development)
 2. [Machine Learning](https://github.com/Skingorithm/Capstone_Bangkit/tree/Machine-Learning)
-3. [Cloud: Private API](https://github.com/Skingorithm/Capstone_Bangkit/tree/Cloud-Computing)
-4. [Cloud: Machine Learning Service](https://github.com/Skingorithm/skingorithm-face-recognition)
+3. [Cloud Computing: Private API](https://github.com/Skingorithm/Capstone_Bangkit/tree/Cloud-Computing)
+4. [Cloud Computing: Machine Learning Service](https://github.com/Skingorithm/skingorithm-face-recognition)
