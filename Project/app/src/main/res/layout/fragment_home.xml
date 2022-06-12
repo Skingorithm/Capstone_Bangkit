@@ -180,34 +180,32 @@
 
     <ImageView
         android:id="@+id/image_chart"
-        android:layout_width="409dp"
-        android:layout_height="269dp"
+        android:layout_width="399dp"
+        android:layout_height="180dp"
         android:contentDescription="@string/image_chart"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline4"
-        app:layout_constraintVertical_bias="0.29"
-        app:srcCompat="@drawable/chart"
-        android:visibility="invisible"/>
+        app:layout_constraintVertical_bias="0.026"
+        app:srcCompat="@drawable/chart" />
 
     <TextView
         android:id="@+id/text_image_chart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="34dp"
         android:alpha="0.7"
+        android:lineSpacingExtra="2dp"
         android:text="@string/text_image_chart"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:lineSpacingExtra="2dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_chart"
-        android:visibility="invisible"/>
+        app:layout_constraintTop_toBottomOf="@+id/image_chart" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
