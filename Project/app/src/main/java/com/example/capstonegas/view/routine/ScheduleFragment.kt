@@ -45,8 +45,6 @@ class ScheduleFragment() : Fragment() {
         rvAlarm = binding.rvMorning
         rvAlarm.setHasFixedSize(true)
 
-        BIDNING
-
         viewModel.getUser().observe(viewLifecycleOwner) {
             if(it!=null){
                 val now = SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis())
