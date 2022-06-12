@@ -1,9 +1,12 @@
 package com.example.capstonegas.view.register
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.activity.viewModels
@@ -12,6 +15,7 @@ import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityRegisterBinding
 import com.example.capstonegas.view.login.LoginActivity
 import com.example.capstonegas.viewmodel.RegisterViewModel
+import com.google.android.material.animation.AnimatorSetCompat.playTogether
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -22,8 +26,32 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        playAnimation()
+
         setupView()
         setupAction()
+    }
+
+    private fun playAnimation(){
+        val textView = ObjectAnimator.ofFloat(binding.textView, View.ALPHA, 1f).setDuration(500)
+        val textView2 = ObjectAnimator.ofFloat(binding.textView2, View.ALPHA, 1f).setDuration(500)
+        val imageView4 = ObjectAnimator.ofFloat(binding.imageView4, View.ALPHA, 1f).setDuration(500)
+        val nameTextLayout = ObjectAnimator.ofFloat(binding.nameTextLayout, View.ALPHA, 1f).setDuration(500)
+        val usernameTextLayout = ObjectAnimator.ofFloat(binding.usernameTextLayout, View.ALPHA, 1f).setDuration(500)
+        val emailTextLayout = ObjectAnimator.ofFloat(binding.emailTextLayout, View.ALPHA, 1f).setDuration(500)
+        val passTextLayout = ObjectAnimator.ofFloat(binding.passTextLayout, View.ALPHA, 1f).setDuration(500)
+        val registerButton = ObjectAnimator.ofFloat(binding.registerButton, View.ALPHA, 1f).setDuration(500)
+        val textView5 = ObjectAnimator.ofFloat(binding.textView5, View.ALPHA, 1f).setDuration(500)
+        val textView6 = ObjectAnimator.ofFloat(binding.textView6, View.ALPHA, 1f).setDuration(500)
+
+        val together = AnimatorSet().apply {
+            playTogether(registerButton, textView5, textView6)
+        }
+
+        AnimatorSet().apply {
+            playSequentially(textView, textView2, imageView4, nameTextLayout, usernameTextLayout, emailTextLayout, passTextLayout, together)
+            start()
+        }
     }
 
     private fun setupView() {

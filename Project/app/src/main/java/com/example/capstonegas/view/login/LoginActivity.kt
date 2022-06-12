@@ -1,5 +1,7 @@
 package com.example.capstonegas.view.login
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -11,8 +13,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModelProvider
-import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityLoginBinding
 import com.example.capstonegas.model.UserPreference
 import com.example.capstonegas.view.main.MainActivity
@@ -36,10 +36,31 @@ class LoginActivity : AppCompatActivity() {
 
         setupView()
         setupAction()
+        playAnimation()
 
         showLoading(false)
         loginViewModel.isLoading.observe(this) {
             showLoading(it)
+        }
+    }
+
+    private fun playAnimation(){
+        val textView = ObjectAnimator.ofFloat(binding.textView, View.ALPHA, 1f).setDuration(500)
+        val textView2 = ObjectAnimator.ofFloat(binding.textView2, View.ALPHA, 1f).setDuration(500)
+        val imageView4 = ObjectAnimator.ofFloat(binding.imageView4, View.ALPHA, 1f).setDuration(500)
+        val usernameTextField = ObjectAnimator.ofFloat(binding.usernameTextField, View.ALPHA, 1f).setDuration(500)
+        val passTextField = ObjectAnimator.ofFloat(binding.passTextField, View.ALPHA, 1f).setDuration(500)
+        val loginButton = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).setDuration(500)
+        val textView3 = ObjectAnimator.ofFloat(binding.textView3, View.ALPHA, 1f).setDuration(500)
+        val textView4 = ObjectAnimator.ofFloat(binding.textView4, View.ALPHA, 1f).setDuration(500)
+
+        val together = AnimatorSet().apply {
+            playTogether(loginButton, textView3, textView4)
+        }
+
+        AnimatorSet().apply{
+            playSequentially(textView, textView2, imageView4, usernameTextField, passTextField, together)
+            start()
         }
     }
 
