@@ -156,10 +156,10 @@ Username as STRING: Mandatory
 {
     "status": "success",
     "datalistset": {
-        "Username": "yusifaoktria",
-        "Email": "yusifaos@gmail.com",
+        "Username": "username",
+        "Email": "example@gmail.com",
         "Password": "$2b$10$RM13qQU5T5Pgrg/Bi./Yy.3rE2g82mVvNmwuI91VEDGCU/edr/A/W",
-        "FullName": "Yusifa Oktria Sageta",
+        "FullName": "Fullname Example",
         "ProfilePicture": null,
         "createdAt": "2022-05-31T09:52:48.000Z",
         "updatedAt": "2022-05-31T09:52:48.000Z"
