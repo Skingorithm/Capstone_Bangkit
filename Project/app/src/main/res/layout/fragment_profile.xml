@@ -88,30 +88,18 @@
         app:layout_constraintStart_toEndOf="@+id/img_profile"
         app:layout_constraintTop_toBottomOf="@+id/full_name" />
 
-    <Button
-        android:id="@+id/btn_edit"
-        style="@style/OutlinedButton"
-        android:layout_width="380dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/btn_edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_profile"
-        app:strokeColor="@color/primary_blue"
-        app:strokeWidth="1.5dp" />
+
 
     <View
         android:id="@+id/line_profile"
         android:layout_width="380dp"
         android:layout_height="2dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="40dp"
         android:background="@color/primary_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <TextView
         android:id="@+id/histori_kulit"
@@ -122,12 +110,12 @@
         style="@style/Title"
         android:text="@string/history"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/line_profile" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_history"
         android:layout_width="380dp"
-        android:layout_height="350dp"
+        android:layout_height="380dp"
         android:layout_marginTop="20dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
