@@ -55,8 +55,17 @@ class ScheduleFragment() : Fragment() {
         }
 
         viewModel.listAlarm.observe(viewLifecycleOwner) {
-            if(it!=null){
-                showAlarmList(it as ArrayList<AlarmItem>)
+            if (it != null) {
+                if(it.isNotEmpty()){
+                    showAlarmList(it as ArrayList<AlarmItem>)
+                } else{
+                    binding.imageView.visibility = View.VISIBLE
+                    binding.textView11.visibility = View.VISIBLE
+                }
+            }
+            else{
+                binding.imageView.visibility = View.VISIBLE
+                binding.textView11.visibility = View.VISIBLE
             }
         }
 
