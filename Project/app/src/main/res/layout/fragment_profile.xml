@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -126,14 +127,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_history"
         android:layout_width="380dp"
-        android:layout_height="454dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/histori_kulit"
-        android:layout_marginTop="20dp"
+        app:layout_constraintVertical_bias="0.057"
         tools:listitem="@layout/item_history" />
 
     <ProgressBar
