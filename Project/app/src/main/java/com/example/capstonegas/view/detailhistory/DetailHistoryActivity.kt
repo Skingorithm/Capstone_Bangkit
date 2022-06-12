@@ -47,7 +47,7 @@ class DetailHistoryActivity : AppCompatActivity() {
     private fun setupAction() {
         val data = intent.getParcelableExtra<DatalistsetHistory>("history") as DatalistsetHistory
 
-//        binding.imageResult.setImageBitmap(data.photo.let { Base64Util.convertStringToBitmap(it) })
+        binding.imageResult.setImageBitmap(data.photo.let { Base64Util.convertStringToBitmap(it) })
         binding.scanDate.text = data.scanDate
         binding.numberResult.text = "${data.total}/100"
 
