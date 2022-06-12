@@ -3,6 +3,7 @@ package com.example.capstonegas.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.capstonegas.model.UserPreference
+import com.example.capstonegas.view.routine.ScheduleFragment
 
 class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
@@ -28,6 +29,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             }
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(ScheduleViewModel::class.java) -> {
+                ScheduleViewModel(pref) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

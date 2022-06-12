@@ -30,66 +30,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Spinner
-                android:id="@+id/spinnerDate"
-                style="@style/Widget.AppCompat.Spinner.Underlined"
-                android:layout_width="120dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iconCalendar"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.52" />
-
-            <ImageButton
-                android:id="@+id/imageButton"
+            <TextView
+                android:id="@+id/textView13"
+                style="@style/Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:background="@color/white"
-                android:contentDescription="@string/desc_icon_notification"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:src="@drawable/ic_baseline_notifications_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.571" />
+                android:layout_marginStart="8dp"
+                android:text="DD/MM/YYYY"
+                app:layout_constraintBottom_toBottomOf="@+id/iconCalendar"
+                app:layout_constraintStart_toEndOf="@+id/iconCalendar"
+                app:layout_constraintTop_toTopOf="@+id/iconCalendar" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/text_skincare_routine_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/text_skincare_routine_1"
-        style="@style/Header"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardAppBar" />
-
-    <TextView
-        android:id="@+id/strip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
-        style="@style/Header"
-        android:text="@string/strip"
-        app:layout_constraintStart_toEndOf="@+id/text_skincare_routine_1"
-        app:layout_constraintTop_toBottomOf="@+id/cardAppBar" />
-
-    <TextView
         android:id="@+id/text_skincare_routine_2"
+        style="@style/Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Header"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:text="@string/text_skincare_routine_2"
-        app:layout_constraintStart_toEndOf="@+id/strip"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardAppBar" />
 
     <TextView
@@ -129,6 +91,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
                 tools:listitem="@layout/item_routine" />
+
+            <ProgressBar
+                android:id="@+id/progressBar4"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -85,4 +85,12 @@ interface ApiService {
         @Field("MataPanda") matapanda: Int,
         @Field("Total") total: Int,
     ): Call<InsertMLResponse>
+
+    @POST("/Alarm/getAlarmByDate")
+    @FormUrlEncoded
+    fun getAlarmByDate(
+        @Header("Authorization") token: String,
+        @Field("Username") username: String,
+        @Field("AlarmDate") alarmDate: String
+    ): Call<GetAlarmResponse>
 }

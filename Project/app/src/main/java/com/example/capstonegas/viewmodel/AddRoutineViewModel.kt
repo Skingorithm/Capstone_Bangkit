@@ -45,11 +45,9 @@ class AddRoutineViewModel(private val pref: UserPreference): ViewModel() {
                     _isLoading.value = false
                 }
             }
-
             override fun onFailure(call: Call<InsertAlarmResponse>, t: Throwable) {
                 _isSuccess.value = false
             }
         })
-        _isSuccess.value = null
     }
 }

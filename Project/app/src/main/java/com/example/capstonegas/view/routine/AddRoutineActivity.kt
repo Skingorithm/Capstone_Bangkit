@@ -18,6 +18,7 @@ import com.example.capstonegas.model.UserPreference
 import com.example.capstonegas.view.main.MainActivity
 import com.example.capstonegas.viewmodel.AddRoutineViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
+import java.text.SimpleDateFormat
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 class AddRoutineActivity : AppCompatActivity() {
@@ -95,6 +96,7 @@ class AddRoutineActivity : AppCompatActivity() {
 
         viewModel.isSuccess.observe(this) {
             if (it == true) {
+                Toast.makeText(this, "Berhasil menambahkan rutinitas", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }
@@ -172,6 +174,7 @@ class AddRoutineActivity : AppCompatActivity() {
         }
 
         binding.datePickerButton.setOnClickListener {
+            val now = SimpleDateFormat("dd").format(System.currentTimeMillis())
             val datePicker: android.app.DatePickerDialog = android.app.DatePickerDialog(
                 // pass the Context
                 this,
