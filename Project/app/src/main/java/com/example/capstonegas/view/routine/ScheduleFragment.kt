@@ -63,15 +63,20 @@ class ScheduleFragment() : Fragment() {
                     binding.textView11.visibility = View.VISIBLE
                 }
             }
-            else{
-                binding.imageView.visibility = View.VISIBLE
-                binding.textView11.visibility = View.VISIBLE
-            }
         }
 
         viewModel.isLoading.observe(viewLifecycleOwner) {
             if(it!=null){
                 showProgressBar(it)
+            }
+        }
+
+        viewModel.isExist.observe(viewLifecycleOwner) {
+            if(it!=null){
+                if(!it){
+                    binding.imageView.visibility = View.VISIBLE
+                    binding.textView11.visibility = View.VISIBLE
+                }
             }
         }
 
