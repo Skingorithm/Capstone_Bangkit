@@ -65,4 +65,11 @@ interface ApiService {
         @Field("Username") username: String
     ): Call<GetUserByUsernameResponse>
 
+    @FormUrlEncoded
+    @POST("/History/getHistoryByUsername")
+    fun getHistoryByUsername(
+        @Header("Authorization") token: String,
+        @Field("Username") username: String
+    ): Call<GetHistoryByUsernameResponse>
+
 }

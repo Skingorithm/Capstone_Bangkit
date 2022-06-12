@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginLeft="8dp"
     android:layout_marginTop="4dp"
-    android:layout_marginRight="8dp"
     android:layout_marginBottom="4dp"
     card_view:cardCornerRadius="4dp">
 
@@ -49,18 +47,28 @@
             app:layout_constraintStart_toEndOf="@+id/ic_face"
             app:layout_constraintTop_toBottomOf="@+id/history_date" />
 
-        <Button
-            android:id="@+id/btn_detail"
-            style="@style/OutlinedButton"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="0dp"
-            android:text="@string/btn_detail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="@color/primary_blue"
-            app:strokeWidth="1.5dp" />
+        <TextView
+            android:id="@+id/history_score_2"
+            style="@style/Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/history_score_2"
+            app:layout_constraintStart_toEndOf="@+id/history_score"
+            app:layout_constraintTop_toBottomOf="@+id/history_date" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_detail"-->
+<!--            style="@style/OutlinedButton"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_marginEnd="0dp"-->
+<!--            android:text="@string/btn_detail"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:strokeColor="@color/primary_blue"-->
+<!--            app:strokeWidth="1.5dp" />-->
 
         <View
             android:id="@+id/line_detail"
