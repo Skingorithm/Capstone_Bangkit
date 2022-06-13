@@ -3,11 +3,12 @@
 SkinGorithm API Documentation
 EndPoint: https://dynamic-reef-344016.uc.r.appspot.com
 Available endpoints:
-1.	/Ingredient
-a.	/Ingredient/InsertIngredients
+
+## 1.	/Ingredient
+### a.	/Ingredient/InsertIngredients
 -	Method: POST
 -	Request Body:
-```
+```json
 {
     "IngredName": "name",
     "IngredFunction": "function",
@@ -20,7 +21,7 @@ IngredFunction as STRING: (mandatory)
 IngredEffect as STRING: (mandatory)
 ```
 -	Response:
-```
+```json
 {
     "error": "false",
     "status": "success",
@@ -28,7 +29,7 @@ IngredEffect as STRING: (mandatory)
 }
 ```
 
-b.	/Ingredient/getAllIngredient
+### b.	/Ingredient/getAllIngredient
 -	Method : GET
 -	Request Body:
 (Leave it blank)
@@ -37,7 +38,7 @@ b.	/Ingredient/getAllIngredient
 Authorization: Bearer Token (from Login)
 ```
 -	Response: 
-```
+```json
 {
     "error": "false",
     "message": "success",
@@ -60,10 +61,10 @@ Authorization: Bearer Token (from Login)
 }
 ```
 
-c.	/Ingredient/getIngredByName
--	Method : GET
+### c.	/Ingredient/getIngredByName
+-	Method : POST
 -	Request Body:
-```
+```json
 {
     "IngredName": "Niacinamide"
 }
@@ -75,7 +76,7 @@ IngredName as STRING: Mandatory
 Authorization: Bearer Token (from Login)
 ```
 -	Response: 
-```
+```json
 {
     "error": "false",
     "message": "success",
@@ -89,11 +90,11 @@ Authorization: Bearer Token (from Login)
 }
 ```
 
-2.	/User
-a.	/User/userRegister
+## 2.	/User
+### a.	/User/userRegister
 -	Method : POST
 -	Request Body:
-```
+```json
 {
     "Username": "username",
     "Password": "password",
@@ -110,19 +111,19 @@ Fullname as STRING: Mandatory
 ProfilePicture as STRING: non Mandatory
 
 -	Response: 
-```
+```json
 {
     "status": "Success",
     "message": "Berhasil melakukan registrasi"
 }
 ```
 
-b.	/User/getAllUser
+### b.	/User/getAllUser
 -	Method : GET
 -	Request Body:
 (leave it blank)
 -	Response:
-```
+```json
 {
     "status": "success",
     "datalistset": [
@@ -139,10 +140,10 @@ b.	/User/getAllUser
 }
 ```
 
-c.	/User/getUserByUsername
--	Method: GET
+### c.	/User/getUserByUsername
+-	Method: POST
 -	Request Body:
-```
+```json
 {
     "Username": "username"
 }
@@ -151,14 +152,14 @@ c.	/User/getUserByUsername
 Username as STRING: Mandatory
 
 -	Response:
-```
+```json
 {
     "status": "success",
     "datalistset": {
-        "Username": "yusifaoktria",
-        "Email": "yusifaos@gmail.com",
+        "Username": "username",
+        "Email": "example@gmail.com",
         "Password": "$2b$10$RM13qQU5T5Pgrg/Bi./Yy.3rE2g82mVvNmwuI91VEDGCU/edr/A/W",
-        "FullName": "Yusifa Oktria Sageta",
+        "FullName": "Fullname Example",
         "ProfilePicture": null,
         "createdAt": "2022-05-31T09:52:48.000Z",
         "updatedAt": "2022-05-31T09:52:48.000Z"
@@ -166,12 +167,12 @@ Username as STRING: Mandatory
 }
 ```
 
-d.	/User/updateUser
+### d.	/User/updateUser
 -	Method: PUT
 -	Header:
 Authorization: Bearer Token (From Login)
 -	Request Body:
-```
+```json
 {
     "Username": "username",
     "FullName": "changed FullName",
@@ -183,21 +184,21 @@ FullName as STRING: Kalau mau diganti jadi mandatory, kalau tidak ambil dari dat
 ProfilePicture as STRING: Kalau mau diganti jadi mandatory, kalau tidak ambil dari data yang lama
 
 -	Response:
-```
+```json
 {
     "status": "success",
     "message": "Berhasil memperbarui data"
 }
 ```
 
-e.	/User/changePassword
+### e.	/User/changePassword
 -	Method: PUT
 -	Header:
 ```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
-```
+```json
 {
     "Username": "username",
     "currentPassword": "oldPassword",
@@ -209,20 +210,20 @@ currentPassword as STRING: Mandatory (harus sama dengan sebelumnya)
 newPassword as STRING: Mandatory
 
 -	Response
-```
+```json
 {
     "status": "success",
     "message": "Berhasil mengubah password"
 }
 ```
 
-3.	/Login
-a.	/Login/userLogin
+## 3.	/Login
+### a.	/Login/userLogin
 -	Method: POST
 -	Request Body:
-```
+```json
 {
-    "Username": "yusifaoktria",
+    "Username": "username",
     "Password": "test1234"
 }
 ```
@@ -230,7 +231,7 @@ Username as STRING: Mandatory
 Password as STRING: Mandatory
 
 -	Response:
-```
+```json
 {
     "message": "Berhasil Login",
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoieXVzaWZhb2t0cmlhIiwiaWF0IjoxNjUzOTkyMzE4LCJleHAiOjE2NTM5OTQxMTh9.Rgh0P1TlMSiW4wfxz2oiu5FFZYH-ycyZOWamW5flIRM",
@@ -239,10 +240,10 @@ Password as STRING: Mandatory
 }
 ```
 
-b.	/Login/refreshToken
+### b.	/Login/refreshToken
 -	Method: POST
 -	Request Body:
-```
+```json
 {
     "Username": "username",
     "RefreshToken": "eyJhbGciOiJIUzI1NiJ9.eXVzaWZhb2t0cmlh.wJRtSnh46_a7I9t3dn6zVcQ-L0dtup5SkLHU6hXXSJQ"
@@ -252,17 +253,17 @@ Username as STRING: Mandatory
 RefreshToken as STRING: Mandatory (From Login)
 
 -	Response:
-```
+```json
 {
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoieXVzaWZhb2t0cmlhIiwiaWF0IjoxNjUzOTkzMTkwLCJleHAiOjE2NTM5OTQ5OTB9.HHzzRlmXkNgpj01z8k6-bw0TiaZjgKN4L5grUV56WQE",
     "expiredIn": "30m"
 }
 ```
 
-c.	/Login/userLogout
+### c.	/Login/userLogout
 -	Method: DELETE
 -	Request Body:
-```
+```json
 {
     "RefreshToken": "eyJhbGciOiJIUzI1NiJ9.dGFyaXN5YW5nYmVuZXI.1kAsAg76GAjyMcKJJRULP3R2a1ZaKQ6YPvhrgRxwZXU"
 }
@@ -270,22 +271,22 @@ c.	/Login/userLogout
 RefreshToken as STRING: Mandatory (From Login)
 
 -	Response:
-```
+```json
 {
     "status": "success",
     "message": "Berhasil Logout"
 }
 ```
 
-4.	/Alarm
-a.	/Alarm/insertAlarm
+## 4.	/Alarm
+### a.	/Alarm/insertAlarm
 -	Method: POST
 -	Header: 
 ```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
-```
+```json
 {
     "RoutinityName": "Memakai Skincare",
     "NotifyHour": "13:00:00",
@@ -304,14 +305,14 @@ fifteenBefore as BOOLEAN: Mandatory
 thirtyBefore as BOOLEAN: Mandatory
 repeatAlarm as INTEGER: Mandatory
 
-b.	/Alarm/getAlarmByUsername
+### b.	/Alarm/getAlarmByUsername
 -	Method: POST
 -	Header: 
 ```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
-```
+```json
 {
     "Username": "username"
 }
@@ -319,7 +320,7 @@ Authorization: Bearer Token (From Login)
 Username as STRING: Mandatory
 
 -	Response:
-```
+```json
 [
     {
         "id": 3,
@@ -335,14 +336,14 @@ Username as STRING: Mandatory
     }
 ]
 ```
-c. /Alarm/getAlarmByDate
+### c. /Alarm/getAlarmByDate
 -   Method: POST
 -	Header: 
 ```
 Authorization: Bearer Token (From Login)
 ```
 -   Request Body:
-```
+```json
 {
     "Username": "username",
     "AlarmDate": "2022-04-07"
@@ -352,7 +353,7 @@ Username as STRING: Mandatory (untuk check apakah user terdaftar)
 AlarmDate as DATE Format (YYYY-MM-DD): Mandatory
 
 -    Response:
-```
+```json
 {
     "status": "success",
     "datalistset": [
@@ -385,15 +386,15 @@ AlarmDate as DATE Format (YYYY-MM-DD): Mandatory
 ```
 
 
-5.	/History
-a.	/History/insertHistory
+## 5.	/History
+### a.	/History/insertHistory
 -	Method: POST
 -	Header: 
 ```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
-```
+```json
 {
     "Username": "username",
     "ScanDate": "2022-04-07",
@@ -416,14 +417,14 @@ FlekHitam as INTEGER
 MataPanda as INTEGER
 Total as INTEGER
 
-b.	/History/getHistoryByUsername
+### b.	/History/getHistoryByUsername
 -	Method: POST
 -	Header: 
 ```
 Authorization: Bearer Token (From Login)
 ```
 -	Request Body:
-```
+```json
 {
     "Username": "username"
 }
@@ -431,7 +432,7 @@ Authorization: Bearer Token (From Login)
 Username as STRING: Mandatory
 
 -	Response:
-```
+```json
 {
     "message": "success",
     "datalistset": [
@@ -480,14 +481,14 @@ Username as STRING: Mandatory
     ]
 }
 ```
-c. /History/getHistoryByUsernameDate
+### c. /History/getHistoryByUsernameDate
 -   Method: POST
 -	Header: 
 ```
 Authorization: Bearer Token (From Login)
 ```
 -   Request Body:
-```
+```json
 {
     "Username": "username",
     "Date": "2022-04-07"
@@ -497,7 +498,7 @@ Username as STRING: Mandatory (untuk check apakah user terdaftar)
 Date as DATE Format (YYYY-MM-DD): Mandatory
 
 -    Response:
-```
+```json
 {
     "status": "success",
     "datalistset": [
