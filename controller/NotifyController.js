@@ -38,7 +38,18 @@ const insertAlarm = async (req, res) => {
             }
             else if(req.body.repeatAlarm == 1)
             {
-                for(let i = 0; i < 4; i++)
+                let t = 1;
+                const insertAlarm = new Notify ({
+                    RoutinityName, 
+                    NotifyHour,
+                    AlarmDate: Tanggal,
+                    fifteenBefore,
+                    thirtyBefore,
+                    repeatAlarm,
+                    Username
+                })
+                await insertAlarm.save();
+                for(let i = t; i < 4; i++)
                 {
                     Tanggal.setDate(Tanggal.getDate() + 7);
                     console.log(Tanggal);
