@@ -25,9 +25,9 @@ Skin Gorithm is an application that helps users in their skincare journey. With 
 
 if you are interested in discussing this project issues with us, please contact us or send an email to c22-ps180@bangkit.academy
 
-## Project Branches
+## Documentation
 
-In our project is divided into four branches.
+In our project is divided into four documentation.
 
 1. [Mobile Development](https://github.com/Skingorithm/Capstone_Bangkit/tree/Mobile-Development)
 2. [Machine Learning](https://github.com/Skingorithm/Capstone_Bangkit/tree/Machine-Learning)
