@@ -49,8 +49,10 @@ class UploadActivity : AppCompatActivity() {
             val file = reduceFileImage(getFile as File)
             val encodedImage = encodeImage(file)
             writeToFile(encodedImage, applicationContext)
+
             val intent = Intent(this, LoadingActivity::class.java)
-            intent.putExtra("image", encodedImage)
+
+//            intent.putExtra("image", encodedImage)
             startActivity(intent)
             finish()
         }else{
@@ -67,7 +69,7 @@ class UploadActivity : AppCompatActivity() {
         }
         val bm = BitmapFactory.decodeStream(fis)
         val baos = ByteArrayOutputStream()
-        bm.compress(Bitmap.CompressFormat.JPEG, 75, baos)
+        bm.compress(Bitmap.CompressFormat.JPEG, 25, baos)
         val b = baos.toByteArray()
         //Base64.encode
         return Base64.encodeToString(b, Base64.NO_WRAP)
@@ -78,7 +80,7 @@ class UploadActivity : AppCompatActivity() {
         val letDirectory = File(path, "Picture Base64")
         letDirectory.mkdirs()
         val file = File(letDirectory, "fotoku.txt")
-        file.appendText(data)
+        file.writeText(data)
         Log.d("File", "File path: $file")
     }
 
@@ -97,7 +99,7 @@ class UploadActivity : AppCompatActivity() {
                 BitmapFactory.decodeFile(myFile.path),
                 isBackCamera
             )
-            result.compress(Bitmap.CompressFormat.JPEG, 75, FileOutputStream(myFile))
+            result.compress(Bitmap.CompressFormat.JPEG, 100, FileOutputStream(myFile))
             getFile = myFile
             binding.previewImageView.setImageBitmap(result)
         }

@@ -18,10 +18,12 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.example.capstonegas.Base64Util
 import com.example.capstonegas.R
 import com.example.capstonegas.databinding.ActivityResultSkincareBinding
+import com.example.capstonegas.model.Output
 import com.example.capstonegas.model.ResultData
 import com.example.capstonegas.model.UserPreference
 import com.example.capstonegas.viewmodel.ResultSkincareViewModel
 import com.example.capstonegas.viewmodel.ViewModelFactory
+import java.io.File
 import kotlin.math.roundToInt
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -29,7 +31,9 @@ class ResultSkincareActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultSkincareBinding
     private lateinit var token: String
     private lateinit var userName: String
+    private lateinit var data_0: Output
     private lateinit var data: ResultData
+    private lateinit var base64: String
 
     private val viewModel: ResultSkincareViewModel by viewModels{
         ViewModelFactory(UserPreference.getInstance(dataStore))
@@ -43,12 +47,23 @@ class ResultSkincareActivity : AppCompatActivity() {
 
         setupView()
 
-        data = intent.getParcelableExtra<ResultData>(ML_DATA) as ResultData
+        data_0 = intent.getParcelableExtra<Output>(ML_DATA) as Output
+        openFile()
+        data = data_0.average?.let { data_0.acne?.let { it1 ->
+            data_0.peye?.let { it2 ->
+                data_0.wrinkle?.let { it3 ->
+                    data_0.bspot?.let { it4 ->
+                        ResultData(it,
+                            it1, it2, it3, it4, base64)
+                    }
+                }
+            }
+        } }!!
 
         binding.imageResult.setImageBitmap(data.image.let { Base64Util.convertStringToBitmap(it) })
         binding.numberResult.text = "${data.average.roundToInt()}/100"
 
-        data.acne.let { binding.acneProgressBarResult.setProgress(it.roundToInt()) }
+        data.acne.let { binding.acneProgressBarResult.progress = it.roundToInt() }
         binding.acneDesc.text = data.acne.toString() + "%"
         if(data.acne.roundToInt() > 75){
             binding.acneExplanation.text = resources.getString(R.string.above75, "Acne")
@@ -60,7 +75,7 @@ class ResultSkincareActivity : AppCompatActivity() {
             binding.acneExplanation.text = resources.getString(R.string.below50, "Acne")
         }
 
-        data.wrinkle.let { binding.wrinkleProgressBarResult.setProgress(it.roundToInt()) }
+        data.wrinkle.let { binding.wrinkleProgressBarResult.progress = it.roundToInt() }
         binding.wrinkleDesc.text= data.wrinkle.toString() + "%"
         if(data.wrinkle.roundToInt() > 75){
             binding.wrinkleExplanation.text = resources.getString(R.string.above75, "Kerutan")
@@ -72,7 +87,7 @@ class ResultSkincareActivity : AppCompatActivity() {
             binding.wrinkleExplanation.text = resources.getString(R.string.below50, "Kerutan")
         }
 
-        data.bspot.let { binding.bspotProgressBarResult.setProgress(it.roundToInt()) }
+        data.bspot.let { binding.bspotProgressBarResult.progress = it.roundToInt() }
         binding.bspotDesc.text = data.bspot.toString() + "%"
         if(data.bspot.roundToInt() > 75){
             binding.bspotExplanation.text = resources.getString(R.string.above75, "Flek Hitam")
@@ -84,7 +99,7 @@ class ResultSkincareActivity : AppCompatActivity() {
             binding.bspotExplanation.text = resources.getString(R.string.below50, "Flek Hitam")
         }
 
-        data.peye.let { binding.peyeProgressBarResult.setProgress(it.roundToInt()) }
+        data.peye.let { binding.peyeProgressBarResult.progress = it.roundToInt() }
         binding.peyeDesc.text = data.peye.toString() + "%"
         if(data.peye.roundToInt() > 75){
             binding.peyeExplanation.text = resources.getString(R.string.above75, "Mata Panda")
@@ -119,6 +134,15 @@ class ResultSkincareActivity : AppCompatActivity() {
 
         setupView()
         setupAction(data)
+    }
+
+    private fun openFile(){
+        val path = applicationContext.filesDir
+        val letDirectory = File(path, "Picture Base64")
+        val file = File(letDirectory, "fotoku.txt")
+        base64 = file.readText()
+//        Log.d("base64", base64)
+//        Log.d("File", "File path: $file")
     }
 
     private fun setupView() {
