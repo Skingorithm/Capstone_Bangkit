@@ -20,18 +20,18 @@ app = Flask(__name__)
 @app.route("/skingorithm/predict", methods=["POST"])
 def predict2():
     data = {"success": False, "output": []}
-    try:
-        params = request.get_json()
-        if params is None:
-            return jsonify(data)
-        if(params != None):
-            finalinput = preproccess_input(params['input'])
-            output_model = modelrun(finalinput)
+#     try:
+    params = request.get_json()
+    if params is None:
+        return jsonify(data)
+    if(params != None):
+        finalinput = preproccess_input(params['input'])
+        output_model = modelrun(finalinput)
 
-            data["success"] = True
-            data["output"] = output_model
-    except:
-        print("Get exception")
+        data["success"] = True
+        data["output"] = output_model
+#     except:
+#         print("Get exception")
     return jsonify(data)
 
 #function resize dan crop
